@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <style>
+        body
+        {
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 78%;
+        }
+        
+        .listtable tr:nth-child(even){background-color: #f2f2f2}
+    </style>
+    <h:head>
+        <title>SCIO-Explorer v2</title>
+    </h:head>
+    <body>
+        <h:form>
+            <f:metadata>
+                <f:viewAction action="#{explorer.setMode('DETAILS')}"/>
+                <f:viewAction action="#{explorer.setQuery(param['query'])}"/>
+            </f:metadata>
+            <table style="height: 100%; width: 100%; position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
+                <tr style="height: 75px; width: 100%;">
+                    <td>
+                        <h2>SCIO-Explorer v2</h2>
+                    </td>
+                </tr>
+                <tr style="height:100%; width:100%; vertical-align: top;">
+                    <td>
+                        <!-- content start-->
+                        <div style=" width: calc(100vw - 6px); height: 100%; overflow: auto;">
+                            <table style="border-collapse: collapse; border: 1px solid black;" class="listtable">
+                                <tr>
+                                    <ui:repeat value="#{explorer.details.header}" var="variable">
+                                        <th style="border: 1px solid black; padding: 5px;">
+                                            #{variable}
+                                        </th>
+                                    </ui:repeat>
+                                </tr>
+                                <ui:repeat value="#{explorer.details.data}" var="row">
+                                    <tr style="vertical-align: top;">
+                                        <ui:repeat value="#{row}" var="value">
+                                            <td style="border: 1px solid black; padding: 5px;">
+                                                <h:outputLabel value="#{value}" escape="false" style=""/>
+                                            </td>
+                                        </ui:repeat>
+                                    </tr>
+                                </ui:repeat>
+                            </table>
+                        </div>
+                        <!-- content end-->
+                    </td>
+                </tr>
+                <tr style="height: 35px; width:100%;">
+                    <td>
+                        <table style="height: 100%; width:100%;">
+                            <tr>
+                                <td style="width: 100%;">
+                                    <h:commandButton action="#{explorer.query()}" value="Back" style="width:100px; height:30px; font-weight: bold;"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
+    </body>
+</html>
