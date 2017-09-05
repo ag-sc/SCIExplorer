@@ -32,7 +32,7 @@ public class Configuration {
 	/**
 	 * File name of the RDF triple data.
 	 */
-	public static final String RDF_TRIPLES_FILE = "FullExcel2RDFv51.n-triples";
+	public static final String RDF_TRIPLES_FILE = "brigitte_full25_v51.n-triples";
 
 	/**
 	 * URIs of resources
