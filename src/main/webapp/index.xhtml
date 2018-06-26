@@ -335,6 +335,27 @@
                                                             </p:chart>
                                                         </div>
                                                     </ui:fragment>
+                                                    <ui:fragment rendered="#{explorer.deliveryMethodBarChartModel != null}">
+                                                        <div style="max-width: calc(100vw - 460px); overflow: auto;">
+                                                            <p:dataTable var="car" value="#{dtBasicView.cars}">
+															    <p:column headerText="Id">
+															        <h:outputText value="#{car.id}" />
+															    </p:column>
+															 
+															    <p:column headerText="Year">
+															        <h:outputText value="#{car.year}" />
+															    </p:column>
+															 
+															    <p:column headerText="Brand">
+															        <h:outputText value="#{car.brand}" />
+															    </p:column>	
+															 
+															    <p:column headerText="Color">
+															        <h:outputText value="#{car.color}" />
+															    </p:column>
+															</p:dataTable>
+                                                        </div>
+                                                    </ui:fragment>
                                                 </div>
                                             </td>
                                         </tr>
