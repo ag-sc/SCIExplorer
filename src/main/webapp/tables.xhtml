@@ -23,6 +23,26 @@
             <f:viewAction action="#{explorer.setMode('TABLES')}"/>
             <f:viewAction action="#{explorer.setQuery(param['query'])}"/>
         </f:metadata>
+        <p:dataTable var="injuryType" value="#{explorer.tableManager.injuryTypes}" style="margin-top:40px">
+            <f:facet name="header">
+                Functional Tests
+            </f:facet>
+     
+            <p:columnGroup type="header">
+                <p:row>
+                    <p:column rowspan="2" headerText="Injury Type" />
+                    <p:column colspan="6" headerText="Injury Areas" />
+                </p:row>
+                <p:row>
+                        <p:column headerText="Lumber" />
+                </p:row>
+            </p:columnGroup>
+     
+            <p:column>
+                <h:outputText value="#{injuryType.name}" />
+            </p:column>
+     
 
+        </p:dataTable>
     </body>
 </html>

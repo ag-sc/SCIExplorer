@@ -91,6 +91,8 @@ public class Explorer implements Serializable {
 
 	private final Map<TreeNode, String> nodeSelectionMap = new HashMap<TreeNode, String>();
 
+	
+	private TableManager tableManager = new TableManager();
 	/**
 	 * Variable-manager for statement-generation.
 	 */
@@ -727,12 +729,12 @@ public class Explorer implements Serializable {
 			break;
 			
 		case TABLES:
-			System.out.println("Showing tables now!");
+			this.tableManager.update(injuryTypeNodes);
 			break;
 		}
-		
-		System.out.println("update finished");
-	}
+			}
+	
+
 
 	public int getNumberOfResults() {
 		return numberOfResults;
@@ -1201,5 +1203,9 @@ public class Explorer implements Serializable {
 
 	public QueryResult getExportData() {
 		return exportData;
+	}
+	
+	public TableManager getTableManager() {
+		return tableManager;
 	}
 }
