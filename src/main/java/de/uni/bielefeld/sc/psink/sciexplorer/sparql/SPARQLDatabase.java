@@ -23,7 +23,7 @@ public class SPARQLDatabase {
 
 	public static QueryResult selectWhere(String variables, String where, String suffix) {
 		String query = QueryGenerator.generateSelectQuery(variables, where, suffix);
-		// System.out.println("Query: " + query);
+		System.out.println("Query: " + query);
 		return select(query);
 	}
 

@@ -52,15 +52,11 @@ public class ApacheJenaDatabase implements SPARQLDatabaseInterface {
 			while (results.hasNext()) {
 				solution = results.nextSolution();
 				row = new LinkedList<RDFObject>();
-				for (String variable : variables)
-                                {
-					try
-                                        {
-                                            row.add(new RDFObject(solution.getResource(variable).toString(), true));
-					}
-                                        catch (ClassCastException e)
-                                        {
-                                            row.add(new RDFObject(solution.getLiteral(variable).toString(), false));
+				for (String variable : variables) {
+					try {
+						row.add(new RDFObject(solution.getResource(variable).toString(), true));
+					} catch (ClassCastException e) {
+						row.add(new RDFObject(solution.getLiteral(variable).toString(), false));
 					}
 				}
 				data.add(row);

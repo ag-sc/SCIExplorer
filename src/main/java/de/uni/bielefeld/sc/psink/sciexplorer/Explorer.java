@@ -729,11 +729,9 @@ public class Explorer implements Serializable {
 			break;
 
 		case TABLES:
-			this.tableManager.update(injuryTypeNodes, locationNodes);
+			this.tableManager.update(investigationMethodNodes, injuryTypeNodes, locationNodes);
 			break;
 		}
-		System.out.println(selectedNodes);
-
 	}
 
 	public int getNumberOfResults() {
