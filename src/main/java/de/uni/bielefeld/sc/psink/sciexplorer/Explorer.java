@@ -92,7 +92,6 @@ public class Explorer implements Serializable {
 
 	private final Map<TreeNode, String> nodeSelectionMap = new HashMap<TreeNode, String>();
 
-	
 	private TableManager tableManager = new TableManager();
 	/**
 	 * Variable-manager for statement-generation.
@@ -728,15 +727,14 @@ public class Explorer implements Serializable {
 			exportData = SPARQLDatabase.selectTriplesFromSubgraph(
 					statementString + " " + QueryGenerator.ROOT_VARIABLE + " (x:|!x:)* ?s . " + "?s ?p ?o .");
 			break;
-			
+
 		case TABLES:
-			
 			this.tableManager.update(injuryTypeNodes, locationNodes);
 			break;
 		}
-			}
-	
+		System.out.println(selectedNodes);
 
+	}
 
 	public int getNumberOfResults() {
 		return numberOfResults;
@@ -1088,14 +1086,15 @@ public class Explorer implements Serializable {
 	public String details() {
 		return generateDetailsPageUrl();
 	}
-	
+
 	public String tables() {
 		return generateTablesPageUrl();
 	}
-	
+
 	public String generateDetailsPageUrl() {
 		return generateDetailsPageUrl(FACESREDIRECT_YES);
 	}
+
 	public String generateTablesPageUrl() {
 		return generateTablesPageUrl(FACESREDIRECT_YES);
 	}
@@ -1103,7 +1102,7 @@ public class Explorer implements Serializable {
 	private String generateDetailsPageUrl(boolean facesRedirect) {
 		return generateUrl("details.xhtml", facesRedirect);
 	}
-	
+
 	private String generateTablesPageUrl(boolean facesRedirect) {
 		return generateUrl("tables.xhtml", facesRedirect);
 	}
@@ -1206,7 +1205,7 @@ public class Explorer implements Serializable {
 	public QueryResult getExportData() {
 		return exportData;
 	}
-	
+
 	public TableManager getTableManager() {
 		return tableManager;
 	}

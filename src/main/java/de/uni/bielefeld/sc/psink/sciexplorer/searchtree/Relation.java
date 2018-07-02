@@ -12,6 +12,11 @@ package main.java.de.uni.bielefeld.sc.psink.sciexplorer.searchtree;
  * @author ABOROWI
  */
 public class Relation extends TreeObject {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3064453491765083303L;
+	
 	private final String domainClass;
 	private final String relation;
 	private final String rangeClass;

@@ -13,7 +13,8 @@ import java.util.Collection;
  */
 public class StringUtility
 {   
-    public static String join(String separator, Iterable objects)
+    @SuppressWarnings("rawtypes")
+	public static String join(String separator, Iterable objects)
     {
         StringBuilder builder = new StringBuilder();
         for(Object object : objects)

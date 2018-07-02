@@ -39,7 +39,7 @@ public class SearchTreeGenerator {
 	private static final List<String[]> SUBCLASSES = getCSVData(
 			ResourceUtility.getResourceAsStream(Configuration.CSV_SUBCLASSES_FILE));
 
-	private static final HashSet EXCLUDED_RELATIONS = new HashSet(Arrays.asList(Configuration.EXCLUDED_RELATIONS));
+	private static final HashSet<String> EXCLUDED_RELATIONS = new HashSet<String>(Arrays.asList(Configuration.EXCLUDED_RELATIONS));
 	private static final TreeNode ROOT = createTree();
 
 	public static TreeNode generateInstance() {
@@ -72,7 +72,7 @@ public class SearchTreeGenerator {
 	 * @return rows that match
 	 */
 	private static List<String[]> findRowsByColumnValue(List<String[]> rows, int column, String value) {
-		List<String[]> hits = new LinkedList();
+		List<String[]> hits = new LinkedList<String[]>();
 		for (String[] row : rows) {
 			if (row[column].equals(value)) {
 				hits.add(row);
@@ -130,7 +130,7 @@ public class SearchTreeGenerator {
 	 */
 	private static TreeNode buildTree() {
 		TreeNode root = new DefaultTreeNode(Configuration.SPARQL_ROOT_VARIABLENAME);
-		HashSet<String> searchTerms = new HashSet();
+		HashSet<String> searchTerms = new HashSet<String>();
 		// searchTerms.add(Configuration.SPARQL_ROOT_VARIABLENAME);
 		buildTree(searchTerms, root, Configuration.SPARQL_ROOT_VARIABLENAME);
 		return root;

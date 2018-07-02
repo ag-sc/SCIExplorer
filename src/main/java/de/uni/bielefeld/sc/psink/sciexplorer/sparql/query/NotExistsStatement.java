@@ -17,22 +17,27 @@ import main.java.de.uni.bielefeld.sc.psink.sciexplorer.utility.StringUtility;
  */
 public class NotExistsStatement extends AbstractStatement implements Serializable
 {
-    private List<AbstractStatement> statements;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -1225537189839640066L;
+	
+	private List<AbstractStatement> statements;
 
     public NotExistsStatement()
     {
-        this.statements = new LinkedList();
+        this.statements = new LinkedList<AbstractStatement>();
     }
     
     public NotExistsStatement(Statement statement)
     {
-        this.statements = new LinkedList();
+        this.statements = new LinkedList<AbstractStatement>();
         this.statements.add(statement);
     }
     
     public NotExistsStatement(List<AbstractStatement> statements)
     {
-        this.statements = new LinkedList(statements);
+        this.statements = new LinkedList<AbstractStatement>(statements);
     }
     
     public void addStatement(String subject, String predicate, String object)

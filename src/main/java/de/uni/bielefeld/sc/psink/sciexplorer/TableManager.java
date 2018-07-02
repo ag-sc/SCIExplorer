@@ -1,7 +1,6 @@
 package main.java.de.uni.bielefeld.sc.psink.sciexplorer;
 
 import java.util.List;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 

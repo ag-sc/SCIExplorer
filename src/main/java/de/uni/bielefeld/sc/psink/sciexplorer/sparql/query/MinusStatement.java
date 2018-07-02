@@ -17,28 +17,33 @@ import main.java.de.uni.bielefeld.sc.psink.sciexplorer.utility.StringUtility;
  */
 public class MinusStatement extends AbstractStatement implements Serializable
 {
-    private List<AbstractStatement> statements;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8969696728623369757L;
+	
+	private List<AbstractStatement> statements;
 
     public MinusStatement()
     {
-        this.statements = new LinkedList();
+        this.statements = new LinkedList<AbstractStatement>();
     }
     
     public MinusStatement(Statement statement)
     {
-        this.statements = new LinkedList();
+        this.statements = new LinkedList<AbstractStatement>();
         this.statements.add(statement);
     }
     
     public MinusStatement(String subject, String predicate, String object)
     {
-        this.statements = new LinkedList();
+        this.statements = new LinkedList<AbstractStatement>();
         this.statements.add(new Statement(subject, predicate, object));
     }
     
     public MinusStatement(List<AbstractStatement> statements)
     {
-        this.statements = new LinkedList(statements);
+        this.statements = new LinkedList<AbstractStatement>(statements);
     }
     
     public void addStatement(String subject, String predicate, String object)

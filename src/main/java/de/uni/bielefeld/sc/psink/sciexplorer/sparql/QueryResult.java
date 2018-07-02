@@ -15,7 +15,12 @@ import java.util.List;
  */
 public class QueryResult implements Serializable
 {
-    private final List<String> variables;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5362613505888611720L;
+	
+	private final List<String> variables;
     private final List<List<RDFObject>> data;
     
     public QueryResult(List<String> variables, List<List<RDFObject>> data)

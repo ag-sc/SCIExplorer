@@ -11,7 +11,12 @@ package main.java.de.uni.bielefeld.sc.psink.sciexplorer.searchtree;
  */
 public class Subclass extends TreeObject
 {
-    public static final boolean DEFAULT_SUBCLASS = true;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1425072832766009234L;
+
+	public static final boolean DEFAULT_SUBCLASS = true;
     
     private final String name;
     private final boolean namedIndividual;

@@ -16,7 +16,7 @@
         .listtable tr:nth-child(even){background-color: #f2f2f2}
     </style>
     <h:head>
-        <title>SCIO-Explorer v2 Tabes</title>
+        <title>SCIO-Explorer v2 Tables</title>
     </h:head>
     <body>
         <f:metadata>
@@ -43,6 +43,11 @@
             <p:column>
                 <h:outputText value="#{injuryType.name}" />
             </p:column>
+
+            <p:columns value="#{explorer.tableManager.locations}" var="location">
+                <h:outputText value="hi" />
+            </p:columns>
+
         </p:dataTable>
     </body>
 </html>
