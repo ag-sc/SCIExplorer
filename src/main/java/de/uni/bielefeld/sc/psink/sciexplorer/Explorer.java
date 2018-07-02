@@ -70,11 +70,11 @@ public class Explorer implements Serializable {
 	private static final String TRISTATECHECKBOX_UNSELECTED = "0";
 	private static final String TRISTATECHECKBOX_SELECTED = "1";
 	private static final String TRISTATECHECKBOX_EXCLUDED = "2";
-	private static final TreeNode NODE_JUDGEMENT_POSITIVE = TreeUtility.getNodeByPath(ROOT,
+	public static final TreeNode NODE_JUDGEMENT_POSITIVE = TreeUtility.getNodeByPath(ROOT,
 			Configuration.PATH_JUDGEMENT_POSITIVE);
-	private static final TreeNode NODE_JUDGEMENT_NEGATIVE = TreeUtility.getNodeByPath(ROOT,
+	public static final TreeNode NODE_JUDGEMENT_NEGATIVE = TreeUtility.getNodeByPath(ROOT,
 			Configuration.PATH_JUDGEMENT_NEGATIVE);
-	private static final TreeNode NODE_JUDGEMENT_NEUTRAL = TreeUtility.getNodeByPath(ROOT,
+	public static final TreeNode NODE_JUDGEMENT_NEUTRAL = TreeUtility.getNodeByPath(ROOT,
 			Configuration.PATH_JUDGEMENT_NEUTRAL);
 	private static final TreeNode[] NODES_JUDGEMENT = new TreeNode[] { NODE_JUDGEMENT_POSITIVE, NODE_JUDGEMENT_NEGATIVE,
 			NODE_JUDGEMENT_NEUTRAL };
@@ -1102,7 +1102,12 @@ public class Explorer implements Serializable {
 	}
 
 	private String generateTablesPageUrl(boolean facesRedirect) {
-		return generateUrl("tables.xhtml", facesRedirect);
+		//return generateUrl("tables.xhtml", facesRedirect);
+		String url = "tables.xhtml";
+		if(facesRedirect) {
+			url += "?faces-redirect=true";
+		}
+		return url;
 	}
 
 	public String generateExportPageUrl() {

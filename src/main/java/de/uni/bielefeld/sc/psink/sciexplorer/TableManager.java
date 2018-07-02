@@ -7,9 +7,6 @@ import java.util.Arrays;
 import org.primefaces.model.TreeNode;
 
 import main.java.de.uni.bielefeld.sc.psink.sciexplorer.searchtree.Subclass;
-import main.java.de.uni.bielefeld.sc.psink.sciexplorer.sparql.QueryGenerator;
-import main.java.de.uni.bielefeld.sc.psink.sciexplorer.sparql.QueryResult;
-import main.java.de.uni.bielefeld.sc.psink.sciexplorer.sparql.RDFObject;
 import main.java.de.uni.bielefeld.sc.psink.sciexplorer.sparql.SPARQLDatabase;
 
 /**
@@ -21,6 +18,10 @@ import main.java.de.uni.bielefeld.sc.psink.sciexplorer.sparql.SPARQLDatabase;
 public class TableManager {
 
 	/** data **/
+
+	private List<List<int[]>> functionalInjuryAreaData;
+
+	private String[] judgements = { "Positive", "Negative", "Neutral" };
 	private List<Subclass> injuryTypes;
 	private List<Subclass> locations;
 
@@ -29,8 +30,9 @@ public class TableManager {
 	public TableManager() {
 		this.injuryTypes = new ArrayList<Subclass>();
 		this.locations = new ArrayList<Subclass>();
-
 		this.functionalTests = new ArrayList<Subclass>();
+
+		this.functionalInjuryAreaData = new ArrayList<List<int[]>>();
 	}
 
 	public void update(List<TreeNode> investigationMethodNodes, List<TreeNode> injuryTypeNodes,
@@ -89,13 +91,45 @@ public class TableManager {
 
 	private void queryData() {
 
-		String where = "?Result <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/Result>. ?Result <http://psink.de/scio/hasTargetGroup> ?TargetExperimentalGroup. ?TargetExperimentalGroup <http://psink.de/scio/hasInjuryModel> ?InjuryModel. ?InjuryModel <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/Compression>. ?InjuryModel <http://psink.de/scio/hasInjuryLocation> <http://psink.de/scio/Thoracic> .";
+		// functional injury area
+		this.functionalInjuryAreaData.clear();
 
-		QueryResult results = SPARQLDatabase.selectWhere(QueryGenerator.ROOT_VARIABLE, where,
-				QueryGenerator.ORDER_BY_ROOTVARIABLE);
+		// go over all injury types
+		for (Subclass injuryType : injuryTypes) {
+			System.out.println(injuryType.getName() + ":");
 
-		for (List<RDFObject> resultRow : results.getData()) {
-			System.out.println(resultRow.get(0).toString());
+			// add a new row for all locations for the current injury type
+			List<int[]> locationData = new ArrayList<int[]>();
+			this.functionalInjuryAreaData.add(locationData);
+
+			// go over all locations
+			for (Subclass location : locations) {
+
+				// add a new set of judgement values for the current injury type / location
+				// combination
+				int[] judgementData = new int[3];
+				locationData.add(judgementData);
+
+				System.out.println("\t" + location.getName() + ":");
+
+				// build the query and fill in the count for all three judgements
+				for (int i = 0; i < judgements.length; i++) {
+					String judgement = judgements[i];
+					String where = "?Result <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/Result>. "
+							+ "?Result <http://psink.de/scio/hasJudgement> <http://psink.de/scio/" + judgement + ">. "
+							+ "?Result <http://psink.de/scio/hasTargetGroup> ?TargetExperimentalGroup. "
+							+ "?TargetExperimentalGroup <http://psink.de/scio/hasInjuryModel> ?InjuryModel. "
+							+ "?InjuryModel <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/"
+							+ injuryType.getName() + ">. "
+							+ "?InjuryModel <http://psink.de/scio/hasInjuryLocation> <http://psink.de/scio/"
+							+ location.getName() + "> .";
+
+					int count = SPARQLDatabase.countWhere(where);
+					System.out.println("\t\t" + judgement + ": " + count);
+
+					judgementData[i] = count;
+				}
+			}
 		}
 	}
 
@@ -111,5 +145,9 @@ public class TableManager {
 
 	public List<Subclass> getFunctionalTests() {
 		return functionalTests;
+	}
+
+	public List<List<int[]>> getFunctionalInjuryAreaData() {
+		return functionalInjuryAreaData;
 	}
 }
