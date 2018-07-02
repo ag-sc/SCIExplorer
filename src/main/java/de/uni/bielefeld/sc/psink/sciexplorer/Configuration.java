@@ -18,7 +18,7 @@ import main.java.de.uni.bielefeld.sc.psink.sciexplorer.sparql.SPARQLDatabaseInte
  */
 public class Configuration {
 	
-	private static final int ONTOLOGY_VERSION = 51;
+	private static final int ONTOLOGY_VERSION = 63;
 	/**
 	 * Filenames of CSV-Files
 	 */
@@ -87,8 +87,10 @@ public class Configuration {
 	 * {@value #SPARQL_ROOT_VARIABLENAME}.
 	 */
 
+	// TODO: investigate, if things are missing for new version 63!!
+	
 	public static final String[] PATH_TREATMENTS_COMPOUND = new String[] { "TargetExperimentalGroup", "TreatmentTypes",
-			"Treatment", "CompoundTreatment", "SuppliedCompound", "Compound", "Compound" };
+			"Treatment", "CompoundTreatment", "Compound", "Compound" };
 
 	public static final String[] PATH_TREATMENTS_COMPOUND_DOSAGE = new String[] { "TargetExperimentalGroup",
 			"TreatmentTypes", "Treatment", "CompoundTreatment", "Dosage" };
