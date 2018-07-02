@@ -31,18 +31,18 @@
             <p:columnGroup type="header">
                 <p:row>
                     <p:column rowspan="2" headerText="Injury Type" />
-                    <p:column colspan="6" headerText="Injury Areas" />
+                    <p:column colspan="#{explorer.tableManager.locations.size()}" headerText="Injury Areas" />
                 </p:row>
                 <p:row>
-                        <p:column headerText="Lumber" />
+                    <ui:repeat value="#{explorer.tableManager.locations}" var="location">
+                        <p:column headerText="#{location.name}" />
+                    </ui:repeat>
                 </p:row>
             </p:columnGroup>
      
             <p:column>
                 <h:outputText value="#{injuryType.name}" />
             </p:column>
-     
-
         </p:dataTable>
     </body>
 </html>

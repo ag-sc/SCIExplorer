@@ -54,6 +54,7 @@ import main.java.de.uni.bielefeld.sc.psink.sciexplorer.visualization.ResultTable
  * web-application.
  * 
  * @author ABOROWI
+ * @author Maik Fruhner
  */
 @ManagedBean
 @ViewScoped
@@ -729,7 +730,8 @@ public class Explorer implements Serializable {
 			break;
 			
 		case TABLES:
-			this.tableManager.update(injuryTypeNodes);
+			
+			this.tableManager.update(injuryTypeNodes, locationNodes);
 			break;
 		}
 			}
