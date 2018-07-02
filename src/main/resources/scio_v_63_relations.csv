@@ -1,0 +1,101 @@
+#domainClass	relation	rangeClass	from	to	isDataTypeProperty	mergedName	description
+Result	hasObservation	Observation	1	m	false	Observations	No description provided
+Result	hasTargetGroup	ExperimentalGroup	1	1	false	TargetExperimentalGroup	A result is obtained from the comparison of two groups, usually the treated and the control group. The target setup represents the focus group, which is compared to a reference group.
+Result	hasJudgement	Judgement	1	1	false	Judgement	No description provided
+Result	hasInvestigationMethod	InvestigationMethod	1	1	false	InvestigationMethod	No description provided
+Result	hasStatisticalTest	StatisticalTest	1	1	false	StatisticalTest	No description provided
+Result	hasReferenceGroup	ExperimentalGroup	1	1	false	ReferenceExperimentalGroup	A result is obtained from the comparison of two groups, usually the treated and the control group. The reference setup represents the group, which is used for comparison to a target group of interest.
+Result	hasTrend	Trend	1	1	false	Trend	No description provided
+Experiment	hasResult	Result	1	m	false	Results	No description provided
+Experiment	hasStudyDesign	StudyDesign	1	m	false	StudyDesigns	No description provided
+Experiment	hasExperimentalMethod	ExperimentalMethod	1	m	false	ExperimentalMethods	No description provided
+Significance	hasAlphaSignificanceNiveau	AlphaSignificanceNiveau	?	?	true	AlphaSignificanceNiveau	No description provided
+Significance	hasPValue	PValue	?	?	true	PValue	No description provided
+InclinedPlaneTest	hasDirection	Direction	1	1	false	Direction	No description provided
+MedicationDuringSurgery	hasDeliveryMethod	DeliveryMethod	1	1	false	DeliveryMethod	Route of administration of medication, cells implants or other therapeutical substances.
+AnatomicalLocation	hasDepth	Depth	1	1	true	Depth	No description provided
+AnatomicalLocation	hasDistance	Distance	1	1	true	Distance	Measure of spatial distance in µm, mm, cm or other units.
+TemperatureTreatment	hasTemperature	Temperature	1	1	true	Temperature	Temperature, unit is Celsius or Fahrenheit.
+PostsurgicalMedication	hasDosage	Dosage	1	1	true	Dosage	No description provided
+Compound	hasSupplier	CompoundSupplier	1	1	false	CompoundSupplier	No description provided
+AnalyzedExperimentalGroup	hasMember	ExperimentalGroup	1	m	false	MemberExperimentalGroups	No description provided
+AnalyzedExperimentalGroup	hasConstraint	Constraint	1	m	false	Constraints	A constraint defines the property/properties the organisms of an analyzed experimental group have which makes them different from the total population of the experimental group.
+LateralHemisection	hasDirection	Direction	1	1	false	Direction	No description provided
+TemporalInterval	hasDuration	Duration	1	1	true	Duration	Timing of injury process, i.e. if compression is applied for several seconds.
+TemporalInterval	hasEventBefore	Event	1	1	false	EventBefore	No description provided
+TemporalInterval	hasEventAfter	Event	1	1	false	EventAfter	No description provided
+WeightDrop	hasDuration	Duration	1	1	true	Duration	Timing of injury process, i.e. if compression is applied for several seconds.
+WeightDrop	hasForce	Force	1	1	true	Force	Pertains to the force of e.g. a clip device or an impactor for spinal cord injury or a measured force in a behavioural test.
+WeightDrop	hasDistance	Distance	1	1	true	Distance	Measure of spatial distance in µm, mm, cm or other units.
+WeightDrop	hasWeight	Weight	1	1	true	Weight	Any weight measured in µg, g or other units.
+Direction	relativeTo	Location	1	1	false	RelativeToLocation	No description provided
+InjuryByAccident	hasInjuryByAccidentType	InjuryByAccidentType	1	m	false	InjuryByAccidentTypes	The "has injury type" property links the "Injury by Accident" class with the injury type. In uncontrolled situations there is usually a mix of crush, dislocation and transection of the spinal cord by e.g. bone parts. Therefore multiple injury types must be considered when describing an uncontrolled spinal cord injury situation.
+Cell	hasOrganismSpecies	OrganismSpecies	1	1	false	OrganismSpecies	No description provided
+Cell	hasCompoundBiologicalRelation	CompoundBiologicalRelation	1	1	false	CompoundBiologicalRelation	A cell or tissue implant is defined by its origin as refered to the host organism.
+Cell	hasExperimentalProcedure	ExperimentalProcedure	1	m	false	ExperimentalProcedures	Mulitple processing steps can be necessary before a cell or tissue can be implanted.
+DeliveryMethod	hasDuration	Duration	1	1	true	Duration	Timing of injury process, i.e. if compression is applied for several seconds.
+DeliveryMethod	hasLocation	Location	1	m	false	Locations	No description provided
+ExperimentalGroup	hasOrganismModel	OrganismModel	1	1	false	OrganismModel	No description provided
+ExperimentalGroup	hasGroupName	GroupName	1	m	true	GroupNames	No description provided
+ExperimentalGroup	hasTotalPopulationSize	TotalPopulationSize	?	?	true	TotalPopulationSize	No description provided
+ExperimentalGroup	hasInjuryModel	Injury	1	1	false	InjuryModel	No description provided
+ExperimentalGroup	hasNNumber	NNumber	?	?	true	NNumber	No description provided
+ExperimentalGroup	hasTreatmentType	Treatment	1	m	false	TreatmentTypes	No description provided
+ExperimentalGroup	hasGroupNumber	GroupNumber	1	1	true	GroupNumber	No description provided
+NonFunctionalTest	hasLocation	Location	1	m	false	Locations	No description provided
+Publication	hasPubmedID	PubmedID	1	1	true	PubmedID	No description provided
+Publication	hasPublicationYear	PublicationYear	1	1	true	PublicationYear	No description provided
+Publication	describes	Experiment	1	m	false	DescribesExperiments	No description provided
+Publication	hasAuthor	Person	1	m	false	AuthorPersons	No description provided
+ElectromagneticFieldTreatment	hasVoltage	Voltage	1	1	true	Voltage	No description provided
+ElectromagneticFieldTreatment	hasElectricFieldStrength	ElectricFieldStrength	1	1	true	ElectricFieldStrength	No description provided
+ElectromagneticFieldTreatment	hasCurrent	Current	1	1	true	Current	No description provided
+StemCell	hasStemCellSourceType	StemCellSourceType	1	1	false	StemCellSourceType	No description provided
+Anaesthetic	hasDosage	Dosage	1	1	true	Dosage	No description provided
+Trend	hasSignificance	Significance	1	1	false	Significance	No description provided
+Trend	hasDifference	ObservedDifference	1	1	false	ObservedDifference	No description provided
+InvestigationMethod	makesUseOf	Apparatus	1	m	false	MakesUseOfApparatus	This property relates the investigation method to the experimental apparatus used.
+Injury	hasInjuryLocation	VertebralLocation	1	1	false	InjuryVertebralLocation	No description provided
+Injury	hasInjuryPostsurgicalCare	AnimalCareCondition	1	m	false	InjuryPostsurgicalCareAnimalCareConditions	No description provided
+Injury	hasInjuryAnaesthesia	Anaesthetic	1	m	false	InjuryAnaesthesiaAnaesthetics	No description provided
+Injury	hasInjuryIntensity	InjuryIntensity	1	1	false	InjuryIntensity	No description provided
+Injury	hasMedication	MedicationDuringSurgery	1	m	false	MedicationDuringSurgeries	No description provided
+Injury	hasAnimalCareCondition	AnimalCareCondition	1	m	false	AnimalCareConditions	No description provided
+Injury	hasInjuryDevice	InjuryDevice	1	1	false	InjuryDevice	No description provided
+Injury	hasInjuryArea	InjuryArea	1	1	false	InjuryArea	No description provided
+NumericValue	hasStandardError	StandardError	?	?	true	StandardError	No description provided
+NumericValue	hasValue	Value	?	?	true	Value	No description provided
+NumericValue	hasStandardDeviation	StandardDeviation	?	?	true	StandardDeviation	No description provided
+Blade	hasThickness	Thickness	1	1	true	Thickness	No description provided
+Blade	hasLongitude	Length	1	1	true	LongitudeLength	No description provided
+Person	hasName	Name	1	1	true	Name	No description provided
+ChemicalInjury	hasLightIntensity	LightIntensity	?	?	true	LightIntensity	No description provided
+Treatment	hasDuration	Duration	1	1	true	Duration	Timing of injury process, i.e. if compression is applied for several seconds.
+Treatment	hasDeliveryMethod	DeliveryMethod	1	1	false	DeliveryMethod	Route of administration of medication, cells implants or other therapeutical substances.
+Treatment	hasApplicationInstrument	ApplicationInstrument	1	1	false	ApplicationInstrument	No description provided
+Treatment	hasFrequency	Frequency	?	?	true	Frequency	No description provided
+Treatment	hasInterval	Interval	?	?	true	Interval	No description provided
+Treatment	hasTreatmentLocation	Location	1	1	false	TreatmentLocation	No description provided
+FunctionalTest	hasDuration	Duration	1	1	true	Duration	Timing of injury process, i.e. if compression is applied for several seconds.
+FunctionalTest	testsFor	Function	1	m	false	TestsForFunctions	No description provided
+Tissue	hasOrganismSpecies	OrganismSpecies	1	1	false	OrganismSpecies	No description provided
+Tissue	hasCompoundBiologicalRelation	CompoundBiologicalRelation	1	1	false	CompoundBiologicalRelation	A cell or tissue implant is defined by its origin as refered to the host organism.
+OrganismModel	hasOrganismSpecies	OrganismSpecies	1	1	false	OrganismSpecies	No description provided
+OrganismModel	hasAgeCategory	AgeCategory	1	1	false	AgeCategory	Specific age stated in days weeks, months or years.
+OrganismModel	hasAge	Age	1	1	true	Age	No description provided
+OrganismModel	hasWeight	Weight	1	1	true	Weight	Any weight measured in µg, g or other units.
+OrganismModel	hasGender	Gender	1	1	false	Gender	No description provided
+Observation	hasNonNumericValue	NonNumericValue	?	?	true	NonNumericValue	No description provided
+Observation	hasTemporalInterval	TemporalInterval	1	m	false	TemporalIntervals	No description provided
+Observation	hasNumericValue	NumericValue	1	1	false	NumericValue	The observation has a quantified numeric value as outcome.
+Observation	belongsTo	ExperimentalGroup	1	1	false	BelongsToExperimentalGroup	No description provided
+VertebralArea	hasLowerVertebrae	Vertebrae	1	1	false	LowerVertebrae	No description provided
+VertebralArea	hasUpperVertebrae	Vertebrae	1	1	false	UpperVertebrae	No description provided
+Clip	hasForce	Force	1	1	true	Force	Pertains to the force of e.g. a clip device or an impactor for spinal cord injury or a measured force in a behavioural test.
+Clip	hasWeight	Weight	1	1	true	Weight	Any weight measured in µg, g or other units.
+Balloon	hasVolume	Volume	1	1	true	Volume	No description provided
+Balloon	hasPressure	Pressure	1	1	true	Pressure	No description provided
+Balloon	hasForce	Force	1	1	true	Force	Pertains to the force of e.g. a clip device or an impactor for spinal cord injury or a measured force in a behavioural test.
+CompoundTreatment	hasSuppliedCompositeCompound	Compound	1	m	false	SuppliedCompositeCompounds	No description provided
+CompoundTreatment	hasDosage	Dosage	1	1	true	Dosage	No description provided
+CompoundTreatment	hasCompound	Compound	1	1	false	Compound	No description provided

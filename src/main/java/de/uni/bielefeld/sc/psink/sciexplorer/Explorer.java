@@ -59,6 +59,10 @@ import main.java.de.uni.bielefeld.sc.psink.sciexplorer.visualization.ResultTable
 @ViewScoped
 public class Explorer implements Serializable {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1709475478663829056L;
+	/**
 	 * Ontology tree.
 	 */
 	private static final TreeNode ROOT = SearchTreeGenerator.generateInstance();
@@ -75,7 +79,7 @@ public class Explorer implements Serializable {
 			NODE_JUDGEMENT_NEUTRAL };
 
 	public static enum Mode {
-		QUERY, DETAILS, EXPORT
+		QUERY, DETAILS, EXPORT, TABLES
 	};
 
 	private static final boolean FACESREDIRECT_YES = true;
@@ -83,9 +87,9 @@ public class Explorer implements Serializable {
 
 	private Mode mode;
 
-	private final BidiMap<TreeNode, TreeNode> nodeMap = new DualHashBidiMap();
+	private final BidiMap<TreeNode, TreeNode> nodeMap = new DualHashBidiMap<TreeNode, TreeNode>();
 
-	private final Map<TreeNode, String> nodeSelectionMap = new HashMap();
+	private final Map<TreeNode, String> nodeSelectionMap = new HashMap<TreeNode, String>();
 
 	/**
 	 * Variable-manager for statement-generation.
@@ -98,7 +102,7 @@ public class Explorer implements Serializable {
 	/**
 	 * Active filter-map for statement-generation.
 	 */
-	private Map<TreeNode, String> filterMap = new HashMap();
+	private Map<TreeNode, String> filterMap = new HashMap<TreeNode, String>();
 	/**
 	 * Indicates if subclasses are included in the query.
 	 */
@@ -108,8 +112,8 @@ public class Explorer implements Serializable {
 
 	private final List<TreeNode> treatmentNodes = getTreatmentNodes();
 
-	private final List<TreeNode> selectedNodes = new LinkedList();
-	private final List<TreeNode> excludedNodes = new LinkedList();
+	private final List<TreeNode> selectedNodes = new LinkedList<TreeNode>();
+	private final List<TreeNode> excludedNodes = new LinkedList<TreeNode>();
 
 	private int numberOfResults;
 
@@ -167,9 +171,9 @@ public class Explorer implements Serializable {
 	private static List<List<String>> generateSelectionStringTable(List<TreeNode> nodes,
 			Map<TreeNode, String> filterMap) {
 		List<String> line;
-		List<List<String>> lines = new LinkedList();
+		List<List<String>> lines = new LinkedList<List<String>>();
 		for (Entry<TreeNode, List<TreeNode>> entry : getAnchorMap(nodes).entrySet()) {
-			line = new LinkedList();
+			line = new LinkedList<String>();
 			line.add(getNodeName(entry.getKey()) + ": ");
 			if (TreeUtility.isRelation(entry.getKey())) {
 				if (TreeUtility.isRelationNodeDatatypeProperty(entry.getKey())) {
@@ -202,7 +206,7 @@ public class Explorer implements Serializable {
 	 * @return anchor-map
 	 */
 	private static Map<TreeNode, List<TreeNode>> getAnchorMap(List<TreeNode> nodes) {
-		Map<TreeNode, List<TreeNode>> map = new LinkedHashMap();
+		Map<TreeNode, List<TreeNode>> map = new LinkedHashMap<TreeNode, List<TreeNode>>();
 		TreeNode anchor;
 		List<TreeNode> list;
 		for (TreeNode node : nodes) {
@@ -214,7 +218,7 @@ public class Explorer implements Serializable {
 			if (map.containsKey(anchor)) {
 				map.get(anchor).add(node);
 			} else {
-				list = new LinkedList();
+				list = new LinkedList<TreeNode>();
 				list.add(node);
 				map.put(anchor, list);
 			}
@@ -248,7 +252,7 @@ public class Explorer implements Serializable {
 	}
 
 	private List<TreeNode> getTreatmentNodes() {
-		List<TreeNode> treatmentNodes = new LinkedList();
+		List<TreeNode> treatmentNodes = new LinkedList<TreeNode>();
 		TreeUtility.getDirectSubclassDescendants(treatmentNodes,
 				TreeUtility.getNodeByPath(ROOT, Configuration.PATH_TREATMENTS_COMPOUND));
 		Collections.sort(treatmentNodes, TreeNodeNameComparator.INSTANCE);
@@ -263,7 +267,7 @@ public class Explorer implements Serializable {
 	 */
 	public List<String> completeTreatmentSearchTerm(String query) {
 		String searchTerm = query.toLowerCase();
-		List<String> results = new LinkedList();
+		List<String> results = new LinkedList<String>();
 		String name;
 		for (TreeNode node : treatmentNodes) {
 			name = getNodeName(node);
@@ -284,7 +288,7 @@ public class Explorer implements Serializable {
 	}
 
 	private List<TreeNode> getAnimalModelNodes() {
-		List<TreeNode> nodes = new LinkedList();
+		List<TreeNode> nodes = new LinkedList<TreeNode>();
 		TreeUtility.getDirectSubclassLeaves(nodes, TreeUtility.getNodeByPath(ROOT, Configuration.PATH_ANIMALMODELS));
 		return nodes;
 	}
@@ -306,7 +310,7 @@ public class Explorer implements Serializable {
 	}
 
 	private List<TreeNode> getInvestigationMethodNodes() {
-		List<TreeNode> nodes = new LinkedList();
+		List<TreeNode> nodes = new LinkedList<TreeNode>();
 		TreeUtility.getDirectSubclassLeaves(nodes,
 				TreeUtility.getNodeByPath(ROOT, Configuration.PATH_INVESTIGATIONMETHODS));
 		return nodes;
@@ -317,7 +321,7 @@ public class Explorer implements Serializable {
 	}
 
 	private List<TreeNode> getInjuryTypeNodes() {
-		List<TreeNode> nodes = new LinkedList();
+		List<TreeNode> nodes = new LinkedList<TreeNode>();
 		TreeUtility.getDirectSubclassLeaves(nodes, TreeUtility.getNodeByPath(ROOT, Configuration.PATH_INJURYTYPES));
 		return nodes;
 	}
@@ -327,18 +331,18 @@ public class Explorer implements Serializable {
 	}
 
 	private List<TreeNode> getLocationNodes() {
-		List<TreeNode> nodes = new LinkedList();
+		List<TreeNode> nodes = new LinkedList<TreeNode>();
 		TreeUtility.getDirectSubclassLeaves(nodes, TreeUtility.getNodeByPath(ROOT, Configuration.PATH_LOCATION));
 		return nodes;
 	}
 
 	private List<TreeNode> getDeliveryMethodNodes() {
-		List<TreeNode> nodes = new LinkedList();
+		List<TreeNode> nodes = new LinkedList<TreeNode>();
 		TreeUtility.getDirectSubclassLeaves(nodes, TreeUtility.getNodeByPath(ROOT, Configuration.PATH_DELIVERYMETHOD));
 		return nodes;
 	}
 
-	private final Map<BarChartModel, List<TreeNode>> modelMap = new HashMap();
+	private final Map<BarChartModel, List<TreeNode>> modelMap = new HashMap<BarChartModel, List<TreeNode>>();
 
 	/**
 	 * Generates a bar-chart.
@@ -351,17 +355,17 @@ public class Explorer implements Serializable {
 	private BarChartModel generateBarChartModel(VariableManager variableManager,
 			List<AbstractStatement> constraintStatements, List<TreeNode> classNodes, String name,
 			Collection<TreeNode> forcedNodes) {
-		List<AbstractStatement> statements_positive = new LinkedList(constraintStatements);
+		List<AbstractStatement> statements_positive = new LinkedList<AbstractStatement>(constraintStatements);
 		QueryGenerator.buildSubclassVariableBranch(new VariableManager(variableManager), statements_positive,
 				NODE_JUDGEMENT_POSITIVE, QueryGenerator.LEAVES_IGNORE);
 		ChartSeries positiveSeries = new ChartSeries("Positive");
 
-		List<AbstractStatement> statements_negative = new LinkedList(constraintStatements);
+		List<AbstractStatement> statements_negative = new LinkedList<AbstractStatement>(constraintStatements);
 		QueryGenerator.buildSubclassVariableBranch(new VariableManager(variableManager), statements_negative,
 				NODE_JUDGEMENT_NEGATIVE, QueryGenerator.LEAVES_IGNORE);
 		ChartSeries negativeSeries = new ChartSeries("Negative");
 
-		List<AbstractStatement> statements_neutral = new LinkedList(constraintStatements);
+		List<AbstractStatement> statements_neutral = new LinkedList<AbstractStatement>(constraintStatements);
 		QueryGenerator.buildSubclassVariableBranch(new VariableManager(variableManager), statements_neutral,
 				NODE_JUDGEMENT_NEUTRAL, QueryGenerator.LEAVES_IGNORE);
 		ChartSeries neutralSeries = new ChartSeries("Neutral");
@@ -371,26 +375,26 @@ public class Explorer implements Serializable {
 		String nodeText;
 		int numberOfEntries = 0;
 		int positive, negative, neutral;
-		List<TreeNode> nodes = new LinkedList();
+		List<TreeNode> nodes = new LinkedList<TreeNode>();
 
 		for (TreeNode classNode : classNodes) {
 			nodeText = getNodeName(classNode);
 
-			statements = new LinkedList(statements_positive);
+			statements = new LinkedList<AbstractStatement>(statements_positive);
 			QueryGenerator.buildSubclassVariableBranch(new VariableManager(variableManager), statements, classNode,
 					QueryGenerator.LEAVES_INCLUDE);
 			statementString = QueryGenerator.generateStatementString(statements);
 			// System.out.println("StatementString: " + statementString);
 			positive = SPARQLDatabase.countWhere(statementString);
 
-			statements = new LinkedList(statements_negative);
+			statements = new LinkedList<AbstractStatement>(statements_negative);
 			QueryGenerator.buildSubclassVariableBranch(new VariableManager(variableManager), statements, classNode,
 					QueryGenerator.LEAVES_INCLUDE);
 			statementString = QueryGenerator.generateStatementString(statements);
 			// System.out.println("StatementString: " + statementString);
 			negative = SPARQLDatabase.countWhere(statementString);
 
-			statements = new LinkedList(statements_neutral);
+			statements = new LinkedList<AbstractStatement>(statements_neutral);
 			QueryGenerator.buildSubclassVariableBranch(new VariableManager(variableManager), statements, classNode,
 					QueryGenerator.LEAVES_INCLUDE);
 			statementString = QueryGenerator.generateStatementString(statements);
@@ -426,34 +430,34 @@ public class Explorer implements Serializable {
 	 */
 	private BarChartModel generateBarChartModel(VariableManager variableManager,
 			List<AbstractStatement> constraintStatements, TreeNode node, String name) {
-		List<AbstractStatement> statements = new LinkedList(constraintStatements);
+		List<AbstractStatement> statements = new LinkedList<AbstractStatement>(constraintStatements);
 		VariableManager privateVariableManager = new VariableManager(variableManager);
 		QueryGenerator.attachBranch(privateVariableManager, statements, node);
 		String where = QueryGenerator.generateStatementString(statements);
 		String valueVariable = privateVariableManager.getValueVariable(node);
 		String variable = privateVariableManager.getVariable(node);
-		Set<String> set = new LinkedHashSet();
+		Set<String> set = new LinkedHashSet<String>();
 
 		for (List<RDFObject> row : SPARQLDatabase.selectWhere(valueVariable, where).getData()) {
 			set.add(row.get(0).toString());
 		}
 
-		List<String> values = new LinkedList(set);
+		List<String> values = new LinkedList<String>(set);
 		Collections.sort(values);
 
-		List<AbstractStatement> statements_positive = new LinkedList(statements);
+		List<AbstractStatement> statements_positive = new LinkedList<AbstractStatement>(statements);
 		QueryGenerator.buildSubclassVariableBranch(new VariableManager(privateVariableManager), statements_positive,
 				NODE_JUDGEMENT_POSITIVE, QueryGenerator.LEAVES_IGNORE);
 		String statementsString_positive = QueryGenerator.generateStatementString(statements_positive);
 		ChartSeries positiveSeries = new ChartSeries("Positive");
 
-		List<AbstractStatement> statements_negative = new LinkedList(statements);
+		List<AbstractStatement> statements_negative = new LinkedList<AbstractStatement>(statements);
 		QueryGenerator.buildSubclassVariableBranch(new VariableManager(privateVariableManager), statements_negative,
 				NODE_JUDGEMENT_NEGATIVE, QueryGenerator.LEAVES_IGNORE);
 		String statementsString_negative = QueryGenerator.generateStatementString(statements_negative);
 		ChartSeries negativeSeries = new ChartSeries("Negative");
 
-		List<AbstractStatement> statements_neutral = new LinkedList(statements);
+		List<AbstractStatement> statements_neutral = new LinkedList<AbstractStatement>(statements);
 		QueryGenerator.buildSubclassVariableBranch(new VariableManager(privateVariableManager), statements_neutral,
 				NODE_JUDGEMENT_NEUTRAL, QueryGenerator.LEAVES_IGNORE);
 		String statementsString_neutral = QueryGenerator.generateStatementString(statements_neutral);
@@ -461,7 +465,7 @@ public class Explorer implements Serializable {
 
 		int numberOfEntries = 0;
 		int positive, negative, neutral;
-		List<TreeNode> nodes = new LinkedList();
+		List<TreeNode> nodes = new LinkedList<TreeNode>();
 
 		for (String value : values) {
 			positive = getValueCount(statementsString_positive, variable, value);
@@ -565,14 +569,14 @@ public class Explorer implements Serializable {
 	private void generateStatements() {
 		variableManager = new VariableManager();
 		filterMap = generateFilterMap();
-		statements = new LinkedList();
+		statements = new LinkedList<AbstractStatement>();
 
 		// Selected and special node statements:
-		HashSet selectedNodeSet = new HashSet(selectedNodes);
+		HashSet<TreeNode> selectedNodeSet = new HashSet<TreeNode>(selectedNodes);
 		if (specialSelected != null && TreeUtility.isDatatypeProperty(specialSelected)) {
 			selectedNodeSet.add(nodeMap.get(specialSelected));
 		}
-		Map privateFilterMap = new HashMap(filterMap);
+		Map<TreeNode, String> privateFilterMap = new HashMap<TreeNode, String>(filterMap);
 		if (specialFilter != null) {
 			privateFilterMap.put(nodeMap.get(specialSelected), specialFilter);
 		}
@@ -600,7 +604,7 @@ public class Explorer implements Serializable {
 		List<AbstractStatement> privateStatements;
 		for (TreeNode excludedNode : excludedNodes) {
 			privateVariableManager = new VariableManager(variableManager);
-			privateStatements = new LinkedList();
+			privateStatements = new LinkedList<AbstractStatement>();
 			QueryGenerator.buildNodeBranch(privateVariableManager, privateStatements, excludedNode,
 					QueryGenerator.LEAVES_IGNORE, filterMap);
 			statements.add(new NotExistsStatement(privateStatements));
@@ -608,7 +612,7 @@ public class Explorer implements Serializable {
 	}
 
 	private Map<TreeNode, String> generateFilterMap() {
-		Map<TreeNode, String> map = new HashMap();
+		Map<TreeNode, String> map = new HashMap<TreeNode, String>();
 		for (Entry<TreeNode, String> entry : filterExpressionMap.entrySet()) {
 			if (!entry.getValue().isEmpty()) {
 				map.put(nodeMap.get(entry.getKey()), entry.getValue());
@@ -721,7 +725,13 @@ public class Explorer implements Serializable {
 			exportData = SPARQLDatabase.selectTriplesFromSubgraph(
 					statementString + " " + QueryGenerator.ROOT_VARIABLE + " (x:|!x:)* ?s . " + "?s ?p ?o .");
 			break;
+			
+		case TABLES:
+			System.out.println("Showing tables now!");
+			break;
 		}
+		
+		System.out.println("update finished");
 	}
 
 	public int getNumberOfResults() {
@@ -885,14 +895,14 @@ public class Explorer implements Serializable {
 	private TreeNode generateAnimalModelDatatypePropertyListTree() {
 		List<TreeNode> relationDescendants = TreeUtility
 				.getNearestRelationDescendants(TreeUtility.getNodeByPath(ROOT, Configuration.PATH_ORGANISMMODELS));
-		List<TreeNode> nodes = new LinkedList();
+		List<TreeNode> nodes = new LinkedList<TreeNode>();
 		for (TreeNode relationDescendant : relationDescendants) {
 			if (TreeUtility.isDatatypeProperty(relationDescendant)) {
 				nodes.add(relationDescendant);
 			}
 		}
 		sortNodes(nodes);
-		clonedAnimalModelDatatypePropertyNodes = new LinkedList();
+		clonedAnimalModelDatatypePropertyNodes = new LinkedList<TreeNode>();
 		return generateListTree(nodes, clonedAnimalModelDatatypePropertyNodes);
 	}
 
@@ -918,14 +928,14 @@ public class Explorer implements Serializable {
 	private TreeNode generateInvestigationMethodDatatypePropertyListTree() {
 		List<TreeNode> relationDescendants = TreeUtility
 				.getNearestRelationDescendants(TreeUtility.getNodeByPath(ROOT, Configuration.PATH_INVESTIGATIONMETHOD));
-		List<TreeNode> nodes = new LinkedList();
+		List<TreeNode> nodes = new LinkedList<TreeNode>();
 		for (TreeNode relationDescendant : relationDescendants) {
 			if (TreeUtility.isDatatypeProperty(relationDescendant)) {
 				nodes.add(relationDescendant);
 			}
 		}
 		sortNodes(nodes);
-		clonedInvestigationMethodDatatypePropertyNodes = new LinkedList();
+		clonedInvestigationMethodDatatypePropertyNodes = new LinkedList<TreeNode>();
 		return generateListTree(nodes, clonedInvestigationMethodDatatypePropertyNodes);
 	}
 
@@ -951,14 +961,14 @@ public class Explorer implements Serializable {
 	private TreeNode generateInjuryTypeDatatypePropertyListTree() {
 		List<TreeNode> relationDescendants = TreeUtility
 				.getNearestRelationDescendants(TreeUtility.getNodeByPath(ROOT, Configuration.PATH_INJURYMODEL));
-		List<TreeNode> nodes = new LinkedList();
+		List<TreeNode> nodes = new LinkedList<TreeNode>();
 		for (TreeNode relationDescendant : relationDescendants) {
 			if (TreeUtility.isDatatypeProperty(relationDescendant)) {
 				nodes.add(relationDescendant);
 			}
 		}
 		sortNodes(nodes);
-		clonedInjuryTypeDatatypePropertyNodes = new LinkedList();
+		clonedInjuryTypeDatatypePropertyNodes = new LinkedList<TreeNode>();
 		return generateListTree(nodes, clonedInjuryTypeDatatypePropertyNodes);
 	}
 
@@ -984,14 +994,14 @@ public class Explorer implements Serializable {
 	private TreeNode generateTreatmentDatatypePropertyListTree() {
 		List<TreeNode> relationDescendants = TreeUtility
 				.getNearestRelationDescendants(TreeUtility.getNodeByPath(ROOT, Configuration.PATH_TREATMENT));
-		List<TreeNode> nodes = new LinkedList();
+		List<TreeNode> nodes = new LinkedList<TreeNode>();
 		for (TreeNode relationDescendant : relationDescendants) {
 			if (TreeUtility.isDatatypeProperty(relationDescendant)) {
 				nodes.add(relationDescendant);
 			}
 		}
 		sortNodes(nodes);
-		clonedTreatmentDatatypePropertyNodes = new LinkedList();
+		clonedTreatmentDatatypePropertyNodes = new LinkedList<TreeNode>();
 		return generateListTree(nodes, clonedTreatmentDatatypePropertyNodes);
 	}
 
@@ -1012,7 +1022,7 @@ public class Explorer implements Serializable {
 	}
 
 	private Map<TreeNode, String> initializeFilterExpressionMap() {
-		Map<TreeNode, String> map = new HashMap();
+		Map<TreeNode, String> map = new HashMap<TreeNode, String>();
 		populateFilterExpressions(map, clonedAnimalModelDatatypePropertyNodes);
 		populateFilterExpressions(map, clonedInvestigationMethodDatatypePropertyNodes);
 		populateFilterExpressions(map, clonedInjuryTypeDatatypePropertyNodes);
@@ -1071,16 +1081,27 @@ public class Explorer implements Serializable {
 		this.includeSubtypes = includeSubtypes;
 	}
 
+	public String details() {
+		return generateDetailsPageUrl();
+	}
+	
+	public String tables() {
+		return generateTablesPageUrl();
+	}
+	
 	public String generateDetailsPageUrl() {
 		return generateDetailsPageUrl(FACESREDIRECT_YES);
 	}
-
-	public String details() {
-		return generateDetailsPageUrl();
+	public String generateTablesPageUrl() {
+		return generateTablesPageUrl(FACESREDIRECT_YES);
 	}
 
 	private String generateDetailsPageUrl(boolean facesRedirect) {
 		return generateUrl("details.xhtml", facesRedirect);
+	}
+	
+	private String generateTablesPageUrl(boolean facesRedirect) {
+		return generateUrl("tables.xhtml", facesRedirect);
 	}
 
 	public String generateExportPageUrl() {

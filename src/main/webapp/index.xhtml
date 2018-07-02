@@ -335,27 +335,6 @@
                                                             </p:chart>
                                                         </div>
                                                     </ui:fragment>
-                                                    <ui:fragment rendered="#{explorer.deliveryMethodBarChartModel != null}">
-                                                        <div style="max-width: calc(100vw - 460px); overflow: auto;">
-                                                            <p:dataTable var="car" value="#{dtBasicView.cars}">
-															    <p:column headerText="Id">
-															        <h:outputText value="#{car.id}" />
-															    </p:column>
-															 
-															    <p:column headerText="Year">
-															        <h:outputText value="#{car.year}" />
-															    </p:column>
-															 
-															    <p:column headerText="Brand">
-															        <h:outputText value="#{car.brand}" />
-															    </p:column>	
-															 
-															    <p:column headerText="Color">
-															        <h:outputText value="#{car.color}" />
-															    </p:column>
-															</p:dataTable>
-                                                        </div>
-                                                    </ui:fragment>
                                                 </div>
                                             </td>
                                         </tr>
@@ -378,6 +357,7 @@
                                 <td style="width:100%; text-align: right;">
                                     <h:commandButton action="#{explorer.export()}" value="Export as RDF" style="width:135px; height:30px;"/>
                                     <h:commandButton action="#{explorer.details()}" value="Show details" style="width:135px; height:30px; font-weight: bold;"/>
+                                    <h:commandButton action="#{explorer.tables()}" value="Show tables" style="width:135px; height:30px; font-weight: bold;"/>
                                 </td>
                             </tr>
                         </table>
