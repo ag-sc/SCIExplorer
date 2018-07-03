@@ -25,7 +25,8 @@ body {
 		<f:viewAction action="#{explorer.setQuery(null)}" />
 	</f:metadata>
 	<p:dataTable var="injuryType"
-		value="#{explorer.tableManager.injuryTypes}" style="margin-top:40px" rowIndexVar="rowIdx">
+		value="#{explorer.tableManager.injuryTypes}" style="margin-top:40px"
+		rowIndexVar="rowIdx">
 		<f:facet name="header">
                 Functional Tests
             </f:facet>
@@ -47,11 +48,13 @@ body {
 			<h:outputText value="#{injuryType.name}" />
 		</p:column>
 
-		<p:columns value="#{explorer.tableManager.locations}" var="location" columnIndexVar="colIdx">
+		<p:columns value="#{explorer.tableManager.locations}" var="location"
+			columnIndexVar="colIdx">
 			<ui:repeat
 				value="#{explorer.tableManager.functionalInjuryAreaData.get(rowIdx).get(colIdx)}"
-				var="data">
-				<h:outputText value="#{data[0]} / #{data[1]} / #{data[2]}" />
+				var="barChartModel">
+
+				<p:chart type="bar" model="#{barChartModel}" style="height: 200px" responsive="true"/>
 			</ui:repeat>
 		</p:columns>
 

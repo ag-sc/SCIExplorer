@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.primefaces.model.TreeNode;
+import org.primefaces.model.chart.Axis;
+import org.primefaces.model.chart.AxisType;
+import org.primefaces.model.chart.BarChartModel;
+import org.primefaces.model.chart.ChartSeries;
 
 import main.java.de.uni.bielefeld.sc.psink.sciexplorer.searchtree.Subclass;
 import main.java.de.uni.bielefeld.sc.psink.sciexplorer.sparql.SPARQLDatabase;
@@ -19,7 +23,7 @@ public class TableManager {
 
 	/** data **/
 
-	private List<List<int[]>> functionalInjuryAreaData;
+	private List<List<BarChartModel>> functionalInjuryAreaData;
 
 	private String[] judgements = { "Positive", "Negative", "Neutral" };
 	private List<Subclass> injuryTypes;
@@ -32,7 +36,7 @@ public class TableManager {
 		this.locations = new ArrayList<Subclass>();
 		this.functionalTests = new ArrayList<Subclass>();
 
-		this.functionalInjuryAreaData = new ArrayList<List<int[]>>();
+		this.functionalInjuryAreaData = new ArrayList<List<BarChartModel>>();
 	}
 
 	public void update(List<TreeNode> investigationMethodNodes, List<TreeNode> injuryTypeNodes,
@@ -99,22 +103,23 @@ public class TableManager {
 			System.out.println(injuryType.getName() + ":");
 
 			// add a new row for all locations for the current injury type
-			List<int[]> locationData = new ArrayList<int[]>();
+			List<BarChartModel> locationData = new ArrayList<BarChartModel>();
 			this.functionalInjuryAreaData.add(locationData);
 
 			// go over all locations
 			for (Subclass location : locations) {
 
-				// add a new set of judgement values for the current injury type / location
-				// combination
-				int[] judgementData = new int[3];
-				locationData.add(judgementData);
+				// create PieChartModels from data
+
+				BarChartModel barModel = this.initBarChartModel();
+				locationData.add(barModel);
+
+				//boolean hasData = false;
 
 				System.out.println("\t" + location.getName() + ":");
 
 				// build the query and fill in the count for all three judgements
-				for (int i = 0; i < judgements.length; i++) {
-					String judgement = judgements[i];
+				for (String judgement : judgements) {
 					String where = "?Result <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/Result>. "
 							+ "?Result <http://psink.de/scio/hasJudgement> <http://psink.de/scio/" + judgement + ">. "
 							+ "?Result <http://psink.de/scio/hasTargetGroup> ?TargetExperimentalGroup. "
@@ -127,10 +132,39 @@ public class TableManager {
 					int count = SPARQLDatabase.countWhere(where);
 					System.out.println("\t\t" + judgement + ": " + count);
 
-					judgementData[i] = count;
+					ChartSeries series = new ChartSeries();
+					series.set("Judgement", count);
+					series.setLabel(judgement);
+					barModel.addSeries(series);
+					
+					/*if (count != 0) {
+						hasData = true;
+					}*/
 				}
+				/*if (hasData) {
+					// only add if there are non zero values
+					locationData.add(barModel);
+				} else {
+					// else add null and display a message
+					locationData.add(null);
+				}*/
 			}
 		}
+	}
+
+	private BarChartModel initBarChartModel() {
+
+		BarChartModel model = new BarChartModel();
+		//model.setLegendPosition("ne");
+		
+		model.setDatatipFormat("%2$d");
+
+		Axis yAxis = model.getAxis(AxisType.Y);
+		yAxis.setLabel("Count");
+        
+		model.setSeriesColors(Configuration.BARCHART_COLOR_STRING);
+
+		return model;
 	}
 
 	/** Getters **/
@@ -147,7 +181,7 @@ public class TableManager {
 		return functionalTests;
 	}
 
-	public List<List<int[]>> getFunctionalInjuryAreaData() {
+	public List<List<BarChartModel>> getFunctionalInjuryAreaData() {
 		return functionalInjuryAreaData;
 	}
 }
