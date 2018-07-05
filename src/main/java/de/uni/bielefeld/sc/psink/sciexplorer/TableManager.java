@@ -1,8 +1,10 @@
 package main.java.de.uni.bielefeld.sc.psink.sciexplorer;
 
 import java.util.List;
+import java.util.Map;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 import org.primefaces.model.TreeNode;
 import org.primefaces.model.chart.Axis;
@@ -23,57 +25,46 @@ public class TableManager {
 
 	/** data **/
 
-	private List<List<BarChartModel>> functionalInjuryAreaData;
+	// investigation method -> injury type -> location -> chart
+	private List<List<List<BarChartModel>>> injuryAreaData;
+
+	// investigation method -> injury type -> delivery method -> chart
+	private List<List<List<BarChartModel>>> deliveryMethodData;
+
+	// investigation method -> injury type -> animal model -> chart
+	private List<List<List<BarChartModel>>> animalModelData;
 
 	private String[] judgements = { "Positive", "Negative", "Neutral" };
+	private String[] investigationMethods = { "FunctionalTest", "NonFunctionalTest", "ImagingTest",
+			"ObservationOfAnimalBehaviour" };
+
+	private Map<String, List<Subclass>> investigationMethodsMap;
+
 	private List<Subclass> injuryTypes;
 	private List<Subclass> locations;
-
-	private List<Subclass> functionalTests;
+	private List<Subclass> deliveryMethods;
+	private List<Subclass> animalModels;
 
 	public TableManager() {
 		this.injuryTypes = new ArrayList<Subclass>();
 		this.locations = new ArrayList<Subclass>();
-		this.functionalTests = new ArrayList<Subclass>();
+		this.deliveryMethods = new ArrayList<Subclass>();
+		this.animalModels = new ArrayList<Subclass>();
 
-		this.functionalInjuryAreaData = new ArrayList<List<BarChartModel>>();
+		this.investigationMethodsMap = new HashMap<String, List<Subclass>>();
+		for (String invMethod : this.investigationMethods) {
+			this.investigationMethodsMap.put(invMethod, new ArrayList<Subclass>());
+		}
+
+		this.injuryAreaData = new ArrayList<List<List<BarChartModel>>>();
+		this.deliveryMethodData = new ArrayList<List<List<BarChartModel>>>();
+		this.animalModelData = new ArrayList<List<List<BarChartModel>>>();
 	}
 
 	public void update(List<TreeNode> investigationMethodNodes, List<TreeNode> injuryTypeNodes,
-			List<TreeNode> locationNodes) {
+			List<TreeNode> locationNodes, List<TreeNode> deliveryMethodNodes, List<TreeNode> animalModelNodes) {
 
-		// investigation methods, only functional for now
-		// TODO include other 3 categories
-
-		for (TreeNode treeNode : investigationMethodNodes) {
-			// get the leave node
-			Subclass investigationMethod = (Subclass) (treeNode.getData());
-			// System.out.println(investigationMethod.getName());
-
-			TreeNode current = treeNode;
-
-			// search for a parent, which is a functional test or investigation method
-			while (true) {
-				Subclass parent = (Subclass) (current.getParent().getData());
-				// System.out.println(parent.getName());
-
-				if (parent.getName().equals("FunctionalTest")) {
-					// current leave is a functional test
-					this.functionalTests.add(investigationMethod);
-					break;
-				}
-
-				if (parent.getName().equals("InvestigationMethod")) {
-					// current leave is a not a functional test
-					break;
-				}
-
-				current = current.getParent();
-
-			}
-			// System.out.println(this.functionalTests.size());
-			// System.out.println("--------");
-		}
+		this.sortInvestigationMethods(investigationMethodNodes);
 
 		// injury types
 		for (TreeNode treeNode : injuryTypeNodes) {
@@ -86,82 +77,225 @@ public class TableManager {
 		for (TreeNode treeNode : locationNodes) {
 			Subclass sc = (Subclass) (treeNode.getData());
 			if (importantLocations.contains(sc.getName())) {
-				locations.add(sc);
+				this.locations.add(sc);
 			}
+		}
+
+		// delivery methods
+		for (TreeNode treeNode : deliveryMethodNodes) {
+			Subclass sc = (Subclass) (treeNode.getData());
+			this.deliveryMethods.add(sc);
+		}
+
+		// animal models
+		for (TreeNode treeNode : animalModelNodes) {
+			Subclass sc = (Subclass) (treeNode.getData());
+			this.animalModels.add(sc);
 		}
 
 		this.queryData();
 	}
 
-	private void queryData() {
+	private void sortInvestigationMethods(List<TreeNode> investigationMethodNodes) {
 
-		// functional injury area
-		this.functionalInjuryAreaData.clear();
+		List<String> superClasses = Arrays.asList(this.investigationMethods);
 
-		// go over all injury types
-		for (Subclass injuryType : injuryTypes) {
-			System.out.println(injuryType.getName() + ":");
+		for (TreeNode treeNode : investigationMethodNodes) {
+			// get the leave node
+			Subclass investigationMethod = (Subclass) (treeNode.getData());
 
-			// add a new row for all locations for the current injury type
-			List<BarChartModel> locationData = new ArrayList<BarChartModel>();
-			this.functionalInjuryAreaData.add(locationData);
+			TreeNode current = treeNode;
 
-			// go over all locations
-			for (Subclass location : locations) {
+			// search for a parent
+			while (true) {
+				Subclass parent = (Subclass) (current.getParent().getData());
 
-				// create PieChartModels from data
-
-				BarChartModel barModel = this.initBarChartModel();
-				locationData.add(barModel);
-
-				//boolean hasData = false;
-
-				System.out.println("\t" + location.getName() + ":");
-
-				// build the query and fill in the count for all three judgements
-				for (String judgement : judgements) {
-					String where = "?Result <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/Result>. "
-							+ "?Result <http://psink.de/scio/hasJudgement> <http://psink.de/scio/" + judgement + ">. "
-							+ "?Result <http://psink.de/scio/hasTargetGroup> ?TargetExperimentalGroup. "
-							+ "?TargetExperimentalGroup <http://psink.de/scio/hasInjuryModel> ?InjuryModel. "
-							+ "?InjuryModel <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/"
-							+ injuryType.getName() + ">. "
-							+ "?InjuryModel <http://psink.de/scio/hasInjuryLocation> <http://psink.de/scio/"
-							+ location.getName() + "> .";
-
-					int count = SPARQLDatabase.countWhere(where);
-					System.out.println("\t\t" + judgement + ": " + count);
-
-					ChartSeries series = new ChartSeries();
-					series.set("Judgement", count);
-					series.setLabel(judgement);
-					barModel.addSeries(series);
-					
-					/*if (count != 0) {
-						hasData = true;
-					}*/
+				if (superClasses.contains(parent.getName())) {
+					List<Subclass> subclasses = this.investigationMethodsMap.get(parent.getName());
+					subclasses.add(investigationMethod);
+					break;
 				}
-				/*if (hasData) {
-					// only add if there are non zero values
-					locationData.add(barModel);
-				} else {
-					// else add null and display a message
-					locationData.add(null);
-				}*/
+
+				if (parent.getName().equals("InvestigationMethod")) {
+					break;
+				}
+				current = current.getParent();
+
 			}
 		}
+	}
+
+	private void queryData() {
+		this.queryInjuryAreaData();
+		this.queryDeliveryMethodData();
+	}
+
+	private void queryInjuryAreaData() {
+
+		this.injuryAreaData.clear();
+
+		for (String investigationMethod : investigationMethods) {
+
+			List<List<BarChartModel>> investigationMethodData = new ArrayList<List<BarChartModel>>();
+			this.injuryAreaData.add(investigationMethodData);
+
+			// go over all injury types
+			for (Subclass injuryType : injuryTypes) {
+				// System.out.println(injuryType.getName() + ":");
+
+				// add a new row for all locations for the current injury type
+				List<BarChartModel> locationData = new ArrayList<BarChartModel>();
+				investigationMethodData.add(locationData);
+
+				// go over all locations
+				for (Subclass location : locations) {
+
+					BarChartModel barModel = this.initBarChartModel();
+					locationData.add(barModel);
+
+					// System.out.println("\t" + location.getName() + ":");
+
+					// build the query and fill in the count for all three judgements
+					for (String judgement : judgements) {
+						String where = this.buildInjuryLocationWhereStatement(judgement, investigationMethod,
+								injuryType, location);
+						// System.out.println(where);
+
+						int count = SPARQLDatabase.countWhere(where);
+
+						/*
+						 * if (count != 0) { System.out.println(investigationMethod + ":");
+						 * System.out.println("\t" + injuryType.getName() + ":");
+						 * System.out.println("\t\t" + location.getName() + ":");
+						 * System.out.println("\t\t\t" + judgement + ": " + count);
+						 * 
+						 * }
+						 */
+
+						ChartSeries series = new ChartSeries();
+						series.set("Judgement", count);
+						series.setLabel(judgement);
+						barModel.addSeries(series);
+
+					}
+				}
+			}
+		}
+	}
+
+	private void queryDeliveryMethodData() {
+
+		this.deliveryMethodData.clear();
+
+		for (String investigationMethod : investigationMethods) {
+
+			List<List<BarChartModel>> investigationMethodData = new ArrayList<List<BarChartModel>>();
+			this.deliveryMethodData.add(investigationMethodData);
+
+			// go over all delivery methods
+			for (Subclass injuryType : injuryTypes) {
+				// System.out.println(injuryType.getName() + ":");
+
+				// add a new row for all methods for the current injury type
+				List<BarChartModel> deliveryMethodData = new ArrayList<BarChartModel>();
+				investigationMethodData.add(deliveryMethodData);
+
+				// go over all locations
+				for (Subclass deliveryMethod : deliveryMethods) {
+
+					BarChartModel barModel = this.initBarChartModel();
+					deliveryMethodData.add(barModel);
+
+					// System.out.println("\t" + location.getName() + ":");
+
+					// build the query and fill in the count for all three judgements
+					for (String judgement : judgements) {
+						String where = this.buildDelilveryMethodWhereStatement(judgement, investigationMethod,
+								injuryType, deliveryMethod);
+						int count = SPARQLDatabase.countWhere(where);
+						// System.out.println("\t\t" + judgement + ": " + count);
+						/*
+						 * if (count != 0) { System.out.println(investigationMethod + ":");
+						 * System.out.println("\t" + injuryType.getName() + ":");
+						 * System.out.println("\t\t" + deliveryMethod.getName() + ":");
+						 * System.out.println("\t\t\t" + judgement + ": " + count);
+						 * 
+						 * }
+						 */
+						ChartSeries series = new ChartSeries();
+						series.set("Judgement", count);
+						series.setLabel(judgement);
+						barModel.addSeries(series);
+
+					}
+				}
+			}
+		}
+	}
+
+	private String buildUnionForInvestigationMethod(String investigationMethod) {
+		String union = "";
+		List<Subclass> subclasses = this.investigationMethodsMap.get(investigationMethod);
+		for (Subclass subclass : subclasses) {
+			if (!union.isEmpty()) {
+				union += " UNION ";
+			}
+			union += "{ ";
+			union += "?InvestigationMethod <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/"
+					+ subclass.getName() + ">. } ";
+		}
+
+		// investigation method itself
+		if (!union.isEmpty()) {
+			union += " UNION ";
+		}
+		union += "{ ";
+		union += "?InvestigationMethod <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/"
+				+ investigationMethod + ">. } ";
+
+		return union;
+	}
+
+	private String buildInjuryLocationWhereStatement(String judgement, String investigationMethod, Subclass injuryType,
+			Subclass injuryLocation) {
+		return "?Result <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/Result>. "
+				+ "?Result <http://psink.de/scio/hasJudgement> <http://psink.de/scio/" + judgement + ">. "
+				+ "?Result <http://psink.de/scio/hasInvestigationMethod> ?InvestigationMethod. "
+				+ this.buildUnionForInvestigationMethod(investigationMethod)
+				+ "?Result <http://psink.de/scio/hasTargetGroup> ?TargetExperimentalGroup. "
+				+ "?TargetExperimentalGroup <http://psink.de/scio/hasInjuryModel> ?InjuryModel. "
+				+ "?InjuryModel <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/"
+				+ injuryType.getName() + ">. "
+				+ "?InjuryModel <http://psink.de/scio/hasInjuryLocation> <http://psink.de/scio/"
+				+ injuryLocation.getName() + "> .";
+	}
+
+	private String buildDelilveryMethodWhereStatement(String judgement, String investigationMethod, Subclass injuryType,
+			Subclass deliveryMethod) {
+		return "?Result <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/Result>. "
+				+ "?Result <http://psink.de/scio/hasJudgement> <http://psink.de/scio/" + judgement + ">. "
+				+ "?Result <http://psink.de/scio/hasInvestigationMethod> ?InvestigationMethod. "
+				+ this.buildUnionForInvestigationMethod(investigationMethod)
+				+ "?Result <http://psink.de/scio/hasTargetGroup> ?TargetExperimentalGroup. "
+				+ "?TargetExperimentalGroup <http://psink.de/scio/hasInjuryModel> ?InjuryModel. "
+				+ "?InjuryModel <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/"
+				+ injuryType.getName() + ">. "
+				+ "?TargetExperimentalGroup <http://psink.de/scio/hasTreatmentType> ?TreatmentTypes. "
+				+ "?TreatmentTypes <http://psink.de/scio/hasDeliveryMethod> ?DeliveryMethod. "
+				+ "?DeliveryMethod <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/"
+				+ deliveryMethod.getName() + ">.";
 	}
 
 	private BarChartModel initBarChartModel() {
 
 		BarChartModel model = new BarChartModel();
-		//model.setLegendPosition("ne");
-		
+		// model.setLegendPosition("ne");
+
 		model.setDatatipFormat("%2$d");
 
 		Axis yAxis = model.getAxis(AxisType.Y);
 		yAxis.setLabel("Count");
-        
+
 		model.setSeriesColors(Configuration.BARCHART_COLOR_STRING);
 
 		return model;
@@ -177,11 +311,23 @@ public class TableManager {
 		return locations;
 	}
 
-	public List<Subclass> getFunctionalTests() {
-		return functionalTests;
+	public List<Subclass> getDeliveryMethods() {
+		return deliveryMethods;
 	}
 
-	public List<List<BarChartModel>> getFunctionalInjuryAreaData() {
-		return functionalInjuryAreaData;
+	public List<Subclass> getAnimalModels() {
+		return animalModels;
+	}
+
+	public List<List<List<BarChartModel>>> getInjuryAreaData() {
+		return injuryAreaData;
+	}
+
+	public List<List<List<BarChartModel>>> getDeliveryMethodData() {
+		return deliveryMethodData;
+	}
+	
+	public List<List<List<BarChartModel>>> getAnimalModelData() {
+		return animalModelData;
 	}
 }

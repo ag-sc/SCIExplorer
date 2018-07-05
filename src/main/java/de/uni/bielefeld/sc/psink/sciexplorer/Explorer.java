@@ -37,6 +37,7 @@ import org.primefaces.model.chart.ChartSeries;
 
 import main.java.de.uni.bielefeld.sc.psink.sciexplorer.misc.Table;
 import main.java.de.uni.bielefeld.sc.psink.sciexplorer.searchtree.SearchTreeGenerator;
+import main.java.de.uni.bielefeld.sc.psink.sciexplorer.searchtree.Subclass;
 import main.java.de.uni.bielefeld.sc.psink.sciexplorer.searchtree.TreeNodeNameComparator;
 import main.java.de.uni.bielefeld.sc.psink.sciexplorer.searchtree.TreeUtility;
 import main.java.de.uni.bielefeld.sc.psink.sciexplorer.sparql.QueryGenerator;
@@ -729,7 +730,7 @@ public class Explorer implements Serializable {
 			break;
 
 		case TABLES:
-			this.tableManager.update(investigationMethodNodes, injuryTypeNodes, locationNodes);
+			this.tableManager.update(investigationMethodNodes, injuryTypeNodes, locationNodes, deliveryMethodNodes, animalModelNodes);
 			break;
 		}
 	}

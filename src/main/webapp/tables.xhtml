@@ -51,11 +51,72 @@ body {
 		<p:columns value="#{explorer.tableManager.locations}" var="location"
 			columnIndexVar="colIdx">
 			<ui:repeat
-				value="#{explorer.tableManager.functionalInjuryAreaData.get(rowIdx).get(colIdx)}"
+				value="#{explorer.tableManager.injuryAreaData.get(0).get(rowIdx).get(colIdx)}"
 				var="barChartModel">
 
 				<p:chart type="bar" model="#{barChartModel}" style="height: 200px" responsive="true"/>
 			</ui:repeat>
+		</p:columns>
+
+	</p:dataTable>
+	
+	<p:dataTable var="injuryType"
+		value="#{explorer.tableManager.injuryTypes}" style="margin-top:40px"
+		rowIndexVar="rowIdx">
+
+		<p:columnGroup type="header">
+			<p:row>
+				<p:column rowspan="2" headerText="Injury Type" />
+				<p:column colspan="#{explorer.tableManager.deliveryMethods.size()}"
+					headerText="Delivery Methods" />
+			</p:row>
+			<p:row>
+				<ui:repeat value="#{explorer.tableManager.deliveryMethods}" var="deliveryMethods">
+					<p:column headerText="#{deliveryMethods.name}" />
+				</ui:repeat>
+			</p:row>
+		</p:columnGroup>
+
+		<p:column>
+			<h:outputText value="#{injuryType.name}" />
+		</p:column>
+
+		<p:columns value="#{explorer.tableManager.deliveryMethods}" var="deliveryMethods"
+			columnIndexVar="colIdx">
+			<ui:repeat value="#{explorer.tableManager.deliveryMethodData.get(0).get(rowIdx).get(colIdx)}"
+				var="barChartModel">
+
+				<p:chart type="bar" model="#{barChartModel}" style="height: 200px" responsive="true"/>
+			
+			</ui:repeat>
+		</p:columns>
+
+	</p:dataTable>
+
+	<p:dataTable var="injuryType"
+		value="#{explorer.tableManager.injuryTypes}" style="margin-top:40px"
+		rowIndexVar="rowIdx">
+
+		<p:columnGroup type="header">
+			<p:row>
+				<p:column rowspan="2" headerText="Injury Type" />
+				<p:column colspan="#{explorer.tableManager.animalModels.size()}"
+					headerText="Animal Models" />
+			</p:row>
+			<p:row>
+				<ui:repeat value="#{explorer.tableManager.animalModels}" var="animalModels">
+					<p:column headerText="#{animalModels.name}" />
+				</ui:repeat>
+			</p:row>
+		</p:columnGroup>
+
+		<p:column>
+			<h:outputText value="#{injuryType.name}" />
+		</p:column>
+
+		<p:columns value="#{explorer.tableManager.animalModels}" var="animalModels"
+			columnIndexVar="colIdx">
+			hi
 		</p:columns>
 
 	</p:dataTable>
