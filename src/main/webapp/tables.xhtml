@@ -100,12 +100,12 @@ body {
 		<p:columnGroup type="header">
 			<p:row>
 				<p:column rowspan="2" headerText="Injury Type" />
-				<p:column colspan="#{explorer.tableManager.animalModels.size()}"
-					headerText="Animal Models" />
+				<p:column colspan="#{explorer.tableManager.organismModels.size()}"
+					headerText="Organism Models" />
 			</p:row>
 			<p:row>
-				<ui:repeat value="#{explorer.tableManager.animalModels}" var="animalModels">
-					<p:column headerText="#{animalModels.name}" />
+				<ui:repeat value="#{explorer.tableManager.organismModels}" var="organismModels">
+					<p:column headerText="#{organismModels.name}" />
 				</ui:repeat>
 			</p:row>
 		</p:columnGroup>
@@ -114,9 +114,14 @@ body {
 			<h:outputText value="#{injuryType.name}" />
 		</p:column>
 
-		<p:columns value="#{explorer.tableManager.animalModels}" var="animalModels"
+		<p:columns value="#{explorer.tableManager.organismModels}" var="organismModels"
 			columnIndexVar="colIdx">
-			hi
+			<ui:repeat value="#{explorer.tableManager.organismModelData.get(0).get(rowIdx).get(colIdx)}"
+				var="barChartModel">
+
+				<p:chart type="bar" model="#{barChartModel}" style="height: 200px" responsive="true"/>
+			
+			</ui:repeat>
 		</p:columns>
 
 	</p:dataTable>

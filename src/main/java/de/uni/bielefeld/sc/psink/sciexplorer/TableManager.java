@@ -31,8 +31,8 @@ public class TableManager {
 	// investigation method -> injury type -> delivery method -> chart
 	private List<List<List<BarChartModel>>> deliveryMethodData;
 
-	// investigation method -> injury type -> animal model -> chart
-	private List<List<List<BarChartModel>>> animalModelData;
+	// investigation method -> injury type -> organism model -> chart
+	private List<List<List<BarChartModel>>> organismModelData;
 
 	private String[] judgements = { "Positive", "Negative", "Neutral" };
 	private String[] investigationMethods = { "FunctionalTest", "NonFunctionalTest", "ImagingTest",
@@ -43,13 +43,13 @@ public class TableManager {
 	private List<Subclass> injuryTypes;
 	private List<Subclass> locations;
 	private List<Subclass> deliveryMethods;
-	private List<Subclass> animalModels;
+	private List<Subclass> organismModels;
 
 	public TableManager() {
 		this.injuryTypes = new ArrayList<Subclass>();
 		this.locations = new ArrayList<Subclass>();
 		this.deliveryMethods = new ArrayList<Subclass>();
-		this.animalModels = new ArrayList<Subclass>();
+		this.organismModels = new ArrayList<Subclass>();
 
 		this.investigationMethodsMap = new HashMap<String, List<Subclass>>();
 		for (String invMethod : this.investigationMethods) {
@@ -58,11 +58,11 @@ public class TableManager {
 
 		this.injuryAreaData = new ArrayList<List<List<BarChartModel>>>();
 		this.deliveryMethodData = new ArrayList<List<List<BarChartModel>>>();
-		this.animalModelData = new ArrayList<List<List<BarChartModel>>>();
+		this.organismModelData = new ArrayList<List<List<BarChartModel>>>();
 	}
 
 	public void update(List<TreeNode> investigationMethodNodes, List<TreeNode> injuryTypeNodes,
-			List<TreeNode> locationNodes, List<TreeNode> deliveryMethodNodes, List<TreeNode> animalModelNodes) {
+			List<TreeNode> locationNodes, List<TreeNode> deliveryMethodNodes, List<TreeNode> organismModelNodes) {
 
 		this.sortInvestigationMethods(investigationMethodNodes);
 
@@ -87,10 +87,10 @@ public class TableManager {
 			this.deliveryMethods.add(sc);
 		}
 
-		// animal models
-		for (TreeNode treeNode : animalModelNodes) {
+		// organism models
+		for (TreeNode treeNode : organismModelNodes) {
 			Subclass sc = (Subclass) (treeNode.getData());
-			this.animalModels.add(sc);
+			this.organismModels.add(sc);
 		}
 
 		this.queryData();
@@ -128,6 +128,7 @@ public class TableManager {
 	private void queryData() {
 		this.queryInjuryAreaData();
 		this.queryDeliveryMethodData();
+		this.queryOrganismModelData();
 	}
 
 	private void queryInjuryAreaData() {
@@ -232,6 +233,55 @@ public class TableManager {
 			}
 		}
 	}
+	
+	private void queryOrganismModelData() {
+
+		this.organismModelData.clear();
+
+		for (String investigationMethod : investigationMethods) {
+
+			List<List<BarChartModel>> investigationMethodData = new ArrayList<List<BarChartModel>>();
+			this.organismModelData.add(investigationMethodData);
+
+			// go over all delivery methods
+			for (Subclass injuryType : injuryTypes) {
+				// System.out.println(injuryType.getName() + ":");
+
+				// add a new row for all methods for the current injury type
+				List<BarChartModel> organismModelData = new ArrayList<BarChartModel>();
+				investigationMethodData.add(organismModelData);
+
+				for (Subclass organismModel : organismModels) {
+
+					BarChartModel barModel = this.initBarChartModel();
+					organismModelData.add(barModel);
+
+					// System.out.println("\t" + location.getName() + ":");
+
+					// build the query and fill in the count for all three judgements
+					for (String judgement : judgements) {
+						String where = this.buildOrganismModelWhereStatement(judgement, investigationMethod,
+								injuryType, organismModel);
+						int count = SPARQLDatabase.countWhere(where);
+						// System.out.println("\t\t" + judgement + ": " + count);
+						/*
+						 * if (count != 0) { System.out.println(investigationMethod + ":");
+						 * System.out.println("\t" + injuryType.getName() + ":");
+						 * System.out.println("\t\t" + deliveryMethod.getName() + ":");
+						 * System.out.println("\t\t\t" + judgement + ": " + count);
+						 * 
+						 * }
+						 */
+						ChartSeries series = new ChartSeries();
+						series.set("Judgement", count);
+						series.setLabel(judgement);
+						barModel.addSeries(series);
+
+					}
+				}
+			}
+		}
+	}
 
 	private String buildUnionForInvestigationMethod(String investigationMethod) {
 		String union = "";
@@ -285,6 +335,21 @@ public class TableManager {
 				+ "?DeliveryMethod <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/"
 				+ deliveryMethod.getName() + ">.";
 	}
+	
+	private String buildOrganismModelWhereStatement(String judgement, String investigationMethod, Subclass injuryType,
+			Subclass organismModel) {
+		return "?Result <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/Result>. "
+				+ "?Result <http://psink.de/scio/hasJudgement> <http://psink.de/scio/" + judgement + ">. "
+				+ "?Result <http://psink.de/scio/hasInvestigationMethod> ?InvestigationMethod. "
+				+ this.buildUnionForInvestigationMethod(investigationMethod)
+				+ "?Result <http://psink.de/scio/hasTargetGroup> ?TargetExperimentalGroup. "
+				+ "?TargetExperimentalGroup <http://psink.de/scio/hasInjuryModel> ?InjuryModel. "
+				+ "?InjuryModel <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/"
+				+ injuryType.getName() + ">. "
+				+ "?TargetExperimentalGroup <http://psink.de/scio/hasOrganismModel> ?OrganismModel. "
+				+ "?OrganismModel <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/"
+				+ organismModel.getName() + ">.";
+	}
 
 	private BarChartModel initBarChartModel() {
 
@@ -315,8 +380,8 @@ public class TableManager {
 		return deliveryMethods;
 	}
 
-	public List<Subclass> getAnimalModels() {
-		return animalModels;
+	public List<Subclass> getOrganismModels() {
+		return organismModels;
 	}
 
 	public List<List<List<BarChartModel>>> getInjuryAreaData() {
@@ -327,7 +392,7 @@ public class TableManager {
 		return deliveryMethodData;
 	}
 	
-	public List<List<List<BarChartModel>>> getAnimalModelData() {
-		return animalModelData;
+	public List<List<List<BarChartModel>>> getOrganismModelData() {
+		return organismModelData;
 	}
 }
