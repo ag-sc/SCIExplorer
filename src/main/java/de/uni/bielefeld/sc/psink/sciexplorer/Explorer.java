@@ -1067,7 +1067,12 @@ public class Explorer implements Serializable {
 	}
 
 	public void treatmentChanged() {
-		redirect(generateQueryPageUrl(FACESREDIRECT_NO));
+		if(this.mode == Mode.TABLES) {
+			
+		}
+		else {
+			redirect(generateQueryPageUrl(FACESREDIRECT_NO));
+		}
 	}
 
 	public String reset() {

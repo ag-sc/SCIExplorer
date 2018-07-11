@@ -6,6 +6,8 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
+
+
 <style>
 body {
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -24,106 +26,135 @@ body {
 		<f:viewAction action="#{explorer.setMode('TABLES')}" />
 		<f:viewAction action="#{explorer.setQuery(null)}" />
 	</f:metadata>
-	<p:dataTable var="injuryType"
-		value="#{explorer.tableManager.injuryTypes}" style="margin-top:40px"
-		rowIndexVar="rowIdx">
-		<f:facet name="header">
-                Functional Tests
-            </f:facet>
+	<h:form>
+		<table>
+			<tr>
+				<td><h:outputLabel value="Treatment:"
+						style="font-weight: bold;" /></td>
+				<td><p:autoComplete dropdown="true"
+						value="#{explorer.treatmentSearchTerm}"
+						completeMethod="#{explorer.completeTreatmentSearchTerm}"
+						inputStyle="width: 500px" scrollHeight="700">
+						<p:ajax event="itemSelect" listener="#{explorer.treatmentChanged}" />
+					</p:autoComplete></td>
 
-		<p:columnGroup type="header">
-			<p:row>
-				<p:column rowspan="2" headerText="Injury Type" />
-				<p:column colspan="#{explorer.tableManager.locations.size()}"
-					headerText="Injury Areas" />
-			</p:row>
-			<p:row>
-				<ui:repeat value="#{explorer.tableManager.locations}" var="location">
-					<p:column headerText="#{location.name}" />
-				</ui:repeat>
-			</p:row>
-		</p:columnGroup>
+			</tr>
+		</table>
+	</h:form>
+	<h3>Functional Tests</h3>
+	<p:accordionPanel multiple="true">
+		<p:tab title="Injury Area">
+			<p:dataTable var="injuryType"
+				value="#{explorer.tableManager.injuryTypes}" style="margin-top:40px"
+				rowIndexVar="rowIdx">
 
-		<p:column>
-			<h:outputText value="#{injuryType.name}" />
-		</p:column>
+				<p:columnGroup type="header">
+					<p:row>
+						<p:column rowspan="2" headerText="Injury Type" />
+						<p:column colspan="#{explorer.tableManager.locations.size()}"
+							headerText="Injury Areas" />
+					</p:row>
+					<p:row>
+						<ui:repeat value="#{explorer.tableManager.locations}"
+							var="location">
+							<p:column headerText="#{location.name}" />
+						</ui:repeat>
+					</p:row>
+				</p:columnGroup>
 
-		<p:columns value="#{explorer.tableManager.locations}" var="location"
-			columnIndexVar="colIdx">
-			<ui:repeat
-				value="#{explorer.tableManager.injuryAreaData.get(0).get(rowIdx).get(colIdx)}"
-				var="barChartModel">
+				<p:column>
+					<h:outputText value="#{injuryType.name}" />
+				</p:column>
 
-				<p:chart type="bar" model="#{barChartModel}" style="height: 200px" responsive="true"/>
-			</ui:repeat>
-		</p:columns>
+				<p:columns value="#{explorer.tableManager.locations}" var="location"
+					columnIndexVar="colIdx">
+					<ui:repeat
+						value="#{explorer.tableManager.injuryAreaData.get(0).get(rowIdx).get(colIdx)}"
+						var="barChartModel">
 
-	</p:dataTable>
-	
-	<p:dataTable var="injuryType"
-		value="#{explorer.tableManager.injuryTypes}" style="margin-top:40px"
-		rowIndexVar="rowIdx">
+						<p:chart type="bar" model="#{barChartModel}" style="height: 200px"
+							responsive="true" />
+					</ui:repeat>
+				</p:columns>
 
-		<p:columnGroup type="header">
-			<p:row>
-				<p:column rowspan="2" headerText="Injury Type" />
-				<p:column colspan="#{explorer.tableManager.deliveryMethods.size()}"
-					headerText="Delivery Methods" />
-			</p:row>
-			<p:row>
-				<ui:repeat value="#{explorer.tableManager.deliveryMethods}" var="deliveryMethods">
-					<p:column headerText="#{deliveryMethods.name}" />
-				</ui:repeat>
-			</p:row>
-		</p:columnGroup>
+			</p:dataTable>
+		</p:tab>
+		<p:tab title="Delivery Method">
+			<p:dataTable var="injuryType"
+				value="#{explorer.tableManager.injuryTypes}" style="margin-top:40px"
+				rowIndexVar="rowIdx">
 
-		<p:column>
-			<h:outputText value="#{injuryType.name}" />
-		</p:column>
+				<p:columnGroup type="header">
+					<p:row>
+						<p:column rowspan="2" headerText="Injury Type" />
+						<p:column
+							colspan="#{explorer.tableManager.deliveryMethods.size()}"
+							headerText="Delivery Methods" />
+					</p:row>
+					<p:row>
+						<ui:repeat value="#{explorer.tableManager.deliveryMethods}"
+							var="deliveryMethods">
+							<p:column headerText="#{deliveryMethods.name}" />
+						</ui:repeat>
+					</p:row>
+				</p:columnGroup>
 
-		<p:columns value="#{explorer.tableManager.deliveryMethods}" var="deliveryMethods"
-			columnIndexVar="colIdx">
-			<ui:repeat value="#{explorer.tableManager.deliveryMethodData.get(0).get(rowIdx).get(colIdx)}"
-				var="barChartModel">
+				<p:column>
+					<h:outputText value="#{injuryType.name}" />
+				</p:column>
 
-				<p:chart type="bar" model="#{barChartModel}" style="height: 200px" responsive="true"/>
-			
-			</ui:repeat>
-		</p:columns>
+				<p:columns value="#{explorer.tableManager.deliveryMethods}"
+					var="deliveryMethods" columnIndexVar="colIdx">
+					<ui:repeat
+						value="#{explorer.tableManager.deliveryMethodData.get(0).get(rowIdx).get(colIdx)}"
+						var="barChartModel">
 
-	</p:dataTable>
+						<p:chart type="bar" model="#{barChartModel}" style="height: 200px"
+							responsive="true" />
 
-	<p:dataTable var="injuryType"
-		value="#{explorer.tableManager.injuryTypes}" style="margin-top:40px"
-		rowIndexVar="rowIdx">
+					</ui:repeat>
+				</p:columns>
 
-		<p:columnGroup type="header">
-			<p:row>
-				<p:column rowspan="2" headerText="Injury Type" />
-				<p:column colspan="#{explorer.tableManager.organismModels.size()}"
-					headerText="Organism Models" />
-			</p:row>
-			<p:row>
-				<ui:repeat value="#{explorer.tableManager.organismModels}" var="organismModels">
-					<p:column headerText="#{organismModels.name}" />
-				</ui:repeat>
-			</p:row>
-		</p:columnGroup>
+			</p:dataTable>
 
-		<p:column>
-			<h:outputText value="#{injuryType.name}" />
-		</p:column>
+		</p:tab>
+		<p:tab title="Organism Model">
+			<p:dataTable var="injuryType"
+				value="#{explorer.tableManager.injuryTypes}" style="margin-top:40px"
+				rowIndexVar="rowIdx">
 
-		<p:columns value="#{explorer.tableManager.organismModels}" var="organismModels"
-			columnIndexVar="colIdx">
-			<ui:repeat value="#{explorer.tableManager.organismModelData.get(0).get(rowIdx).get(colIdx)}"
-				var="barChartModel">
+				<p:columnGroup type="header">
+					<p:row>
+						<p:column rowspan="2" headerText="Injury Type" />
+						<p:column colspan="#{explorer.tableManager.organismModels.size()}"
+							headerText="Organism Models" />
+					</p:row>
+					<p:row>
+						<ui:repeat value="#{explorer.tableManager.organismModels}"
+							var="organismModels">
+							<p:column headerText="#{organismModels.name}" />
+						</ui:repeat>
+					</p:row>
+				</p:columnGroup>
 
-				<p:chart type="bar" model="#{barChartModel}" style="height: 200px" responsive="true"/>
-			
-			</ui:repeat>
-		</p:columns>
+				<p:column>
+					<h:outputText value="#{injuryType.name}" />
+				</p:column>
 
-	</p:dataTable>
+				<p:columns value="#{explorer.tableManager.organismModels}"
+					var="organismModels" columnIndexVar="colIdx">
+					<ui:repeat
+						value="#{explorer.tableManager.organismModelData.get(0).get(rowIdx).get(colIdx)}"
+						var="barChartModel">
+
+						<p:chart type="bar" model="#{barChartModel}" style="height: 200px"
+							responsive="true" />
+
+					</ui:repeat>
+				</p:columns>
+
+			</p:dataTable>
+		</p:tab>
+	</p:accordionPanel>
 </body>
 </html>
