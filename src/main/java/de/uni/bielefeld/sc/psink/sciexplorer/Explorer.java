@@ -730,7 +730,8 @@ public class Explorer implements Serializable {
 			break;
 
 		case TABLES:
-			this.tableManager.update(investigationMethodNodes, injuryTypeNodes, locationNodes, deliveryMethodNodes, animalModelNodes);
+			this.tableManager.update(investigationMethodNodes, injuryTypeNodes, locationNodes, deliveryMethodNodes,
+					animalModelNodes);
 			break;
 		}
 	}
@@ -1067,14 +1068,14 @@ public class Explorer implements Serializable {
 	}
 
 	public void treatmentChanged() {
-		if(this.mode == Mode.TABLES) {
-			
-		}
-		else {
+		if (this.mode == Mode.TABLES) {
+			redirect(generateTablesPageUrl(FACESREDIRECT_NO));
+		} else {
 			redirect(generateQueryPageUrl(FACESREDIRECT_NO));
 		}
 	}
 
+	
 	public String reset() {
 		return "index.xhtml?faces-redirect=true";
 	}
@@ -1108,9 +1109,14 @@ public class Explorer implements Serializable {
 	}
 
 	private String generateTablesPageUrl(boolean facesRedirect) {
-		//return generateUrl("tables.xhtml", facesRedirect);
-		String url = "tables.xhtml";
-		if(facesRedirect) {
+		// return generateUrl("tables.xhtml", facesRedirect);
+		String url = "tables.xhtml?treatment=";
+		if(treatmentSearchTerm != null && !treatmentSearchTerm.isEmpty()) {
+			url += treatmentSearchTerm;
+		} else {
+			url += "all";
+		}
+		if (facesRedirect) {
 			url += "?faces-redirect=true";
 		}
 		return url;

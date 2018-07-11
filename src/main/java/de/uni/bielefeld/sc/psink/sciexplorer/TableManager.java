@@ -2,6 +2,9 @@ package main.java.de.uni.bielefeld.sc.psink.sciexplorer;
 
 import java.util.List;
 import java.util.Map;
+
+import javax.faces.context.FacesContext;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -126,12 +129,15 @@ public class TableManager {
 	}
 
 	private void queryData() {
-		this.queryInjuryAreaData();
-		this.queryDeliveryMethodData();
-		this.queryOrganismModelData();
+		String treatment = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("treatment");
+		System.out.println("parameter: " + treatment);
+		
+		this.queryInjuryAreaData(treatment);
+		this.queryDeliveryMethodData(treatment);
+		this.queryOrganismModelData(treatment);
 	}
 
-	private void queryInjuryAreaData() {
+	private void queryInjuryAreaData(String treatment) {
 
 		this.injuryAreaData.clear();
 
@@ -158,7 +164,7 @@ public class TableManager {
 
 					// build the query and fill in the count for all three judgements
 					for (String judgement : judgements) {
-						String where = this.buildInjuryLocationWhereStatement(judgement, investigationMethod,
+						String where = this.buildInjuryLocationWhereStatement(treatment, judgement, investigationMethod,
 								injuryType, location);
 						// System.out.println(where);
 
@@ -184,7 +190,7 @@ public class TableManager {
 		}
 	}
 
-	private void queryDeliveryMethodData() {
+	private void queryDeliveryMethodData(String treatment) {
 
 		this.deliveryMethodData.clear();
 
@@ -211,9 +217,12 @@ public class TableManager {
 
 					// build the query and fill in the count for all three judgements
 					for (String judgement : judgements) {
-						String where = this.buildDelilveryMethodWhereStatement(judgement, investigationMethod,
-								injuryType, deliveryMethod);
+						String where = this.buildDelilveryMethodWhereStatement(treatment, judgement,
+								investigationMethod, injuryType, deliveryMethod);
 						int count = SPARQLDatabase.countWhere(where);
+
+						// System.out.println(where);
+
 						// System.out.println("\t\t" + judgement + ": " + count);
 						/*
 						 * if (count != 0) { System.out.println(investigationMethod + ":");
@@ -233,8 +242,8 @@ public class TableManager {
 			}
 		}
 	}
-	
-	private void queryOrganismModelData() {
+
+	private void queryOrganismModelData(String treatment) {
 
 		this.organismModelData.clear();
 
@@ -260,7 +269,7 @@ public class TableManager {
 
 					// build the query and fill in the count for all three judgements
 					for (String judgement : judgements) {
-						String where = this.buildOrganismModelWhereStatement(judgement, investigationMethod,
+						String where = this.buildOrganismModelWhereStatement(treatment, judgement, investigationMethod,
 								injuryType, organismModel);
 						int count = SPARQLDatabase.countWhere(where);
 						// System.out.println("\t\t" + judgement + ": " + count);
@@ -306,9 +315,9 @@ public class TableManager {
 		return union;
 	}
 
-	private String buildInjuryLocationWhereStatement(String judgement, String investigationMethod, Subclass injuryType,
-			Subclass injuryLocation) {
-		return "?Result <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/Result>. "
+	private String buildInjuryLocationWhereStatement(String treatment, String judgement, String investigationMethod,
+			Subclass injuryType, Subclass injuryLocation) {
+		String where = "?Result <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/Result>. "
 				+ "?Result <http://psink.de/scio/hasJudgement> <http://psink.de/scio/" + judgement + ">. "
 				+ "?Result <http://psink.de/scio/hasInvestigationMethod> ?InvestigationMethod. "
 				+ this.buildUnionForInvestigationMethod(investigationMethod)
@@ -317,12 +326,20 @@ public class TableManager {
 				+ "?InjuryModel <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/"
 				+ injuryType.getName() + ">. "
 				+ "?InjuryModel <http://psink.de/scio/hasInjuryLocation> <http://psink.de/scio/"
-				+ injuryLocation.getName() + "> .";
+				+ injuryLocation.getName() + "> . ";
+
+		if (treatment != null && !treatment.isEmpty()) {
+			where += "?TargetExperimentalGroup <http://psink.de/scio/hasTreatmentType> ?TreatmentTypes. "
+					+ "?TreatmentTypes <http://psink.de/scio/hasCompound> ?Compound. "
+					+ "?Compound <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/" + treatment
+					+ ">.";
+		}
+		return where;
 	}
 
-	private String buildDelilveryMethodWhereStatement(String judgement, String investigationMethod, Subclass injuryType,
-			Subclass deliveryMethod) {
-		return "?Result <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/Result>. "
+	private String buildDelilveryMethodWhereStatement(String treatment, String judgement, String investigationMethod,
+			Subclass injuryType, Subclass deliveryMethod) {
+		String where = "?Result <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/Result>. "
 				+ "?Result <http://psink.de/scio/hasJudgement> <http://psink.de/scio/" + judgement + ">. "
 				+ "?Result <http://psink.de/scio/hasInvestigationMethod> ?InvestigationMethod. "
 				+ this.buildUnionForInvestigationMethod(investigationMethod)
@@ -333,12 +350,18 @@ public class TableManager {
 				+ "?TargetExperimentalGroup <http://psink.de/scio/hasTreatmentType> ?TreatmentTypes. "
 				+ "?TreatmentTypes <http://psink.de/scio/hasDeliveryMethod> ?DeliveryMethod. "
 				+ "?DeliveryMethod <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/"
-				+ deliveryMethod.getName() + ">.";
+				+ deliveryMethod.getName() + ">. ";
+		if (treatment != null && !treatment.isEmpty()) {
+			where += "?TreatmentTypes <http://psink.de/scio/hasCompound> ?Compound. "
+					+ "?Compound <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/" + treatment
+					+ ">.";
+		}
+		return where;
 	}
-	
-	private String buildOrganismModelWhereStatement(String judgement, String investigationMethod, Subclass injuryType,
-			Subclass organismModel) {
-		return "?Result <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/Result>. "
+
+	private String buildOrganismModelWhereStatement(String treatment, String judgement, String investigationMethod,
+			Subclass injuryType, Subclass organismModel) {
+		String where = "?Result <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/Result>. "
 				+ "?Result <http://psink.de/scio/hasJudgement> <http://psink.de/scio/" + judgement + ">. "
 				+ "?Result <http://psink.de/scio/hasInvestigationMethod> ?InvestigationMethod. "
 				+ this.buildUnionForInvestigationMethod(investigationMethod)
@@ -348,7 +371,15 @@ public class TableManager {
 				+ injuryType.getName() + ">. "
 				+ "?TargetExperimentalGroup <http://psink.de/scio/hasOrganismModel> ?OrganismModel. "
 				+ "?OrganismModel <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/"
-				+ organismModel.getName() + ">.";
+				+ organismModel.getName() + ">. ";
+
+		if (treatment != null && !treatment.isEmpty()) {
+			where += "?TargetExperimentalGroup <http://psink.de/scio/hasTreatmentType> ?TreatmentTypes. "
+					+ "?TreatmentTypes <http://psink.de/scio/hasCompound> ?Compound. "
+					+ "?Compound <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psink.de/scio/" + treatment
+					+ ">.";
+		}
+		return where;
 	}
 
 	private BarChartModel initBarChartModel() {
@@ -391,7 +422,7 @@ public class TableManager {
 	public List<List<List<BarChartModel>>> getDeliveryMethodData() {
 		return deliveryMethodData;
 	}
-	
+
 	public List<List<List<BarChartModel>>> getOrganismModelData() {
 		return organismModelData;
 	}
