@@ -22,6 +22,7 @@ public class SPARQLDatabase {
 	}
 
 	public static QueryResult selectWhere(String variables, String where, String suffix) {
+		System.out.println("Vars: " + variables);
 		String query = QueryGenerator.generateSelectQuery(variables, where, suffix);
 		System.out.println("Query: " + query);
 		return select(query);

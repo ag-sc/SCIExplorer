@@ -1110,11 +1110,9 @@ public class Explorer implements Serializable {
 
 	private String generateTablesPageUrl(boolean facesRedirect) {
 		// return generateUrl("tables.xhtml", facesRedirect);
-		String url = "tables.xhtml?treatment=";
+		String url = "tables.xhtml";
 		if(treatmentSearchTerm != null && !treatmentSearchTerm.isEmpty()) {
-			url += treatmentSearchTerm;
-		} else {
-			url += "all";
+			url += "?treatment=" + treatmentSearchTerm;
 		}
 		if (facesRedirect) {
 			url += "?faces-redirect=true";
