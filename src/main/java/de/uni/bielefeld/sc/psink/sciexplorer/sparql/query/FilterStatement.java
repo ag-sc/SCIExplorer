@@ -13,7 +13,12 @@ import java.io.Serializable;
  */
 public class FilterStatement extends AbstractStatement implements Serializable
 {
-    private final String variable;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -8980085425181894957L;
+	
+	private final String variable;
     private final String expression;
     private final boolean caseSensitive;
     

@@ -60,7 +60,7 @@ public class TreeUtility
     
     public static List<TreeNode> getDescendants(TreeNode node)
     {
-        List<TreeNode> descendants = new LinkedList();
+        List<TreeNode> descendants = new LinkedList<TreeNode>();
         getDescendants(descendants, node);
         return descendants;
     }
@@ -76,7 +76,7 @@ public class TreeUtility
     
     public static List<TreeNode> getDirectSubclassDescendants(TreeNode node)
     {
-        List<TreeNode> descendants = new LinkedList();
+        List<TreeNode> descendants = new LinkedList<TreeNode>();
         getDirectSubclassDescendants(descendants, node);
         return descendants;
     }
@@ -95,7 +95,7 @@ public class TreeUtility
     
     public static List<TreeNode> getNearestRelationDescendants(TreeNode node)
     {
-        List<TreeNode> descendants = new LinkedList();
+        List<TreeNode> descendants = new LinkedList<TreeNode>();
         TreeUtility.getNearestRelationDescendants(descendants, node);
         return descendants;
     }
@@ -127,7 +127,7 @@ public class TreeUtility
     
     public static List<TreeNode> getLeaves(TreeNode node)
     {
-        List<TreeNode> leaves = new LinkedList();
+        List<TreeNode> leaves = new LinkedList<TreeNode>();
         getLeaves(leaves, node);
         return leaves;
     }
@@ -149,7 +149,7 @@ public class TreeUtility
     
     public static List<TreeNode> getDirectSubclassLeaves(TreeNode node)
     {
-        List<TreeNode> leaves = new LinkedList();
+        List<TreeNode> leaves = new LinkedList<TreeNode>();
         getDirectSubclassLeaves(leaves, node);
         return leaves;
     }
@@ -186,7 +186,7 @@ public class TreeUtility
 
     public static List<TreeNode> getSubclassChildren(TreeNode node)
     {
-        List<TreeNode> subclasses = new LinkedList();
+        List<TreeNode> subclasses = new LinkedList<TreeNode>();
         getSubclassChildren(subclasses, node);
         return subclasses;
     }
@@ -231,7 +231,7 @@ public class TreeUtility
     
     public static List<TreeNode> getContainedNodes(Collection<TreeNode> referenceNodes, Collection<TreeNode> nodes)
     {
-        List<TreeNode> containedNodes = new LinkedList();
+        List<TreeNode> containedNodes = new LinkedList<TreeNode>();
         for(TreeNode node : nodes)
         {
             if(referenceNodes.contains(node))
@@ -444,7 +444,7 @@ public class TreeUtility
     
     public static String[] getPath(TreeNode node)
     {
-        LinkedList<String> segments = new LinkedList();
+        LinkedList<String> segments = new LinkedList<String>();
         TreeNode currentNode = node;
         while(currentNode != null)
         {
@@ -460,7 +460,7 @@ public class TreeUtility
     
     public static Integer[] getIndexPath(TreeNode node)
     {
-        LinkedList<Integer> segmentIndices = new LinkedList();
+        LinkedList<Integer> segmentIndices = new LinkedList<Integer>();
         TreeNode currentNode = node;
         while(currentNode != null)
         {

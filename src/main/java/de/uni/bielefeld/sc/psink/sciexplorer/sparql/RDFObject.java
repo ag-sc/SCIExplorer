@@ -35,4 +35,8 @@ public class RDFObject
     {
         return value;
     }
+    
+    public String toStringNoPrefix() {
+    	return value.replace("http://psink.de/scio/", "");
+    }
 }

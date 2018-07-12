@@ -79,7 +79,7 @@ public class QueryGenerator {
 
 	public static String generateStatementBlockString(TreeNode root, List<TreeNode> constraints,
 			Map<TreeNode, String> filters, boolean includeTypeVariables) {
-		return generateStatementString(QueryGenerator.generateStatements(root, new HashSet(constraints), filters,
+		return generateStatementString(QueryGenerator.generateStatements(root, new HashSet<TreeNode>(constraints), filters,
 				new VariableManager(), includeTypeVariables));
 	}
 
@@ -91,7 +91,7 @@ public class QueryGenerator {
 	 * @return
 	 */
 	public static String generateSubclassStatementBlockString(TreeNode subclassNode, boolean includeLeaves) {
-		List<AbstractStatement> statements = new LinkedList();
+		List<AbstractStatement> statements = new LinkedList<AbstractStatement>();
 		buildSubclassVariableBranch(new VariableManager(), statements, subclassNode, includeLeaves);
 		return generateStatementString(statements);
 	}
@@ -177,7 +177,7 @@ public class QueryGenerator {
 				return variableManager.getVariable(node);
 			}
 			String parentVariable = attachBranch(variableManager, statements, node.getParent());
-			return generateAndAddRelationStatement(new HashMap(), variableManager, parentVariable, statements, node);
+			return generateAndAddRelationStatement(new HashMap<TreeNode, String>(), variableManager, parentVariable, statements, node);
 		}
 		return attachBranch(variableManager, statements, node.getParent());
 	}
@@ -204,9 +204,9 @@ public class QueryGenerator {
 
 	private static List<AbstractStatement> buildStatementBlock(TreeNode root, TreeNode node,
 			boolean includeTypeVariables) {
-		Set<TreeNode> selectedNodes = new HashSet();
+		Set<TreeNode> selectedNodes = new HashSet<TreeNode>();
 		selectedNodes.add(node);
-		return generateStatements(root, selectedNodes, new HashMap(), new VariableManager(), includeTypeVariables);
+		return generateStatements(root, selectedNodes, new HashMap<TreeNode, String>(), new VariableManager(), includeTypeVariables);
 	}
 
 	/**
@@ -221,7 +221,7 @@ public class QueryGenerator {
 	 */
 	public static List<AbstractStatement> generateStatements(TreeNode root, Set<TreeNode> nodes,
 			Map<TreeNode, String> filterMap, VariableManager variableManager, boolean includeTypeVariables) {
-		List<AbstractStatement> statements = new LinkedList();
+		List<AbstractStatement> statements = new LinkedList<AbstractStatement>();
 		generateStatements(statements, root, nodes, filterMap, variableManager, includeTypeVariables);
 		return statements;
 	}
@@ -250,7 +250,7 @@ public class QueryGenerator {
 	private static void generateStatements(Set<TreeNode> selectedNodes, Set<TreeNode> pathNodes,
 			Map<TreeNode, String> filterMap, VariableManager variableManager, List<AbstractStatement> statements,
 			TreeNode parent, boolean includeTypeVariables) {
-		List<TreeNode> relevantSubclasses = new LinkedList();
+		List<TreeNode> relevantSubclasses = new LinkedList<TreeNode>();
 		for (TreeNode child : parent.getChildren()) {
 			if (pathNodes.contains(child)) {
 				if (TreeUtility.isRelation(child)) {
@@ -317,7 +317,7 @@ public class QueryGenerator {
 		List<AbstractStatement> block;
 		VariableManager branchVariableManager;
 		for (TreeNode subclassNode : subclassNodes) {
-			block = new LinkedList();
+			block = new LinkedList<AbstractStatement>();
 			branchVariableManager = new VariableManager(variableManager);
 			if (selectedNodes.contains(subclassNode)) {
 				block.add(generateSubclassStatement(branchVariableManager, relationParentVariable, subclassNode));
@@ -382,7 +382,7 @@ public class QueryGenerator {
 		String parentVariable = variableManager.getVariable(relationParentNode);
 		String typeVariable = variableManager.generateTypeVariable(getTypeVariable(parentVariable), relationParentNode);
 		UnionStatement typeUnionStatement = new UnionStatement();
-		List<AbstractStatement> block = new LinkedList();
+		List<AbstractStatement> block = new LinkedList<AbstractStatement>();
 		String superiorRelationParentVariable = variableManager
 				.getVariable(TreeUtility.getSuperiorRelation(relationParentNode.getParent()));
 		block.add(new Statement(superiorRelationParentVariable,
@@ -415,7 +415,7 @@ public class QueryGenerator {
 	}
 
 	private static Set<TreeNode> getPathNodes(Collection<TreeNode> nodes) {
-		Set<TreeNode> pathNodes = new HashSet();
+		Set<TreeNode> pathNodes = new HashSet<TreeNode>();
 		for (TreeNode node : nodes) {
 			getPathNodes(pathNodes, node);
 		}

@@ -14,7 +14,12 @@ import java.io.Serializable;
  */
 public class Statement extends AbstractStatement implements Serializable
 {   
-    private final String subject;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -2390409114632069728L;
+	
+	private final String subject;
     private final String predicate;
     private final String object;
     

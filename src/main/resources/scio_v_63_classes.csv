@@ -1,0 +1,565 @@
+#class	isNamedIndividual	Description
+Constraint	false	Constraint describes the criteria which defines the subset of individuals observed in the analyzed experimental group of an experiment.
+Lower	true	Lower is an observed qualitative difference between experimental groups in the course of an experiment and indicates a decreased level of an investigated property or variable.
+RatSpecies	false	Rat Species is the taxonomic genus Rattus. that is amenable to experimentation.
+Event	false	Event is a processual entity that is a maximally connected spatiotemporal whole and has bona fide beginnings and endings corresponding to real discontinuities.
+DefinedExperimentalGroup	false	Defined Experimental Group is the group of individuals as defined before data analysis in the course of an experiment.
+LongEvansRat	true	Long Evans Rat is an outbred strain of rats developed in 1915 by crossing several Wistar Institute white females with a wild gray male. Inbred strains have been derived from this original outbred strain, including Long-Evans cinnamon rats (RATS, INBRED LEC) and Otsuka-Long-Evans-Tokushima Fatty rats (RATS, INBRED OLETF), which are models for Wilson's disease and non-insulin dependent diabetes mellitus, respectively.
+BladderExpression	true	Bladder expression is the procedure of assited bladder voiding. It can be achieved either via catheterization or manual expression of the bladder or similar methods.
+Protein	false	Protein is a linear polypeptide that is synthesized on ribosomes and may be further modified, crosslinked, cleaved, or assembled into complex proteins with several subunits. The specific sequence of amino acids determines the shape the polypeptide will take, during protein folding, and the function of the protein.
+Extremity	false	Extremity is a projection of the body such as hand and foot which is the target tissue of neuronal innervation.
+AneurysmClip	false	Aneurysm clip is a surgical instrument used to treat a balloon-like bulge of an artery wall known as an aneurysm. In experimental spinal cord injury studies these clips are used to inflict compression lesions to the spinal cord.
+Result	false	Result is the outcome of an experiment and represents the findings of a study. The recorded value of the outcome of some test. There can be more than one result per publication.
+Ice	true	Ice is the solid substance formed by the freezing of water.
+ICOSCorporation	true	ICOS Corporation is a company which distributes compounds used in spinal cord injury experimental studies, among others.
+Pressure	false	Pressure is a type of stress exerted uniformly in all directions. Its measure is the force exerted per unit area. (McGraw-Hill Dictionary of Scientific and Technical Terms, 6th ed)
+Hypothesis	true	Hypothesis is a proposed explanation for a phenomenon.
+Pioglitazone	false	Pioglitazone with the chemical structure 5-(4-(2-(5-ethyl-2-pyridyl)ethoxy)benzyl)-2,4-thiazolidinedione is a PPAR agonist used for type II diabetes.
+T7	true	T7 is the seventh thoracic vertebra counting from the top down.
+RatModel	false	Rat Model is an animal of the genus Rattus that is amenable to experimentation.
+T8	true	T8 is the eighth thoracic vertebra counting from the top down.
+IridectomyScissors	true	Iridectomy Scissors is a surgical instrument normally used for eye surgery, in this context used to perform a cut of the spinal cord.
+Experiment	false	Experiment is a coordinated set of actions and observations designed to generate data, with the ultimate goal of discovery or hypothesis testing.
+T9	true	T9 is the ninth thoracic vertebra counting from the top down.
+T3	true	T3 is the third thoracic vertebra counting from the top down.
+SpringScissors	true	Spring Scissors is a special type of scissors where a sping is attached to pull the scissor in a closed position.
+T4	true	T4 is the fourth thoracic vertebra counting from the top down.
+BW755C	false	BW755C with the chemical structure 4,5-Dihydro-1-(3-(trifluoromethyl)phenyl)-1H-pyrazol-3-amine is a dual inhibitor of both cyclooxygenase and lipoxygenase pathways. It exerts an anti-inflammatory effect by inhibiting the formation of prostaglandins and leukotrienes. The drug also enhances pulmonary hypoxic vasoconstriction and has a protective effect after myocardial ischemia.
+LightIntensity	false	Light Intensity is the power of a light source measured in lux.
+NewZealandRabbit	true	The New Zealand is a breed of rabbit, which despite the name, is American in origin. The breed originated in California, possibly from rabbits imported from New Zealand. New Zealand rabbits are available in five ARBA-recognized colors: white, red, black, blue, and broken (color mingled with white). Crossbreeding can result in many different combinations of the three basic pigmentations. The most common of these variations are gold tipped steel and chestnut agouti. They average 10 to 12 lb (5 kg) with the does being slightly larger than the bucks. New Zealands are bred for meat, pelts, show, and laboratory uses, being the most used rabbit breed both for meat production and animal testing. They are also bred as pet rabbits.
+T5	true	T5 is the fifth thoracic vertebra counting from the top down.
+Significance	false	Significance is a concept in statistics, a number that expresses the probability that the result of a given experiment or study could have occurred purely by chance. This number can be a margin of error or it can indicate a confidence level.
+Vertebrae	false	Vertebrae are bones which form the column around the spinal cord.
+T6	true	T6 is the sixth thoracic vertebra counting from the top down.
+SchwannCellChangesTest	false	Schwann Cell Changes Test is the histological examination of alterations in the neuroglial cells of the peripheral nervous system which form the insulating myelin sheaths of peripheral axons. After spinal cord injury, these cells can migrate into the lesion area or beyond this.
+T1	true	T1 is the first thoracic vertebra counting from the top down.
+T2	true	T2 is the second thoracic vertebra counting from the top down.
+VoltageApplication	false	Voltage Application is an electromagnetic field treatment for spinal cord injury using application of a voltage gradient into the tissue usually by external or implanted electrodes.
+HindpawSensationTest	false	Hindpaw Sensation Test is the examination of sensation threshold in the hindpaws other than pain reception in the animal, measured by behavioural signs of perception and not electrophysiologial means.
+VertebralSegment	false	Vertebral Segment is an anatomical location inside the vertebral column which comprises more than one vertebra. In contrast to Vertebral Area it does  not include information about the exact vertebral bone.
+VentralHemisection	false	Ventral Hemisection is the partial transection of the spinal cord at the ventral side, leaving the dorsal spinal tracts intact.
+Interval	false	No description provided
+PartialTransectionType	true	The "partial transection type" describes the type of an uncontrolled partial transection injury that was caused by an accident.
+AxonalDamageTest	false	Axonal Damage Test is the investigation of axonal damage as a measure for failed neuroprotection measured with histological methods.
+ObservedDifference	false	Observed Difference is a qualitative characteristic of a feature that is investigated between experimental groups and is not identical between these.
+InclinedPlaneTest	false	Inclined Plane Test is a functional test for muscle strength of the upper and lower limbs and balance where the animals bevahiour on an inclined plane is tested.
+ContusionType	true	The "contusion type" describes the type of an uncontrolled contusion injury that was caused by an accident.
+NucleicAcid	false	Nucelic Acid is a high molecular weight polymer containing a mixture of purine and pyrimidine nucleotides chained together by ribose or deoxyribose linkages.
+RabbitModel	false	Rabbit Model is an animal of the family Leporidae that is amenable to experimentation.
+Slower	true	Slower is an observed qualitative difference between experimental groups in the course of an experiment and indicates a decreased velocity or longer time to reach a certain status. It also describes measurements of recovery.
+Rotarod	true	Rotarod is a horizontal rotating rod, a test for motor coordination, balance, fatigue resistance of rats and mice.                                                                                                  A method that utilizes a device consisting of a rotating rod with a mechanically driven and precisely controlled constant or accelerated speed. The rotarod test is often used to measure riding time or endurance in order to evaluate balance, motor coordination or grip strength.
+SpatialDimensions	false	Spatial Dimensions are anatomical or physical locations in space or tissue, either absolute or in relation to each other.
+IrisClip	false	Iris Clip is a small surgical instrument used in eye surgery. It is also used for experimental spinal cord injury.
+InjuryDevice	false	Injury Device is an apparatus or instrument used for injury of the spinal cord in an experimental study.
+Liposomes	true	Liposomes are spherical vesicles having at least one lipid bilayer. The liposome can be used as a vehicle for administration of nutrients and pharmaceutical drugs
+Substance	false	Substance is a chemical compound apllied for a treatment, other than nucleic acid or a protein.
+PhysicalTreatment	false	Physical Treatment is a therapeutic intervention for spinal cord injury comprising  temperature, radiation, vibration, movement, electrostimulation or other physical processes.
+Penicillinase	false	Penicinillase is a beta-lactamase preferentially cleaving penicillins. (Dorland, 28th ed) EC 3.5.2.-.
+MedicationDuringSurgery	false	Medication during surgery is an applied substance to the subject under surgery which is different from a treatment substance, e.g. as anaesthetic or sedative.
+Female	true	Female is the feminine gender of a single subject or a group of subjects with equal gender.
+MortalityObservation	false	Mortality Observation is the assessment of death rates in a population of laboratory animals in a preclinical study.
+Allodynia	true	Allodynia is a pain where there is a painful sensation with a normal, non painful stimulation.
+InjectionDelivery	false	Injection is process which aims at introducing a compound or a mixture into a material entity (either biological entity or instrument) by relying on devices such as syringe or injector connection, attached or forced into a vascular system (veins of an organism or tubes of a machine) or in a tissue.
+ProteinLevelAnalysis	false	Protein Level Analysis is the quantitative examination of changes in protein concentration, either as a mixed protein level or of a single protein, e.g. by Western Blot.
+HypothermicTreatment	false	Hypothermic Treatment is the procedure of lowering body temperature in order to save spinal cord tissue from damage or induce processes leading to recovery.
+NormothermicTreatment	false	Normothermic Treatment is the procedure of maintaining body temperature in its natural level in order to save spinal cord tissue from damage.
+Hydration	true	Hydration comprises any information on procedures or circumstances which influence hydration of a subject like water ad libitum, saline injections, air humidity.
+TyrosineHydroxylase	false	Tyrosine hydroxylase or tyrosine 3-monooxygenase is the enzyme responsible for catalyzing the conversion of the amino acid L-tyrosine to L-3,4-dihydroxyphenylalanine (L-DOPA).
+Xylazine	false	Xylazine is an analog of clonidine, an adrenergic alpha-2 agonist used as a sedative, analgesic and centrally acting muscle relaxant in veterinary medicine.  Year introduced: 1991(1975)
+AnatomicalLocation	false	Anatomical Location is the region in the body where something can be found, applied, a test is conducted or tissue is taken from.
+BMSTest	false	BMS or Basso Mouse Scale is a neurologic scale describing open field locomotion of the mouse after spinal cord contusion.
+Apparatus	false	Apparatus is the instrument used for diagnostic or therapeutic procedures or analytic techniques.
+TemperatureTreatment	false	Temperature Treatment is the procedure of modifying body temperature in order to save spinal cord tissue from damage or indurce processes leading to recovery.
+AngiogenesisTest	false	Angiogenesis Test is the examination of the development of new blood vessels during the restoration of blood circulation during the healing process with histological methods.
+MeasurementOfIncreasingTemperature	true	Measurement of increasing temperature is the observation of increased body temperature of an organism compared to the ground state, e.g., before and after injury or treatment.
+Electrodes	false	Electrodes are surgically placed electric conductors through which electric stimulation is delivered to or electrical activity is recorded from a specific point inside the body.
+FischerRat	true	Fischer rat is a rat from mating #344 of rats purchased from a local breeder (Fischer). The colony was originated by M. R. Curtis, Columbia University in 1920. To the Germ-Free Animal Laboratory at CNRS, Gif-sur-Yvette, France from the Lobund Institute, University of Notre-Dame, South Bend, Indiana, U.S.A. Subsequently introduced to Charles River France in 1970 as an axenic colony.
+CephalicVeinLocation	true	Cephalic Vein Location is the spatial region of one of five superficial veins of the upper extremity, beginning at the radial aspect of the wrist area, wrapping around the forearm and emptying into the axillary vein, where a substance can be applied to.
+Depth	false	Depth describes the physical distance from the top of the spinal cord e.g. during application of a therapeutic substance or implant at the horizontal level. An injection from dorsal to the midline would result in a lesion depth of half the spinal cord's height. Injection depths are often given in mm.
+HReflexTest	false	H Reflex Test is an examination of the monosynaptic H reflex elicited by stimulating a nerve, particularly the tibial nerve, with an electric shock.
+Housing	true	Housing is the mode of living of a subject of the subject e.g. cage size, social groups of animals etc.
+AxonalDiebackTest	false	Axonal Dieback Test is the investigation of retraction of an axon due to an injury, measured with histological methods.
+MinocyclineMC	false	Minocycline or MC is a tetracycline analog, having a 7-dimethylamino and lacking the 5 methyl and hydroxyl groups, which is effective against tetracycline-resistant staphylococcus infections.
+Melatonin	false	Melatonin is a a biogenic amine that is found in animals and plants. In mammals, melatonin is produced by the PINEAL GLAND. Its secretion increases in darkness and decreases during exposure to light. Melatonin is implicated in the regulation of SLEEP, mood, and REPRODUCTION. Melatonin is also an effective antioxidant.
+KetamineAsAnaesthetic	false	Ketamine as anaesthetic is a substance for pain relief and sedation during anaesthesia. It must be differentiated from Ketamine which is used as a neuroprotective therapeuticum.
+PhysiologicalFunction	true	Physiologcal Function is an inherent ability or capability of the body which is extecuted or maintained without or only minimal conscious control.
+AutonomicDysreflexiaTest	false	Autonomic Dysreflexia Test is the examination of a syndrome associated with damage to the spinal cord above the mid thoracic level characterized by a marked increase in the sympathetic response to minor stimuli such as bladder or rectal distention.
+Male	true	Male is the masculin gender of a single subject or a group of subjects with equal gender.
+MethylprednisoloneMP	false	Methylprednisolone or MP is a PREDNISOLONE derivative with similar anti-inflammatory action.
+HypothermiaBlanket	true	Hypothermia Blanket is an instrument for cooling the body. It is a blanket which is cooled from inside and it can be used to cover the subject.
+AscendingFiberTract	false	Ascending Fiber Tract is a nervous system tract that transmits pain, temperature, and touch sensations and position and vibratory sense to the brain.
+SingleBlindStudy	true	Single blind study is defined as any study execution in which the subjects are not informed of which study arm they are part of during the portion of the trial when the subjects are being treated.
+ICI182780	false	ICI 182780 or fulvestrant, sold under the trade name Faslodex among others, is a medication used to treat hormone receptor (HR)-positive metastatic breast cancer in postmenopausal women with disease progression as well as HR-positive, HER2-negative advanced breast cancer in combination with palbociclib in women with disease progression after endocrine therapy. It is given by injection into a muscle.  Fulvestrant is a selective estrogen receptor degrader (SERD) and was first-in-class to be approved. It works by binding to the estrogen receptor and destabilizing it, causing the cell's normal protein degradation processes to destroy it.  Fulvestrant was approved for medical use in the United States in 2002. (Wikipedia)
+ImagingTest	false	Imaging Test is the examination of a biological process, cell, tissue or organ with any technology or method that aids in the visualization.
+SpinalCordEvokedPotentialsTest	false	Spinal Cord Evoked Potentials Test or SCEP test is the examination of electrophysiological signals stimulated and recorded in the spinal cord.
+PregnenoloneS	false	PregnenoloneS or Pregnenolone sulfate is the sulfated form of Pregnenolone.
+C57_BL6_Mouse	true	C57_BL6 is a mouse strain as described in Jackson Laboratory strain index
+SpinalDorsalHalf	false	Spinal Dorsal Half is the spinal tissue from the central canal to the dorsal border of the spinal cord tissue.
+P4	false	P4 or Progesterone is a steroid hormone.
+Capsule	true	A capsule is a hard or soft soluble containers used for the oral administration of medicine.
+RearingTest	false	Rearing Test is a functional test for forelimb asymmetry. It is normally investigated in a glass cylinder. The forelimb contact to the glass wall is counted. Nevertheless, other setups for measurement of rearing are also possible.
+CompoundSupplier	false	Compound supplier is the company or laboratory which manufactures, synthesizes or distributes the compounds used in the experimental study.
+DoubleBlindStudy	true	Double blind study is a study design using the method of studying a drug or procedure in which both the subjects and investigators are kept unaware of who is actually getting which specific treatment.
+FogartyBalloonCatheter	false	Fogarty Balloon Catheter is a special balloon catheter device to induce compression injury to the spinal cord.
+Current	false	Current is the measure of movement of electrical charges in a conductor measured in milliamperes.
+NitrousOxide	false	Nitrous oxide or laughing gas is a substance used as anaesthetic.
+Conduit	false	Conduit is any tube, opening or passage that connects two distinct anatomical spaces.
+Name	false	No description provided
+TreadScan	true	Tread Scan is a gait analysis software for treadmills for rats and mice.
+CD1_Mouse	true	CD1_Mouse is a mouse from an inbred strain of athymic, nude mouse developed by transferring the Foxn1nu gene to a CD1 mouse.
+TTest	true	TTest or Studen't t-test is a data transformation with the objective of a statistical hypothesis test in which the test statistic has a Student's t distribution if the null hypothesis is true. It is applied when the population is assumed to be normally distributed but the sample sizes are small enough that the statistic on which inference is based is not normally distributed because it relies on an uncertain estimate of standard deviation rather than on a precisely known value.
+VimentinAntiSenseDNA	false	Vimentin Antisense DNA is the anti-sense cyclic DNA for Vimentin which is an intermediate filament protein found in most differentiating cells, in cells grown in tissue culture, and in certain fully differentiated cells. Its insolubility suggests that it serves a structural function in the cytoplasm. MW 52,000.  A complementary DNA is a single-stranded complementary DNA synthesized from an RNA template by the action of RNA-dependent DNA polymerase. cDNA (i.e., complementary DNA, not circular DNA, not C-DNA) is used in a variety of molecular cloning experiments as well as serving as a specific hybridization probe.
+Virus	false	Virus is a minute infectious agents whose genomes are composed of DNA or RNA, but not both. They are characterized by a lack of independent metabolism and the inability to replicate outside living host cells.
+Volume	false	Volume  is a size quality which describes the amount of 3-dimensional space an object occupies.. A 3-D extent quality inhering in a bearer by virtue of the bearer's amount of 3-dimensional space it occupies.
+Estrogen	false	Estrogen is a compound that interact with ESTROGEN RECEPTORS in target tissues to bring about the effects similar to those of ESTRADIOL. Estrogens stimulate the female reproductive organs, and the development of secondary female SEX CHARACTERISTICS. Estrogenic chemicals include natural, synthetic, steroidal, or non-steroidal compounds.
+UBCMultimechanismDevice	true	UBC Multimechanism Device or University of British Columbia (UBC) multimechanism device is an injury device, which was developed in the rat, is highly versatile; it can inflict contusion, distraction and dislocation injury
+Clodronate	false	Clodronate or clodronic acid is a diphosphonate which affects calcium metabolism. It inhibits bone resorption and soft tissue calcification.
+CatWalkGaitAnalysisSystem	true	Catwalk Gait Analysis System is a semi-automated quantitative gait analysis system for rats and mice. It analyses the temporal and spatial correlations of foot movement. Also used for analysis of mechanical allodynia.
+Sedative	false	Sedative is a substance applied to the subject during surgery in order to keep it in a calm state.
+PostsurgicalMedication	false	Postsurgical medication is the medication of pain, immunosuppression, antibiotic medication and other medications which are not directly related to the treatment applied.
+MouseSpecies	false	Mouse Species is the taxonomic genus Mus.
+Distraction	false	Distraction is a process leading to spinal cord injury by lengthening the vertebral column by gradual mechanical distraction.
+MedianValue	false	Median Value is the value which has an equal number of values greater and less than it.
+Voltage	false	Voltage is the rate at which energy is drawn from a source that produces a flow of electricity in a circuit; expressed in volts.
+CompleteInjuryArea	true	Complete Injury Area is the spinal cord are after a lesion which affects the whole cross-area of the spinal cord.
+SpragueDawleyRat	true	A strain of albino rat used widely for experimental purposes because of its calmness and ease of handling. It was developed by the Sprague-Dawley Animal Company.
+FasterDecrease	true	Faster Decrease is an observed qualitative difference between experimental groups in the course of an experiment and indicates an increased velocity or shorter time to reach a reduced level of an investigated property or variable. It also describes measurements of recovery.
+SwimmingTest	false	Swimming Test is the examination of the ability and quality of locomotion during swimming.
+NeuronalActivityTest	false	Neuronal Activity Test is the investigation of electrophysiological activity of neurons measured with histochemical means, usually antigen marker.
+Function	false	Function is the physiological or motor cabability which inheres in an organism and is investigated in an experimental study.
+Compound	false	Compound is a substance, which consists of two or more ingredients.
+MotorTest	false	Motor Test is a functional test which examines abilities of voluntary muscle abilities and control other than walking or locomotion.
+Temperature	false	Temperature is the property of objects that determines the direction of heat flow when they are placed in direct thermal contact. The temperature is the energy of microscopic motions (vibrational and translational) of the particles of atoms.
+CurrentApplication	false	Current Application is an electromagnetic field treatment for spinal cord injury using injection of current into the tissue usually by external or implanted electrodes.
+LightSource	true	Light Source is a pointed lamp which causes spinal cord injury if a photoactive dye is infused into the spinal cord and injury is applied by irradiation under a microscope.
+AutomatedGaitAnalysis	false	Automated Gait Analysis is the examination of gait using automated systems as the CatWalk or DigiGait apparatus. Measures walking patterns and kinematics either while crossing solid surfaces or treadmills.
+OrganismSpecies	false	Organism Species is a group of organisms that differ from all other groups of organisms and that are capable of breeding and producing fertile offspring.
+SubcutaneousLocation	true	Subcutaneous Location is the anatomical region for substance application beneath the skin.
+NNumber	false	Integer representing the number of animals per group, per result or per statistical analysis.
+LocomotorFunction	false	Locomotor Function is the bodies' capability to execute task which demand rhythm or gait control or coupling of multiple muscle groups involved in movement.
+ObservationOfAnimalBehaviour	false	No description provided
+AcetylsalicylicAcid	false	Acetylsalicylic acid or Aspirin is the prototypical analgesic used in the treatment of mild to moderate pain. It has anti-inflammatory and antipyretic properties and acts as an inhibitor of cyclooxygenase which results in the inhibition of the biosynthesis of prostaglandins. Aspirin also inhibits platelet aggregation and is used in the prevention of arterial and venous thrombosis. (From Martindale, The Extra Pharmacopoeia, 30th ed, p5)
+CompoundSource	false	Compound source is the origin of a compound applied as treatment for spinal cord injury. It can be a company or the description of the biological source of an implanted biological entity.
+Progesterone	false	Progesterone is the major progestational steroid that is secreted primarily by the CORPUS LUTEUM and the PLACENTA. Progesterone acts on the UTERUS, the MAMMARY GLANDS and the BRAIN. It is required in EMBRYO IMPLANTATION; PREGNANCY maintenance, and the development of mammary tissue for MILK production. Progesterone, converted from PREGNENOLONE, also serves as an intermediate in the biosynthesis of GONADAL STEROID HORMONES and adrenal CORTICOSTEROIDS.
+Albumin	false	Albumin is a family of globular proteins found in many plant and animal tissues that tend to bind a wide variety of ligands.
+Randomization	true	Randomization is a group assignment which relies on chance to assign materials to a group of materials in order to avoid bias in experimental set up.
+SpinalSubduralArea	false	Spinal Subdural Area is the anatomical location between the dura mater and the spinal cord tissue.
+Cervical	true	Cervical is the anatomical region comprising any one or more of the seven vertebrae that start with C1, connecting the skull to the spine, and ends with C7, which joins the cervical with the thoracic spine.
+Dipyridamol	false	Dipyridamol is a phosphodiesterase inhibitor that blocks uptake and metabolism of adenosine by erythrocytes and vascular endothelial cells. Dipyridamole also potentiates the antiaggregating action of prostacyclin. (From AMA Drug Evaluations Annual, 1994, p752)
+AgeCategory	false	The age category is the gross description of the age of the subject in a study.
+RNA	false	RNA or ribonucleic acid is a polynucleotide consisting essentially of chains with a repeating backbone of phosphate and ribose units to which nitrogenous bases are attached. RNA is unique among biological macromolecules in that it can encode genetic information, serve as an abundant structural component of cells, and also possesses catalytic activity. (Rieger et al., Glossary of Genetics: Classical and Molecular, 5th ed)
+DragonPharmaceuticals	true	Dragon Pharmaceuticals is a company which distributes compounds used in spinal cord injury experimental studies, among others.
+ModificationTreatment	false	Modification Treatment is either a surgical intervention to treat spinal cord injury or a mostly experimental setting of genetically modified animals which are spinal cord injured to investigate the role of certain molecules.
+Indomethacin	false	Indomethacin is a non-steroidal anti-inflammatory agent (NSAID) that inhibits the enzyme cyclooxygenase necessary for the formation of prostaglandins and other autacoids. It also inhibits the motility of polymorphonuclear leukocytes.
+Undirected	true	Undirected is an observed qualitative difference between experimental groups in the course of an experiment which is not further defined in direction or course of the difference.
+AllenWeightDropDevice	false	Allen Weight Drop Device is an apparatus for accurate targeting and weight drop from specified heights in order to produce  traumatic brain or spinal cord injury.
+EnrichedEnvironment	false	Housing in an enriched environment to increase natural movement of the animals.
+Scissors	false	Scissors is a surgical instrument used to perform a cut of the spinal cord.
+T11	true	T11 is the eleventh thoracic vertebra counting from the top down.
+T10	true	T10 is the tenth thoracic vertebra counting from the top down.
+T13	true	T13 is the twelfth thoracic vertebra counting from the top down.
+BrainDerivedNeurotrophicFactor	false	Brain derived neurotrophic factor or BDNF is a member of the nerve growth factor family of trophic factors. In the brain BDNF has a trophic action on retinal, cholinergic, and dopaminergic neurons, and in the peripheral nervous system it acts on both motor and sensory neurons. (From Kendrew, The Encyclopedia of Molecular Biology, 1994)
+T12	true	T12 is the twelfth thoracic vertebra counting from the top down.
+ScoutenWireKnife	true	Scouten Wire Knife is a retractable wire knife system which is used to produce spinal cord injury transection lesions.
+AnalyzedExperimentalGroup	false	Analyzed Experimental Group is the subgroup of an experimental group which is analyzed in the experiment - it can differ from the Defined Experimental Group as it was described before data analysis.
+VeinLocation	true	Vein Location is the anatomical region of a blood vessel which carries blood to the heart where substances can be applied to.
+IntraperitonealLocation	true	Intraperitoneal Location is the anatomical region of substance application in the peritoneal cavity.
+QuadrantInjuryArea	true	Quadrant Injury Area is the area of injured spinal cord tissue after a lesion which comprises only one quarter of the spinal cord in cross section.
+MyelinationTest	false	Myelination Test is the investigation the process in which myelin sheaths are formed and maintained around neurons. Oligodendrocytes in the brain and spinal cord and Schwann cells in the peripheral nervous system wrap axons with compact layers of their plasma membrane. Adjacent myelin segments are separated by a non-myelinated stretch of axon called a node of Ranvier.
+L3	true	L3 is the third lumbar vertebra counting from the top down.
+L4	true	L4 is the fourth lumbar vertebra counting from the top down.
+L5	true	L5 is the fifth lumbar vertebra counting from the top down.
+L1	true	L1 is the first lumbar vertebra counting from the top down.
+L2	true	L2 is the second lumbar vertebra counting from the top down.
+Iloprost	false	Iloprost is an eicosanoid, derived from the cyclooxygenase pathway of arachidonic acid metabolism. It is a stable and synthetic analog of EPOPROSTENOL, but with a longer half-life than the parent compound. Its actions are similar to prostacyclin. Iloprost produces vasodilation and inhibits platelet aggregation.
+LateralHemisection	false	Lateral Hemisection is the partial transection of the lateral aspect of the spinal cord at one side.
+Halothane	false	Halothane is a substance used for anaesthesia.It is a liquid which is evaporated as a halogenated ether gas for inhalation.
+SurvivalObservation	false	Survival Observation is the assessment of continuance of life or existence especially under adverse conditions. A measurement of the survival rate for a group of individuals suffering from a disease.
+GroupNumber	false	Experimental groups are often described with numbers in a scientific text, e.g. control group (group 1) versus treated group (group 2).
+Value	false	No description provided
+LesionAdjacentTissue	false	Lesion Adjacent Tissue is any tissue of the spinal cord in close vicinity to the spinal cord lesion excluding the spinal cord lesion core.
+SevereInjury	true	Severe Injury is the high degree of severity of a spinal cord injury.
+TemporalInterval	false	Temporal Interval is a measured time instance in any unit (minutes, hours, days etc.).
+SlowerDecrease	true	Slower Decrease is an observed qualitative difference between experimental groups in the course of an experiment and indicates a decreased velocity or longer time to reach a reduced level of an investigated property or variable. It also describes measurements of recovery.
+ImplantedDepotPellet	true	Implanted Depot Pellets are drug implants as small containers or pellets of a solid drug implanted in the body to achieve sustained release of the drug.
+Mixed	true	Mixed or mixed gender group is a  group of subjects with mixed gender, i.e. male and female individuals.
+TailFlickReflexTest	false	Tail Flick Reflex Test or TFR in rats is a classic nociceptive test originally described by D'Amour and Smith, in which pinching of the tail or hind leg produces a withdrawal response. The TFR is a general flexor withdrawal reflex that functions in intact as well as in decerebrated rats.
+MagneticFieldApplication	false	Magnetic Field Application is an electromagnetic field treatment for spinal cord injury by inducing an electic field in the tissue through an external magnetic field.
+WeightDrop	false	Weight Drop is a device used to inflict a contusion injury to the spinal cord usually by dropping a weight from a defined height onto the dura mater.
+MotorReflexTest	false	Motor Reflex Test is the examination of abdominal reflexes, i.e. contractions of the abdominal muscles upon stimulation of the skin (superficial abdominal reflex) or tapping neighboring bony structures (deep abdominal reflex). The superficial reflex may be weak or absent, for example, after a stroke, a sign of upper (suprasegmental) motor neuron lesions. (Stedman, 25th ed and Best and Taylor's Physiological Basis of Medical Practice, 12th ed, p1073)
+TreadmillTraining	false	Treadmill Training is a rehabilitative training for enhancement of recovery by movement on a treadmill.
+Direction	false	Direction is the spatial relation between something and the course along which it points or moves.
+Enzyme	false	Enzyme is a biological molecule that possesses catalytic activity. They may occur naturally or be synthetically created.
+MechanicalAllodyniaTest	false	Mechanical Allodynia Test is the examination of an increased sensation of pain or discomfort produced by a non-noxious stimulus.
+InjuryByAccident	false	Injury By Accident is a process which leads to spinal cord injury in an uncontrolled way. It is not caused by an experimentator on purpose but occurs by circumstances which are uncontrolled like e.g. in an accident. These injuries are characterized by their severity and also by their type.
+Ethanol	false	Ethanol is a clear, colorless liquid rapidly absorbed from the gastrointestinal tract and distributed throughout the body. It has bactericidal activity and is used often as a topical disinfectant. It is widely used as a solvent and preservative in pharmaceutical preparations.
+AstrogliosisTest	false	Astrogliosis Test or Gliosis Test is the examination of the production of a dense fibrous network of neuroglia with histological methods; includes astrocytosis, which is a proliferation of astrocytes in the area of a degenerative lesion.
+SurfaceRightingReflexTest	false	Surface Righting Reflex Test is a functional motor reflex test for animals and tests for movement coordination and muscle strength. For mice, the procedure comprises: the mouse is held gently on its back with two fingers holding on either side of the head and two fingers holding the hindquarters of the neck. The mouse is released and the time in seconds for the mice to flip over onto its abdomen with all the four paws touching the surface of the ground is measured.
+ForelimbStrengthTest	false	Forelimb Strength Test or grip strength test is the assessment of hand muscle strength that measures that force with which one holds or grasps.
+Cell	false	Cell is a biological entity used for treatment by transplantation or application to the organism after spinal cord injury, e.g., genetically modified cells, stem cells, etc.
+CompleteTransection	false	Complete Transection is the cross-cut of the spinal cord at a specific height.
+Glycopyrrolate	false	Glycopyrrolate is a synthetic anticholinergic used as an antispasmodic, decreases tracheal and bronchial secretions.
+OvariectomyTreatment	false	Ovariectomy Treatment is the surgical removal of one or both ovaries in order to influence the outcome after spinal cord injury.
+MesenchymalStemCell	false	Mesenchymal stem cells are stem cells which originate from connective tissue cells. They are multipotent stromal cells giving rise to multiple different cell types.
+ForelimbHindlimbCouplingAbility	true	Forelimb Hindlimb Coupling Ability is a feature of quadrupedal movement. It is also called diagonal limb coupling or coordination.
+WhishawApparatus	true	Whishaw Apparatus is a test for forelimb reaching ability in rats and mice where the animal reaches through a slot for pellets and the reaching process is recorded for kinematic analysis.
+Methanesulfonamide	false	Methane Sulfonamide is a group of compounds that contain the structure SO2NH2 linked to methane.
+NOGOReceptorAntagonist	false	NOGO receptor antagonist is a peptide fragment corresponding to residues 1 - 40 of Nogo-66, the domain of the myelin protein Nogo that inhibits axonal outgrowth. Acts as a competitive antagonist at the Nogo-66 receptor (NgR); blocks Nogo-66- and CNS myelin-induced inhibition of axonal growth, but does not reduce myelin-associated glycoprotein (MAG) inhibition of neurite outgrowth in vitro. Promotes regeneration of hemisected spinal axons and locomotor recovery following spinal injury in vivo.
+ForelimbAsymmetryTest	false	Forelimb Asymmetry Test is the examination of preference of one forelimb of an animal during rearing, usually in a glass cylinder.
+ArylsulfataseB	false	Arylsulfatase B is an enzyme which breaks down dermatan sulfate and chondroitin sulfate proteoglycans side chains.
+Rolipram	false	Rolipram is a selective phosphodiesterase-4 inhibitor discovered and developed by Schering AG as a potential antidepressant drug in the early 1990s.
+Darbepoetin	false	Darbepoetin is a recombinant protein which stimulates erythropoiesis and is used to treat anemia.
+RegularWalkingPatternMaintaining	true	Regular Walking Pattern Maintaining is the ability to walk in a regular pattern without interruption. Especially for quadrupedal walking this is a measure for intact locomotion and interlimb coupling.
+FootprintAnalysisTest	false	Footprint Analysis Test is the examination of the footprints of walking animals.
+DeliveryMethod	false	Delivery method is a standadized procedure of administration of medication, cells implants or other therapeutical substances to a subject.
+ElectricFieldStrength	false	Electric Field Strength is the strength of an applied electric field measured in V/m.
+MacrophageCell	false	Macrophage cell is a mononuclear phagocyte present in variety of tissues, typically differentiated from monocytes, capable of phagocytosing a variety of extracellular particulate material, including immune complexes, microorganisms, and dead cells.
+Distance	false	Distance is the physical length measured in any unit (e.g. µm, mm).
+Riluzole	false	Riluzole is a glutamate antagonist used as an anticonvulsant and to prolong the survival of patients with Amyotrophic Lateral Sclerosis.
+Diazepam	false	Diazepame is a benzodiazepine with anticonvulsant, anxiolytic, sedative, muscle relaxant, and amnesic properties and a long duration of action. Its actions are mediated by enhancement of GAMMA-AMINOBUTYRIC ACID activity.
+DNA	false	DNA or desoxyribonucleic acid is a deoxyribonucleotide polymer that is the primary genetic material of all cells. Eukaryotic and prokaryotic organisms normally contain DNA in a double-stranded state, yet several important biological processes transiently involve single-stranded regions. DNA, which consists of a polysugar-phosphate backbone possessing projections of purines (adenine and guanine) and pyrimidines (thymine and cytosine), forms a double helix that is held together by hydrogen bonds between these purines and pyrimidines (adenine to thymine and guanine to cytosine).
+DistractorDevices	false	Distractor Device is a device used for distraction models of spinal cord injury which  involve controlled stretching of the cord aiming to simulate the tension forces experienced by the cord in spinal cord injury.
+ThermalHyperalgesiaTest	false	Thermal Hyperalgesia Test as the Plantar Test measures the abnormal pain reaction to a normally painless thermal stimulus.
+StatisticalTest	false	Statistical  Test is a group of mathematical operations used to determine the statistical significance of an observation.
+RabbitSpecies	false	Rabbit Species is the taxonomic family Leporidae.
+NarrowBeamTest	false	Narrow Beam Test is the examination of the ability of an animal to cross a narrow beam. Tests for paw placement and balance.
+SodiumPentobarbital	false	Sodium Pentobarbital is a short-acting barbiturate that is effective as a sedative and hypnotic (but not as an anti-anxiety) agent and is usually given orally. It is prescribed more frequently for sleep induction than for sedation but, like similar agents, may lose its effectiveness by the second week of continued administration. (From AMA Drug Evaluations Annual, 1994, p236)
+ExperimentalGroup	false	Experimental group is a set of individuals of defined organism model, injury model and treatment model in the context of a study.
+StandardDeviation	false	Property of the  Normal Distribution  Continuous frequency distribution of infinite range. Its properties are as follows: 1, continuous, symmetrical distribution with both tails extending to infinity; 2, arithmetic mean, mode, and median identical; and 3, shape completely determined by the mean and standard deviation.
+VegetableOil	false	Vegetable oil is an oil derived from plants or plant products.
+DehydroEpiandrosteroneSulfate	false	androsterone sulfate [Supplementary Concept] RN given refers to (3alpha,5alpha)-isomer
+NonNeuronalCellChangesTest	false	Non-neuronal Changes Test is the examination of changes in any other cell types than neurons with histological methods.
+HartleyGuineaPig	true	Hartley Guinea Pig is an albino outbred guinea pig belonging to the English (short-haired) breed. The Hartley guinea pig was imported from the Medical Research Council, Millhill, England, to Charles River in 1968 for propagation. The animal is a crepuscular mammalian herbivore that is tailless with short legs and a large head. The Hartley Guinea Pig has a white coat color (acromelanic albino) and red eyes and requires a nutritional source of vitamin C to sustain normal function. The Hartley guinea pig is used as an animal model for studying human diseases and toxins harmful to man, as well as the development of serums and vaccines.
+Cannula	true	Cannula is a short, hollow cylinder or tube for insertion into a canal, vessel, or body cavity.
+NonFunctionalTest	false	Non-functional Test is the Investigation method which is performed with tissue, liquids or organs of the subject but does not require it's functionality. In most cases this test is applied after the subjects death as for histological investigation methods. It can also comprise detection of molecules in the living organism's body liquids.
+Publication	false	Publication comprises any information about a scientific article.
+AntiCD11dAntibody	false	AntiCD11d Antibody is an antibody recognizing the CD11d cell surface antigen (the integrin ad subunit)
+Age	false	Age is the time span of an individuals birth to the current moment of observation stated in days weeks, months or years.
+InfiniteHorizonImpactor	false	Infinite Horizon Impactor is an instrument for accurate and specific weight drop on the exposed spinal cord. force: 100-200 kdyn (100-150 kdyn corresponds to mild-moderate injury, 150-200 kdyn to moderate-severe injury)
+BalanceAbility	true	Balance Ability is the behavioral quality inhering in a bearer by virtue of having physical steadiness.
+ElectromagneticFieldTreatment	false	Electromagnetic Field Treatment is the therapeutic intervention for spinal cord injury using an electromagnetic field usually by external or implanted electrodes.
+Adult	true	Adult is a specific age category of the experimental subject as defined by the author. The exact age of an adult organism differs between species.
+StemCell	false	Stem cells are undifferentiated cell which can divide and develop into specialized cells.
+ContactPlacingResponseTest	false	Contact Placing Response Test is the examination of a reflex elicited by lightly touching the skin of the dorsal side of the foot without joint displacement. The animal responds by lifting the hind leg and placing it upon the obstacle.
+CyclosporineA	false	Cyclosporine A is a cyclic undecapeptide from an extract of soil fungi. It is a powerful immunosupressant with a specific action on T-lymphocytes. It is used for the prophylaxis of graft rejection in organ and tissue transplantation. (From Martindale, The Extra Pharmacopoeia, 30th ed).
+SpasticityObservation	false	Spasticity Observation is the assessment of muscle spasticity in laboratory animals, which is a form of muscle hypertonia associated with upper motor neuron dysfunction. Resistance to passive stretch of a spastic muscle results in minimal initial resistance (a "free interval") followed by an incremental increase in muscle tone. Tone increases in proportion to the velocity of stretch. Spasticity is usually accompanied by HYPERREFLEXIA and variable degrees of MUSCLE WEAKNESS. (modified From Adams et al., Principles of Neurology, 6th ed, p54)
+Matrix	false	Matrix is a biocompatible structure or scaffold implanted as treatments for spinal cord injury, which provides structural support for cells or tissues.
+Phenytoine	false	Phenytoine is an anticonvulsant that is used to treat a wide variety of seizures. It is also an anti-arrhythmic and a muscle relaxant. The mechanism of therapeutic action is not clear, although several cellular actions have been described including effects on ion channels, active transport, and general membrane stabilization. The mechanism of its muscle relaxant effect appears to involve a reduction in the sensitivity of muscle spindles to stretch. Phenytoin has been proposed for several other therapeutic uses, but its use has been limited by its many adverse effects and interactions with other drugs.
+DogSpecies	true	Dog Species is the taxonomic carnivore family Canidae.
+InhalationDelivery	false	Inhalation delivery is the administration of drugs by the respiratory route. It includes insufflation into the respiratory tract.
+Dexterity	true	Dexterity is skill in performing tasks, especially with the hands.
+LithiumChloride	false	Lithium Chloride is a salt of lithium that has been used experimentally as an immunomodulator.
+HistologicalInvestgationTest	false	Histological Investigation Test or Histology is the study of the structure of various tissues of organisms on a microscopic level.
+ListerHoodedRat	true	Lister hooded rat is a rat strain. Origin The exact origin of the Lister Hooded rat is obscure, but it was certainly maintained at the Lister Institute in the 1920s. It is not thought to be closely related to the Long Evans rat. This stock was developed at the Lister Institute in the UK and has since become an appropriate stock for behavioural studies. Originally sourced by Charles River UK from GlaxoUK in 1990.  Appearance White with black hood  Strain Characteristics • Susceptible to audiogenic seizures • Docile, highly inquisitive, and easily handled • Superior eyesight compared to albino outbred rat strains due to the pigmented nature of hooded rats • More likely to respond to environmental stimuli and easily trained for a wide range of behavioural studies
+LadderRungTest	false	Ladder Rung Test is an examination procedure where the animals walk over a horizontal ladder and missteps are counted and/or rated. Tests for fore- and hindlimb stepping, fine motor control, foot placing accuracy,  sensory motor coordination .
+SinglePelletReachingTest	false	Single Pellet Reaching Test is a functional test for skilled forepaw use and gripping. The rat or mouse reaches for pellets with its forepaws and video recordings are analyzed in slow motion.
+HarringtonDistractor	true	Harrington Distractor is a spinal cord injury device which causes distraction of the spinal cord. The procedure involves laminectomy at the intended injury location, followed by the placement of modified Harrington hooks under the laminae of the vertebrae one level caudal and one level rostral to the injury target. These hooks are connected to a computer-controlled stepping motor that is used to control the length, speed and duration of distraction.
+SpinalWhiteMatter	false	Spinal White Matter is the region of the spinal cord that appears lighter in color than the other type, thr gray matter. It mainly consists of myelinated nerve fibers and contains few neuronal cell bodies or dendrites.
+MeanValue	false	Mean Value is the sum of a set of values divided by the number of values in the set.
+Forceps	false	Forceps are surgical instruments used in experimental spinal cord injury studies to crush the spinal cord by applying constant force from two sides for a specified duration.
+Micropump	true	Micropump is a device that can control and manipulate small fluid volumes. Although any kind of small pump is often referred to as micropump, a more accurate definition restricts this term to pumps with functional dimensions in the micrometer range.
+OpenLabelStudy	true	Open label study is a study design where no blinding is in effect: the investigator and participant are aware which intervention is being used for which participant (i.e. not blinded)
+Celebocid	false	Celebocid is a well-characterized COX inhibitor with a 10,000-1-fold selectivity for COX-2 [4]. The drug is now widely used for the treatment of inflammatory arthritis and has an excellent safety profile.
+NuclearTransfection	true	Nuclear transfection is a technique of transferring DNA into somatic cells or germ lines of experimental animals so that the cells or progeny may express the integrated donor gene.
+OlfactoryEnsheathingGliaCell	false	Olfactory Ensheathing Glia are cells of the nervous system which myelinate axons of olfactory system neurons which originate from the olfactory bulb. They can be found in the central and peripheral nervous system where they support regeneration of injured olfactory neuron axons.
+PhysiologyTest	false	Physiology Test is the examination of the biological functions concerned with the life-supporting properties, functions, and processes of living organisms or their parts.
+ThiopentalSodium	false	Thiopental Sodium is a barbiturate that is administered intravenously for the induction of general anesthesia or for the production of complete anesthesia of short duration.
+GlialCell	false	Glial cell is a non-neuronal cell in the nervous system with multiple different functions as maintaining homeostasis, forming myelin, and providing support and protection for neurons.
+SpinalCord	false	Spinal Cord is a cylindrical column of tissue that lies within the vertebral canal. It is composed of white matter and gray matter.
+CuttingDevice	false	Cutting Device describes a group of surgical instruments with sharp edges to inflict cutting lesions to the spinal cord.
+ExperimentalMethod	false	Experimental method is a planned process in the execution of a study design.
+SensoryTest	false	Sensory Test is the examination of sensory function as functional investigation method.
+AdhesiveRemovalTest	false	Adhesive Removal Test or tape removal test is the examination of sensory function by applying adhesive tape on each forepaw or hindpaw of the animal and measuring the time-to-contact and the time-to-remove them. This behavior implies correct paw and mouth sensitivity (time-to-contact) and correct paw coordination (time-to-remove).
+AtorvastatinAT	false	Atorvastatin AT is a pyrrole and heptanoic acid derivative,HYDROXYMETHYLGLUTARYL-COA REDUCTASE INHIBITOR (statin), and ANTICHOLESTEREMIC AGENT that is used to reduce serum levels of LDL-CHOLESTEROL; APOLIPOPROTEIN B; AND TRIGLYCERIDES and to increase serum levels of HDL-CHOLESTEROL in the treatment of HYPERLIPIDEMIAS and prevention of CARDIOVASCULAR DISEASES in patients with multiple risk factors.
+FineMotorControlAbility	true	Fine Motor Function is the ability to coordinate of small muscle movements which occur in body parts such as the fingers, usually in coordination with the eyes.
+Neurotrophin3	false	Neurotrophin-3 or NT-3 (257 aa, ~29 kDa) is encoded by the human NTF3 gene. This protein plays a role in the survival of sensory neurons.
+SpinalCordStrapper	true	Spinal Cord Strapper is a custom made spinal cord injury device which is used in animal studies and causes compression injuries to the spinal cord.
+Proliferation	true	Prolieferation is all of the processes involved in increasing CELL NUMBER including CELL DIVISION.
+Location	false	Location is a spatial region or named place. It is further a position, site, or point in space where something can be found.
+Epidural	false	Epidural is the anatomical location distal to the dura mater referred to the spinal cord tissue. Substances injected epidurally must cross the dura to reach the spinal cord tissue.
+FemoralVeinLocation	true	Femoral Vein Location is the anatomical region for substance application in the  vein accompanying the femoral artery in the same sheath; it is a continuation of the popliteal vein and becomes the external iliac vein.
+Anaesthetic	false	Anaesthetic is the type or substance of anasthaesia applied to a subject during surgery.
+UTADistractor	true	UTA Distractor or University of Texas at Arlington (UTA) distractor is a device for inflicting distractor spinal cord injuries. The UTA distractor uses custom clips that are affixed securely to the vertebral body. These clamps are attached to linear actuators that simultaneously distract two vertebrae (T9 and T11) caudorostrally. It is relatively noninvasive, as a laminectomy is not performed, and computer software is able to record the force delivered to the spinal cord during the injury.
+Dislocation	false	Dislocation is a displacement of a part of the spinal cord from its normal position.
+Inosine	false	Inosine is a purine nucleoside that has hypoxanthine linked by the N9 nitrogen to the C1 carbon of ribose. It is an intermediate in the degradation of purines and purine nucleosides to uric acid and in pathways of purine salvage. It also occurs in the anticodon of certain transfer RNA molecules. (Dorland, 28th ed)
+Syringe	true	Syringe is an instruments used for injecting or withdrawing fluids. (Stedman, 25th ed)
+HemorrhageTest	false	Hemorrhage Test is the histological examination of bleeding or escape of blood from a vessel.
+Poloxamer	false	Poloxamer is a nonionic polyoxyethylene-polyoxypropylene block co-polymer with the general formula HO(C2H4O)a(-C3H6O)b(C2H4O)aH. It is available in different grades which vary from liquids to solids. It is used as an emulsifying agent, solubilizing agent, surfactant, and wetting agent for antibiotics. Poloxamer is also used in ointment and suppository bases and as a tablet binder or coater. (Martindale The Extra Pharmacopoeia, 31st ed)
+GastricUlcerogenesisTest	false	Gastric Ulcerogenesis Test is the observation of the formation of ulcers in the stomach. Ulcer is a lesion on the surface of the skin or a mucous surface, produced by the sloughing of inflammatory necrotic tissue.
+LesionVolumeTest	false	Lesion Volume Test is the histological examination of the damaged or abnormal tissue after spinal cord injury post-mortem.
+AxonalSproutingTest	false	Axonal Sprouting Test is the investigation of axonal outgrowth with histological methods, which is different from long-distance axonal regeneration. The process of axonal sprouting results in reformation of a growth cone by the tip of an injured axon, or in collateral sprouting of an injured or uninjured axon. Collateral sprouting is the process in which outgrowths develop from the shafts of existing axons. Long distance axonal sprouting is defined as axonal regeneration.
+Neutral	true	Neutral is a property of a result of a study and means that the subject experiences neither advantages nor disadvantages with regard to the observed function or state. If a treatment is tested against a control situation neutral would mean that the treatment failed to show any benefit for the subject.
+DigiGait	true	DigiGait is a high performance digitalimaging system for gait analysis in rat and mouse.
+DMSO	false	DMSO or dimethylulfoxide is a highly polar organic liquid, that is used widely as a chemical solvent. Because of its ability to penetrate biological membranes, it is used as a vehicle for topical application of pharmaceuticals. It is also used to protect tissue during CRYOPRESERVATION. Dimethyl sulfoxide shows a range of pharmacological activity including analgesia and anti-inflammation.
+Seikagaku	true	Seikagaku is a company which distributes compounds used in spinal cord injury experimental studies, among others.
+Dosage	false	Dosage is the concentration of a substance or solution of e.g. cells. It can apply for a treatment substance or an anaesthetic or even an outcome measure if e.g. body fluid is investigated.
+HargreavesApparatus	true	Hargreaves Apparatus is a device for measuring cutaneous hyperalgesia/allodynia with thermal stimulation, nociception.  It is also known as Plantar Test.
+RepeatedMeasureTrend	false	Repeated Measure Trend is the outcome of an experiment where multiple datapoints are collected from one group during a specified time course. It also describes measurements of recovery.
+Gelfoam	true	Gelfoam is a sterile, gelatin-base surgical sponge applied topically as an adjunct to hemostasis when the control of bleeding by conventional procedures is ineffective to reduce capillary ooze or is impractical. (From AMA Drug Evaluations Annual, 1994, p797)
+PartialTransection	false	Partial Transection is a process causing spinal cord injury by cutting of the spinal cord, resulting in incomplete spinal cord injury which leaves a certain amount of the grey and/or white matter intact.
+TouchSensation	true	Touch Sensation is the ability to sense skin contact via receptors in the skin.
+KeepingCondition	false	Keeping condition summarizes the circumstances under which an animal is kept. Keeping conditinons are defined by the animal care taker or the experimentator.
+Ibuprofen	false	Ibuprofen is a nonsteroidal anti-inflammatory agent with analgesic properties used in the therapy of rheumatism and arthritis.
+OpenFieldTest	false	Open Field Test is a functional test for locomotion in an open field where the animal can move freely. There are multiple aspects that can be monitored in this arrangement. Usually, neurologic scales are used to grade the animals locomotor skills.
+BALB_C_Mouse	true	Balb_C_Mouse or Balb/c Mouse is a mouse derived from albino mice stocks originally disseminated by Bagg (1913) to Snell in 1932 that has an albino coat with genotype A,b,c. The BALB/c mouse develops plasmacytomas upon injection with mineral oil, which form the mouse cell component of the mouse-human hybrid cells that are used in the production of monoclonal antibodies. This strain exhibits excellent breeding performance and a long life span which contribute to its being one of the most highly utilized of all available mouse strains.
+Pregabalin	false	Pregabalin is a gamma-aminobutyric acid (GABA) derivative that functions as a calcium channel blocker and is used as an anticonvulsant as well as an anti-anxiety agent. It is also used as an analgesic in the treatment of neuropathic pain and fibromyalgia.
+NektarTherapeuticsInc	true	Nektar Therapeutics INC  is a company which distributes compounds used in spinal cord injury experimental studies, among others.
+Contusion	false	Contusion is a process which leads to spinal cord lesion by inflicting mechanical force on the spinal cord from one side for a short moment.  "Contusion devices are designed to inflict a transient, acute injury to the spinal cord. The category includes weight-drop apparatuses,electromagnetic impactors and a recently described air gun device."doi:10.1038/sc.2014.91
+SpinalCentralPart	false	Spinal Central Part is the tissue in the spinal cord which is in the center, i.e. in the area of the central canal and surrounding tissue.
+UmbilicalCordBloodStemCell	false	Umbilical Cord Blood Stem Cells are pluripotent stem cells which are collected from the cord blood after child birth.
+MinipigSpecies	true	Minipig Species is a family of  miniature pigs (also mini pig, or micro pig, or teacup pig) which is a breed of pig developed and used for medical research or for use as a pet. Miniature pigs weigh between 75 pounds (34 kg) to 150 pounds (68 kg) when fully grown, while farm pigs may weigh more than 700 pounds (320 kg). They were first used for medical research in Europe before being introduced to the United States in the 1980s.
+SC58125	false	SC58125 is a COX-2 inhibitor with the chemical structure 1-((4-methylsulfonyl)phenyl)-3-trifluoromethyl-5-(4-fluorophenyl)pyrazole .
+TailVeinLocation	true	Tail Vein Location is the anatomical region of the vein that returns blood from the tail to the heart in animals where substances can be applied to.
+Weight	false	Weight is a physical quality inhering in a bearer that has mass near a gravitational body. Any weight measured in µg, g or other units.
+InjuryArea	false	Injury Area is the damaged area inside the spinal cord which spans between complete (e.g. a complete transection) or only very small like in a ventral lesion.
+Trend	false	Trend is the outcome or result of an investigative test.
+SpinalGrayMatter	false	Spinal Gray Matter is the region of the spinal cord that appears darker in color than the other type.  It is composed of neuronal cell bodies, neuropil, glial cells, capillaries but few myelinated nerve fibers.
+Caudal	false	Caudal is the anatomical location constituting or relating to a tail; situated near the tail.
+C6	true	C6 is the sixth of the seven cervical vertebrae.
+C7	true	C7 is the seventh of the seven cervical vertebrae.
+C2	true	C2 is the second of the seven cervical vertebrae.
+C3	true	C3 is the third of the seven cervical vertebrae.
+Lentivirus	false	Lentivirus is a genus of the family RETROVIRIDAE consisting of non-oncogenic retroviruses that produce multi-organ diseases characterized by long incubation periods and persistent infection. Lentiviruses are unique in that they contain open reading frames (ORFs) between the pol and env genes and in the 3' env region. Five serogroups are recognized, reflecting the mammalian hosts with which they are associated. HIV-1 is the type species.
+C4	true	C4 is the fourth of the seven cervical vertebrae.
+Micropipette	true	Micropipette is a laboratory tool commonly used in chemistry, biology and medicine to transport a measured volume of liquid, often as a media dispenser.
+C5	true	C5 is the fifth of the seven cervical vertebrae
+Duration	false	Duration is a temporal measurement of the time between two specified points.
+RocheMexico	true	Roche Mexico is a company which distributes compounds used in spinal cord injury experimental studies, among others.
+MacaqueMonkey	true	A genus of the subfamily CERCOPITHECINAE, family CERCOPITHECIDAE, consisting of 16 species inhabiting forests of Africa, Asia, and the islands of Borneo, Philippines, and Celebes.
+C1	true	C1 is the first of the seven cervical vertebrae.
+P188	false	P188 or Poloxamer 188 is a nonionic linear copolymer having an average molecular weight of 8400.
+MASCISImpactor	false	MASCIS Impactor or Multicenter Animal Spinal Cord Injury Study (MASCIS) impactor is an istrument for accurate and specific weight drop on the exposed spinal cord.
+CentralNervousSystem	false	Central Nervous System is an anatomical location comprising the brain, spinal cord, and meninges.
+BodyTemperatureMeasurement	false	Body temperature measurement is the quantification of a person’s or an animal's body temperature, which is an important indicator of the physiological state. Under experimental conditions, the body temperature is considered one important marker for the overall health state of a subject.
+InvestigationMethod	false	Investigation Method is a procedure that yields an experimental outcome (result). Experimental methods can be in vivo, in vitro or in silico procedures that are well described and can be referenced.
+ApoptosisTest	false	Apoptosis Test is the histological examination of the mechanisms by which CELL DEATH occurs (compare with NECROSIS and AUTOPHAGOCYTOSIS). Apoptosis is the mechanism responsible for the physiological deletion of cells and appears to be intrinsically programmed. It is characterized by distinctive morphologic changes in the nucleus and cytoplasm, chromatin cleavage at regularly spaced sites, and the endonucleolytic cleavage of genomic DNA; (DNA FRAGMENTATION); at internucleosomal sites. This mode of cell death serves as a balance to mitosis in regulating the size of animal tissues and in mediating pathologic processes associated with tumor growth.
+CompressionType	true	The "compression type" describes the type of an uncontrolled compression injury that was caused by an accident.
+VentralInjuryArea	true	Ventral Injury Area is the location of damaged spinal cord tissue after a lesion which is in direction to the the front or anterior part - in quadrupedal animals at the lower surface of the body.
+NeuronalCellLossTest	false	Neuronal Cell Loss Test is the examination of failure of neuroprotection, meaning the decrease in number of neruons.
+OSUImpactor	false	OSU or Ohio State University Impactor is an instrument for accurate and specific weight drop on the exposed spinal cord. The procedure involves laminectomy at the target level and spine stabilization using clamping. Similar to the IH impactor, the OSU device uses a computer feedback-controlled electromagnetic impactor. When triggered, a probe contacts and displaces the cord 30 μm to provide a replicable starting point. Then, the instrument compresses the cord a predetermined distance, generally between 0.8 and 1.1 mm, for a set amount of time, ~4 to 5 ms. The OSU device avoids multiple strikes, as the impounder is actively withdrawn.
+AxonalChangesTest	false	Axonal Changes Test is the investigation of any changes in axon morphology, physiology or function with histological methods. The axon is a projection of a neuron that conducts electrical impulses away from the neuronal cell body.
+ANOVA	true	ANOVA or analysis of variance is a data transformation in which a statistical test of whether the means of several groups are all equal.
+UrineVoidingTest	false	Urine Voiding Test or Urination Test is the examination of the discharge of urine, liquid waste processed by the kidney, from the body.
+AntiNG2Antibody	false	AntiNG2 Antibody is a neutralizing antibody to NG2, a chondroitin sulfate proteoglycan.
+BodyWeightExamination	false	Body Weight Examination is the record of the subjects body weight.
+Intrathecal	false	Intrathecal is an anatomical location inside the spinal canal (the canal in successive vertebrae through which the spinal cord passes-Wordnet definition) . For example, intrathecal immunoglobulin production means production of this substance in the spinal cord; intrathecal injection is an injection into the the spinal canal (intrathecal space surrounding the spinal cord), as in a spinal anaesthesia or in chemotherapy or pain management applications.
+MinipigModel	false	Minipig Model is an animal that is amenable to experimentation.  A miniature pig (also mini pig, or micro pig, or teacup pig) is a breed of pig developed and used for medical research or for use as a pet. Miniature pigs weigh between 75 pounds (34 kg) to 150 pounds (68 kg) when fully grown, while farm pigs may weigh more than 700 pounds (320 kg). They were first used for medical research in Europe before being introduced to the United States in the 1980s.
+ToxicityTest	false	Toxicity Test is the histological examination of toxic processes in the context of secondary degeneration after spinal cord injury.
+PValue	false	The P value, or calculated probability, is the probability of finding the observed, or more extreme, results when the null hypothesis (H0) of a study question is true – the definition of ‘extreme’ depends on how the hypothesis is being tested. P is also described in terms of rejecting H0 when it is actually true, however, it is not a direct probability of this state.
+BloodBrainBarrierTest	false	Blood Brain Barrier Test is the examination of the functionality of the blood brain barrier, a structure surrounding the central nervous system, consisting of specialized non-fenestrated tightly-joined endothelial cells with tight junctions that form a transport barrier for certain substances between the cerebral capillaries and the brain tissue.
+Injury	false	Injury or spinal cord injury is a process which leads to lesion of the spinal cord.
+TotalPopulationSize	false	No description provided
+Purification	true	Purification is a planned process to separate a material entity into different compositions of which one or more have are purified fractions that contain higher concentration of a desired component, while others contain impurities and are not of interest.
+SingleMeasureTrend	false	Single Measure Trend is the outcome of and experiment where only one timepoint per group is investigated.
+SpinalVentralHalf	false	Spinal Ventral Half is the spinal tissue from the central canal to the ventral border of the spinal cord tissue.
+InjuryByAccidentType	false	The "injury by accident type" describes some type of an uncontrolled injury that was caused by an accident.
+PBS	false	PBS or phospate buffered saline solution is a phosphate buffer, prepared from sodium phosphate, potassium phosphate and sodium chloride, where the pH is maintained by a phosphate--phosphoric acid equilibrium..
+Rostral	false	Rostral is the anatomical direction to the head.
+DislocationType	true	The "dislocation type" describes the type of an uncontrolled dislocation injury that was caused by an accident.
+GuineaPigSpecies	false	Guinea Pig Species is the taxonomic genus Cavia.
+VerticalGrid	true	Vertical grid is an apparatus consisting of a vertical metal or  plastic grid an animal has to climb. Muscle strength is measured.
+MotoRater	true	MotoRater is a standardized quantitative and objective kinematic evaluation of animal movement types for rats and mice.
+AsialoEPO	false	Asialoerythropoietin (asialoEPO) is a nonerythrogenic erythropoietin derivative.
+AnimalSpecies	false	Animal species is the name specifying one of the basic units of biological classification and taxonomic rank that specifies a group of organisms that share similar characteristics and can interbreed with one another to produce fertile offspring.
+InfusionDelivery	false	Infusion delivery is an injection that is continuous.
+LethargyObservation	false	Lethargy Observation is the assessment of a general state of sluggishness, listless, or uninterested, with being tired, and having difficulty concentrating and doing simple tasks. For laboratory animals the observation of lack of motion and explorative behaviour is often a sign for lethargy.
+Saline	false	Saline is a solution of salt and water. Saline usually refers to normal or physiological saline, which is an aqueous solution containing 0.9% sodium chloride.
+SelfMutilationObservation	false	Self Mutilation Observation is the assessment of a laboratory animal biting, eating up or scratching its own body parts to an extend which causes open wounds and even death.
+Ketamine	false	Ketamine is a cyclohexanone derivative used for induction of anesthesia. Its mechanism of action is not well understood, but ketamine can block NMDA receptors and may interact with sigma receptors.
+GripStrengthMeter	true	Grip Strength Meter is an automatic device, which measures the peak force and time resistance of grip-strenght.
+Erythropoietin	false	Erythropoietin is a glycoprotein hormone, secreted chiefly by the kidney in the adult and the liver in the fetus, that acts on erythroid stem cells of the bone marrow to stimulate proliferation and differentiation.
+qudt#Quantity	false	No description provided
+StaircaseTest	false	Staircase Test is a functional test for independent forelimb reaching and grasping, and for gripping abilities.The animal reaches downwards to grasp pellets on a staircase.
+Left	false	Left is the direction toward the side of the body to the west when facing north.
+Water	false	Water is a clear, odorless, tasteless liquid that is essential for most animal and plant life and is an excellent solvent for many substances. The chemical formula is hydrogen oxide (H2O). (McGraw-Hill Dictionary of Scientific and Technical Terms, 4th ed)
+PhotochemicalInjury	false	No description provided
+LaminectomyType	true	The "laminectomy type" describes the type of an uncontrolled laminectomy injury that was caused by an accident.
+UnilateralInjuryArea	true	Unilateral Injury Area is the injury are in the spinal cord after a lesion which is asymmetric to one lateral half of the spinal cord.
+NumericValue	false	Numeric Value is the measured quantitative value in an experiment.
+MonkeyModel	false	Monkey Model is an animal of the Haplorhini family that is amenable to experimentation.   A suborder of primates consisting of six families.
+StandardError	false	Property of the  Normal Distribution  Continuous frequency distribution of infinite range. Its properties are as follows: 1, continuous, symmetrical distribution with both tails extending to infinity; 2, arithmetic mean, mode, and median identical; and 3, shape completely determined by the mean and standard deviation.
+CorticospinalTract	false	Corticospinal Tract is the spinal segment of the nervous system fiber tract originating in the cortex inside the brain and projecting to the spinal cord.
+ImmuneCell	false	Immune cell is a cell of the immune system, including lymphocytes, granulocytes, mast cells, dendritic cells and macrophages/monocytes.
+Vibraknife	true	Vibrakniffe is an electronic vibrating sharp blade for cutting the spinal cord.
+Retrovirus	false	Retrovirus is a family of RNA viruses that infects birds and mammals and encodes the enzyme reverse transcriptase. The family contains seven genera: DELTARETROVIRUS; LENTIVIRUS; RETROVIRUSES TYPE B, MAMMALIAN; ALPHARETROVIRUS; GAMMARETROVIRUS; RETROVIRUSES TYPE D; and SPUMAVIRUS. A key feature of retrovirus biology is the synthesis of a DNA copy of the genome which is integrated into cellular DNA. After integration it is sometimes not expressed but maintained in a latent state (PROVIRUSES).
+TissueSparingTest	false	Tissue Sparing Test is the histological examination of rescue of tissue after injury and is the opposite test to lesion volume measurement.
+AirGunImpactor	true	Air Gun Impactor is a spinal cord injury causing device which is used in animal studies. It causes contusion of the spinal cord through compressed air.
+CytrexCorporation	true	Cytrex Corporation is a company which distributes compounds used in spinal cord injury experimental studies, among others.
+Pregnenolone	false	Pregnenolone is a 21-carbon steroid, derived from CHOLESTEROL and found in steroid hormone-producing tissues. Pregnenolone is the precursor to GONADAL STEROID HORMONES and the adrenal CORTICOSTEROIDS.
+PhysicalImplantTreatment	false	Physical Implant Treatment is the therapeutic intervention for spinal cord injury by implanting a device which influences physical attributed of the tissue after spinal cord injury, e.g. implantation of a vertebra stabilizing device.
+HeatSensation	true	Heat Sensation is the ability to detect high temperatures with recepors in the skin. It comprises the series of events in which a sensory heat stimulus is converted into a percieved senstation.
+OxidativeStressTest	false	Oxidative Stress Test is the histological examination of a disturbance in the prooxidant-antioxidant balance in favor of the former, leading to potential damage. Indicators of oxidative stress include damaged DNA bases, protein oxidation products, and lipid peroxidation products (Sies, Oxidative Stress, 1991, pxv-xvi).  Measurement of Malondialdehyde (MDA) or Myeloperoxidase (MPO) activity is a standard test for oxidative stress.
+Blade	false	Blade is a class of sharp cutting instruments like razor blades, scalpels etc.
+AtropineSulfate	false	Atropine sulfate is a medication applied to stabilize the heart rate during surgery.
+DosageIntracorporal	false	Dosage Intracorporal is the total quantity or strength of a substance administered at one time measured as concentration inside the body, usually as unit/kg body weight.
+Person	false	Person is the author of a published study.
+ChinaShenyangSunshinePharmaceuticalCompany	true	http://www.3sbio.com/en/
+VonFreyFilaments	true	Von Frey Filaments or the Von Frey Anaesthesiometer are plastic filaments with calibrated bending force, used for testing mechanical sensitivity, allodynia,  neuropathic pain.
+Gender	false	Gender is the range of physical, mental, and behavioral characteristics distinguishing between masculinity and femininity.
+ChondroitinaseABC	false	Chondroitinase ABC or chondroitin ABC lyase  is an enzyme that catalyzes the eliminative degradation of polysaccharides containing 1,4-beta-D-hexosaminyl and 1,3-beta-D-glucuronosyl or 1,3-alpha-L-iduronosyl linkages to disaccharides containing 4-deoxy-beta-D-gluc-4-enuronosyl groups. (Enzyme Nomenclature, 1992)
+PostSurgeryCondition	false	Postsurgery condition comprises medication after surgery and all actions necessary to keep the subject in a stable state.
+CompleteTransectionType	true	The "complete transection type" describes the type of an uncontrolled complete transection injury that was caused by an accident.
+ZeroSignificance	false	Zero Significance is the test result of a statistical test which confirms that a null hypothesis can not be rejected and - if two or more groups were compared - the difference between  these groups is not statistically significant, i.e. a certain p value (usually above 0.05) was computed.
+AntibioticMedication	false	Antibiotic medication is the substance applied to the subject to prevent infections after surgery or to treat an infection.
+Embryonic	true	Embryonic is the definition of the source of a stem cell which is used for transplantation. It means that this stem cell was derived from embryonic tissue.
+InfectionExamination	false	Infection Examination is the assessment of the invasion of the organism by a micsoorganism that can cause pathological conditions or disease.
+StemCellSourceType	false	No description provided
+Tetracycline	false	Tetracycline is a naphthacene antibiotic that inhibits amino acyl tRNA binding during protein synthesis.
+ChemicalInjury	false	Chemical Innjury or chemical spinal cord injury is a process leading to a lesion or damage to the spinal cord using a photochemical dye and illumination.
+LimbMuscleStrengthTest	false	Limb Muscle Strength Test is the examination of the fore- or hindlimb muscle strength during voluntary movement.
+time#TemporalEntity	false	Temporal Entity is a temporal interval or instant.
+17BetaEstradiolE2	false	17Beta Estradiol E 2 is the 17-beta-isomer of estradiol, an aromatized C18 steroid with hydroxyl group at 3-beta- and 17-beta-position. Estradiol-17-beta is the most potent form of mammalian estrogenic steroids.
+EpiduralClip	false	Epidural Clip is a surgical instrument used to inflict a compression injury to the spinal cord. The clipping device is not further specified. It is placed epidurally to inflict the spinal cord lesion.
+ElectrophysiologyTest	false	Electrophysiology Test is a test investigating the generation and behavior of electrical charges in living organisms particularly the nervous system and the effects of electricity on living organisms.
+RunwayScan	true	Runway Scan is a gait analysis software for walkways for rats and mice.
+Hormone	false	Hormone is a chemical substance having a specific regulatory effect on the activity of a certain organ or organs. The term was originally applied to substances secreted by various endocrine glands and transported in the bloodstream to the target organs. It is sometimes extended to include those substances that are not produced by the endocrine glands but that have similar effects.
+RingersSolution	false	Ringers Solution is a physiological salt solution containing sodium chloride, potassium chloride, calcium chloride, magnesium sulfate, potassium dihydrogen phosphate, sodium bicarbonate and glucose.
+GaitControlAbility	true	Gait Control Ability is the general function to execute walking behavioiur on purpose.
+WalkingAnalysisTest	false	Walking Analysis Test is the examination of walking kinematics and kinetics either using a treadmill or another device, or in the open field.
+SomatosensoryEvokedPotentialsTest	false	Somatosensory Evoked Potentials Test or SSEP test is the examination of the electric response evoked in the cerebral cortex by stimulation along afferent pathways from peripheral nerves to cerebrum.
+BoneMarrowStemCell	false	Bone Marrow Stem Cells are stem cells which originate from the red bone marrow and give rise to blood cells. They are also called hematopoietic stem cells.
+BloodCirculationExamination	false	Blood Circulation Examnation is the assessment of the movement of the blood as it is pumped through the cardiovascular system.
+Thoracic	true	Thoracic is the anatomical region comprising one or more of 12 (in some animals 13) vertebrae in the vertebral column. The thoracic vertebrae are situated between the seventh cervical vertebra down to the first lumbar vertebra.
+PEGFITC	false	PEG FITC or Polyethylene glycol coupled to Fluorescein-5-isothiocyanate is a polymer of ethylene oxide and water, or its ethers. They vary in consistency from liquid to solid depending on the molecular weight indicated by a number following the name. They are used as surfactants, dispersing agents, solvents, ointment and suppository bases, vehicles, and tablet excipients. Some specific groups are nonoxynols, octoxynols amd poloxamers.  PEG is coupled to FITC, a fluorescent probe capable of being conjugated to tissue and proteins. It is used as a label in fluorescent antibody staining procedures as well as protein- and amino acid-binding techniques.
+Judgement	false	Judgement is a property of a result of an experiment, it is a part of the interpretation of the observation resulting from a treatment - or the lack of a treatment - after spinal cord injury and is focused on the subjects or patients of the study.  A Judgement is stated by the author of a study.
+AntiNogoAAntibody	false	AntiNOGO Antibody is an antibody to the Nogo protein. Nogo protein is a neurite growth inhibitor restricting the structural plasticity and regeneration of nerve fibers in the adult vertebrate CNS; Nogo-66 refers to the 66-residue extracellular domain; has been sequenced.
+LewisRat	true	Lewis rat is a rat strain developed by Dr. Lewis from Wistar stock in the early 1950s. To Charles River from Tulane in 1970 at F34.
+RehabilitativeTraining	false	Rehabilitative Training is a therapeutic intervention for spinal cord injury by physical exercise.
+Isoflurane	false	Isoflurane is a liquid which is evaporated as a halogenated ether gas for inhalation anaesthesia.
+SigmaAldrich	true	Sigma Aldrich is a company which distributes compounds used in spinal cord injury experimental studies, among others.
+ScarringTest	false	Scarring Test is the histological examination of the fibrous tissue that replaces normal tissue during the process of wound healing. After spinal cord injury, a glial scar forms at the lesion penumbra while a fibrous scar forms in its core.
+MeasurementOfDecreasingTemperature	true	Measurement of decreasing temperature is the observation of decreased body temperature of an organism compared to the ground state, e.g., before and after injury or treatment.
+Treatment	false	Treatment is the therapeutic intervention for spinal cord injury which is applied to a subject in a study.
+Lumbar	true	Lumbar is the anatomical region comprising any one or more of the five bones situated between the thoracic vertebrae and the sacrum in the lower part of the spine.
+MagnesiumSulfate	false	Magnesium Sulfate is a small colorless crystal used as an anticonvulsant, a cathartic, and an electrolyte replenisher in the treatment of pre-eclampsia and eclampsia. It causes direct inhibition of action potentials in myometrial muscle cells. Excitation and contraction are uncoupled, which decreases the frequency and force of contractions. (From AMA Drug Evaluations Annual, 1992, p1083)
+NeuronalChangesTest	false	Neuronal Changes Test is the investigation of any alterations in cell morphology, physiology or function of neurons, perfomed with histological methods. Neurons are the basic cellular units of nervous tissue. Each neuron consists of a body, an axon, and dendrites. Their purpose is to receive, conduct, and transmit impulses in the nervous system.
+GroomingObservation	false	Grooming Observation is the assessment of an animal's cleaning and caring for the body surface. This includes preening, the cleaning and oiling of feathers with the bill or of hair with the tongue.
+Compression	false	Compression (or crush) of the spinal cord is a process naturally caused by bone fragments, tumors or other pathological conditions. In the experimental spinal cord injury model, compression means a constant force being inflicted on the spinal cord from one or multiple sides simultaneously. This is in contrast to contusion, where a short term force is inflicted on the spinal cord from one side.
+AxonalRegenerationTest	false	Axonal Regeneration Test is the investigation of outgrowth of an injured axon over a long distance, measured with histological methods. Usually stated in the text as "axonal regeneration" or "axonal regrowth". This is in contrast to axon sparing or axon sprouting which could also stand for the growth of unlesioned axons or the formation of new collaterals.
+TakedaPharmaceuticalCompany	true	Takeda Pharmaceutical Company is a company which distributes compounds used in spinal cord injury experimental studies, among others.
+StudyDesign	false	Study Design is a plan detailing how a study will be performed in order to represent the phenomenon under examination, to answer the research questions that have been asked, and defining the methods of data analysis. Study design is driven by research hypothesis being posed, study subject/population/sample available, logistics/resources: technology, support, networking, collaborative support, etc.
+CatModel	false	Cat Model is an animal of the carnivore family Felidae that is amenable to experimentation.
+GuineaPigModel	false	Guinea Pig Model is an animal of the genus Cavia that is amenable to experimentation.
+CD2_Mouse	true	CD2_Mouse is a genetically modified mouse with an human CD2 gene.
+ExperimentalProcedure	false	Experimental procedure is a process carried out in a laboratory which alters the composition or state of an organism, tissue, cell or substance.
+MonkeySpecies	false	Monkey Species is the taxonomix Haplorhini family.   A suborder of primates consisting of six families.
+Length	false	Length is the linear extent in space from one end of something to the other end, or the extent of something from beginning to end.
+NovartisMexico	true	Novartis is a company which distributes compounds used in spinal cord injury experimental studies, among others.
+NeurologicScalesTest	false	Behavior Rating Scale Instrument designed to assess human or animal behavior, using a standardized format.
+SlowerIncrease	true	Slower Increase is an observed qualitative difference between experimental groups in the course of an experiment and indicates a decreased velocity or longer time to reach an elevated level of an investigated property or variable. It also describes measurements of recovery.
+PublicationYear	false	No description provided
+Lipopolysaccharide	false	Lipopolysaccharides are lipid-containing polysaccharides which are endotoxins and important group-specific antigens. They are often derived from the cell wall of gram-negative bacteria and induce immunoglobulin secretion. The lipopolysaccharide molecule consists of three parts: LIPID A, core polysaccharide, and O-specific chains (O ANTIGENS). When derived from Escherichia coli, lipopolysaccharides serve as polyclonal B-cell mitogens commonly used in laboratory immunology. (From Dorland, 28th ed)
+PubmedID	false	No description provided
+Vehicle	false	Vehicle is a carrier or inert medium used as a solvent (or diluent) in which the medicinally active agent is formulated and or administered. (Dictionary of Pharmacy, 1986)
+ManualDexterityTest	false	Manual Dexterity Test is a functional test of skill in performing tasks with the hand.
+FunctionalTest	false	Functional Test or physical assessment is an experimental investigation method which tests for normal or impaired physiological function of the living organism.
+Xenogeneic	true	Xenogeneic is the biological relation of two biological entities and describes the circumstance that both entities are from different individuals which are genetically different. Ususally this refers to transplantation of cells or tissue from one species to a host of another species.
+AvoidanceResponseTest	false	Avoidance Response Test is the examination of any measurable or observable characteristic related to the actions or reactions of an organism pertaining to the ability to associate a previously neutral stimulus with an unpleasant or punishing stimulus so that the animal learns to avoid the previously neutral stimulus.
+TShapedLesion	true	T Shaped Lesion is the description of an injury area inside the spinal cord which is comprising the bilateral dorsal hemisection and complete midline transection.
+DislocationDevice	true	Dislocation Device is an apparatus for causinf spinal cord injury. The device consisted of two horizontal beams that can be attached the lateral surfaces of bodies of adjacent vertebrae by means of adjustable sliding clamps. One beam is rigidly fixed, whereas the other beam is used to laterally displace the lower attached vertebrae to a specified distance (1–20 mm) and speed (50–150 mm s−1) for a time period of 1 s.
+PolyethyleneGlycolPEG	false	Polyethyleneglycol or PEG are polymers of ETHYLENE OXIDE and water, and their ethers. They vary in consistency from liquid to solid depending on the molecular weight indicated by a number following the name. They are used as SURFACTANTS, dispersing agents, solvents, ointment and suppository bases, vehicles, and tablet excipients. Some specific groups are NONOXYNOLS, OCTOXYNOLS, and POLOXAMERS.
+SpinalLesionSite	false	Spinal Lesion Site is the tissue from the spinal cord injury lesion core (possibly including adjacent tissue).
+Tissue	false	Tissue is a multicellular anatomical structure that consists of many cells of one or a few types, arranged in an extracellular matrix such that their long-range organisation is at least partly a repetition of their short-range organisation.
+Allogeneic	true	Allogeneic is the biological relation of two biological entities and describes the circumstance that both entities are from different individuals of the same species.
+OrganismModel	false	Organism Model is the subject of an experiment in research which represents the population of similar organisms.
+CompoundBiologicalRelation	false	Compound biological relation is the relation of the biological compound source which is used as a treatment for spinal cord injury to the host organism.
+HematoxyLinEosin	false	HematoxylinEosin is a mix of hematoxylin, dye obtained from the heartwood of logwood (Haematoxylon campechianum Linn., Leguminosae) used as a stain in microscopy and in the manufacture of ink and Eosine, a versatile red dye used in cosmetics, pharmaceuticals, textiles, etc., and as tissue stain, vital stain.
+InflammationTest	false	Inflammation Test is the histological examination of a pathological process characterized by injury or destruction of tissues caused by a variety of cytologic and chemical reactions involving cells of the immune system.
+DogModel	false	Dog Model is an animal of the carnivore family Canidae that is amenable to experimentation.
+GaitTest	false	Gait Test is the examination of the pattern of movement of the limbs of animals or legs of humans, characterized by elements of progression, stability, speed and length over the ground.
+Observation	false	Observation is the group of variables, qualitative states and any physical changes during an experiment.
+OsmoticMinipump	true	Osmotic Minipump is an Implantable pump for slow substance release by osmotic pressure.
+AnimalCareCondition	false	Animal care condition is a process performed according to an animal care protocol, which specifies the conditions of animal keeping and pre- and postsurgical medical care. Depending on the severity of the injury, medication and special care like e.g. manual bladder voiding is necessary in the postsurgical phase.
+OscillatingFieldStimulator	true	Oscillating Field Stimulator is a device used to apply an oscillating electric field to the spinal cord. It consists of mulitple parts which are either implanted or placed above the bone or skin.
+FluanisoneMidazolamMixture	false	Fluanisone Midazolam Mixture is a typical sedative mixture for anaesthesia induction and maintenance containing the two components fluanisone and midazolam.
+BBBSubscoreTest	false	BBB Subscore Test is a system to rate single locomotion abilities in a 7-point scale originating from the Basso-Beattie-Bresnahan locomotor scale.
+WistarRat	true	A strain of albino rat developed at the Wistar Institute that has spread widely at other institutions. This has markedly diluted the original strain.
+NeuroprotectionTest	false	Neuroprotection Test is the examination of the physiological processes and techniques used by the body to prevent neuronal injury and degeneration in the central nervous system following acute disorders or as a result of chronic neurodegenerative diseases.
+GroupName	false	Experimental groups are often described with synonyms in a scientific text, e.g. control group ('control') versus treated group ('treated').
+Right	false	Right is the anatomical location toward the side of the body to the east when facing north.
+Aged	true	Aged is a specific age category of the experimental subject as defined by the author, usually reflecting a long mature or geriatric state, possibly combined with age-specific degeneration of motor and physiological function. The exact age of an aged organism differs between species.
+Frequency	false	No description provided
+ApplicationInstrument	false	Application Instrument is an instrument for pharmacological treatment administration, i.e. syringe or osmotic minipump.
+SurgeryTreatment	false	Surgery Treatment is a surgical procedure as therapeutic intervention for spinal cord injury as e.g. decompression surgery.
+ChloralHydrate	false	Chloral hydrate is a hypnotic pharmacological drug with sedative and hypnotic effects.
+VertebralLocation	false	Vertebral Location is the anatomical region of the vertebral column.
+MolecularChangesTest	false	Molecular Changes Test is the investigation of changes of molecular composition or signal pathways or molecular signal function using molecular biology methods.
+SecondaryDegenerationTest	false	Secondary Degeneration Test is the histological examination of the process of degeneration of tissue after the initial impact. This process can last for several days or weeks after spinal cord injury.
+Steroid	false	A group of polycyclic compounds closely related biochemically to TERPENES. They include cholesterol, numerous hormones, precursors of certain vitamins, bile acids, alcohols (STEROLS), and certain natural drugs and poisons. Steroids have a common nucleus, a fused, reduced 17-carbon atom ring system, cyclopentanoperhydrophenanthrene. Most steroids also have two methyl groups and an aliphatic side-chain attached to the nucleus. (From Hawley's Condensed Chemical Dictionary, 11th ed)
+Autologous	true	Autologous is the biological relation of two biological entities and describes the circumstance that both entities are from the same individual.
+SpinalFiberTract	false	Spinal Fiber Tract comprises a bundle of neuronal projections inside the spinal cord.
+MicrodialysisDelivery	false	Microdialysis delivery is a substance delivery method using a small probe equipped with a semipermeable membrane.
+VertebralArea	false	Vertebral Area is a spatial location which spans from a higher vertebral bone to a lower vertebral bone. It can comprise vertebrae from different segments, e.g. T10 to L2.
+RubrospinalTract	false	Rubrospinal Tract is the spinal fiber tract originating from the nucleus ruber in the brain, descending into the spinal cord.
+PainTest	false	Pain Test are scales, questionnaires, tests, and other methods used to assess pain severity and duration in patients or experimental animals to aid in diagnosis, therapy, and physiological studies. [MeSH 2014_2014_02_10].
+DorsalColumn	false	Dorsal Column is the dorsal portion of the white matter of the spinal cord; consists primarily of axons that relay somatic sensory information to the medulla.
+InjuryIntensity	false	Injury Intensity or severity is a measure for the severity of a spinal cord injury. It can be mild, moderate, severe etc..
+SchwannCell	false	Schwann cells are glia cells of the peripheral nervous system which play an important role in peripheral nerve regeneration.
+Retransection	true	Retransection is a surgical procedure applied in preclinical spinal cord injury research where the spinal cord is transected after an initial lesion and recovery time in order to verify that a functional benefit was due to axonal regrowth.
+InVitroExperimentalProcedure	false	In vitro experimental procedure is a planned process which is carried out outside the body and results in physical changes of biological entities like cells.
+NYUImpactor	false	NYU Impactor or New York University (NYU) impactor is an instrument for accurate and specific weight drop on the exposed spinal cord.The injury procedure involves performing a laminectomy at the targeted level and stabilization of the spinal cord by means of clamps. A rod of specific weight, usually 10 g, is dropped from a precise height above the surface of the cord to induce SCI of defined severity. Key parameters such as height, time, velocity upon impact and cord compression are recorded digitally that enable experiments to be analyzed and discarded if out of desired range.
+RecombinantEPORhEpo	false	Recombinant EPO (R hEPO) is the recombinant form of a glycoprotein hormone, secreted naturally chiefly by the KIDNEY in the adult and the LIVER in the FETUS, that acts on erythroid stem cells of the BONE MARROW to stimulate proliferation and differentiation.
+Sacral	true	Sacral is the anatomical region comprising any one or more of the usually five fused vertebrae forming the triangular bone just below the lumbar vertebrae.
+PfizerMexico	true	Pfizer Mexico is a company which distributes compounds used in spinal cord injury experimental studies, among others.
+NonNumericValue	false	No description provided
+BBBTest	false	BBB Test is a scale for locomotion in the rat: Basso-Beattie-Bresnahan locomotor scale. This open field walking score measures recovery of hindlimb movements in rats during free open field locomotion as described by Basso et al.
+Magnesium	false	Magnesium is a metallic element that has the atomic symbol Mg, atomic number 12, and atomic weight 24.31. It is important for the activity of many enzymes, especially those involved in OXIDATIVE PHOSPHORYLATION.
+None	true	None is the observation that there is no qualitative difference between experimental groups in the course of an experiment.
+IntramuscularLocation	true	Intramuscular Location is the anatomical location for substance application within a muscle.
+Clip	false	Clip is a surgical instrument used to inflict a compression injury to the spinal cord.
+No5DumontForeceps	true	No5 Dumont Forceps is a specific type of forceps often used in experimental spinal cord injury studies for compression of the spinal cord.
+NT3Lentivirus	false	NT3 Lentivirus is a lentiviral vector expressing neurotrophin-3 or NT-3.
+Intraspinal	false	Intraspinal is an anatomical location inside the central nervous tissue within the vertebral column.
+Positive	true	Positive is a property of a result of a study and means that the subject experiences advantages with regard to the observed function or state. If a treatment is tested against a control situation positive would mean that the treatment succeeds to benefit the subject.
+MouseModel	false	Mouse Model is an animal of the genus Mus that is amenable to experimentation.
+ModerateInjury	true	Moderate Injury is a medium degree of severity for spinal cord injury.
+AlphaSignificanceNiveau	false	No description provided
+Catheter	true	Catheter is a flexible, tubular device that is used to carry fluids into or from a blood vessel, hollow organ, or body cavity.
+LouisvilleSwimScale	false	Louisville Swim Scale is a scale that evaluates three characteristics of swimming that are highly altered by spinal cord injury— namely, hindlimb movement, forelimb dependency, and body position.
+Balloon	false	Balloon is an injury device inserted into the epidural space and inflated by saline or air to cause a graded spinal cord injury without damaging surrounding tissue.
+GeneExpressionAnalysis	false	Gene Expression Analysis is the examination of the process in which a gene's sequence is converted into a mature gene product or products (proteins or RNA). This includes the production of an RNA transcript as well as any processing to produce a mature RNA product or an mRNA or circRNA (for protein-coding genes) and the translation of that mRNA or circRNA into protein. Protein maturation is included when required to form an active form of a product from an inactive precursor form.
+DorsalHemisection	false	Dorsal Hemisection is the partial transection of the spinal cord, leaving ventral spinal tracts intact.
+Sacrifice	true	Sacrifice is the process of killing an experimental animal.
+LocomotorTest	false	Locomotor Test is the examination of movement or the ability to move from one place or another. It can refer to humans, vertebrate or invertebrate animals, and microorganisms.
+SubstanceApplicationLocation	false	Substance Application Location is the anatomical region where a substance or a compound is applied to the body.
+MPSS	false	MPSS or methylprednisolone sodium succinate is a prednisolone derivative with similar anti-inflammatory action.
+Brain	false	Brain is the part of the central nervous system that is contained within the skull.
+MildInjury	true	Mild Injury is the minor degree of severity of a spinal cord injury.
+CompoundTreatment	false	Compound Treatment is a therapeutic intervention for spinal cord injury which includes the application of a substance, cell, implant etc. which is either applied locally or systemically.
+DistractionType	true	The "distraction type" describes the type of an uncontrolled distraction injury that was caused by an accident.
+Thickness	false	Thickness is the dimension between two surfaces of an object, usually the smallest dimension as opposed to the width or the length.
+CatSpecies	true	Cat Species is the taxonomic family (Felidae) which includes domestic and wild cats such as lions and tigers.
+OralDelivery	false	Oral delivery is the giving of drugs, chemicals, or other substances by mouth.
+VentricularLocation	true	Ventricular location is an anatomical locus in one of the systems of communicating cavities in the brain that are continuous with the central canal of the spinal cord, that like it are derived from the medullary canal of the embryo, that are lined with an epithelial ependyma, and that contain a serous fluid
+FasterIncrease	true	Faster Increase is an observed qualitative difference between experimental groups in the course of an experiment and indicates an increased velocity or shorter time to reach an elevated level of an investigated property or variable. It also describes measurements of recovery.
+NeurogenesisTest	false	Neurogenesis Test is the examination of formation of neurons which involves the differentiation and division of stem cells in which one or both of the daughter cells become neurons.
+CystVolumeTest	false	Cyst Volume Test is the histological examination of any fluid-filled closed cavity or sac that are lined by an EPITHELIUM in the spinal cord. Cysts can be of normal, abnormal, non-neoplastic, or neoplastic tissues.
+MotorEvokedPotentialsTest	false	Motor Evoked Potentials Test or MEP test is the examination of the electrical response evoked in a muscle or motor nerve by electrical or magnetic stimulation. Common methods of stimulation are by transcranial electrical and transcranial electric stimulation. It is often used for monitoring during neurosurgery.
+Higher	true	Higher is an observed qualitative difference between experimental groups in the course of an experiment and indicates an increased value or amount of a certain measured property.
+DorsalInjuryArea	true	Dorsal Injury Area is the location of damaged spinal cord tissue after a lesion which is in direction to the the end or posterior part - in quadrupedal animals at the upper surface of the body.
+CardioVascularFunctionTest	false	Cardiovascular Function Test is the examination of the physiological phenomena, processes and properties of the cardiovascular system as a whole or of any of its parts.
+GeneticModificationTreatment	false	Genetic Modification Treatment is a procedure of influencing gene expression of an organism in order to study the effect of a certain molecule.
+SensoryFunction	false	Sensory Function or Sensory System Function is the extent to which an individual correctly senses skin stimulation, sounds, proprioception, taste and smell, and visual images.
+NS398	false	NS398 is a C-nitro compound that is N-methylsulfonyl-4-nitroaniline bearing an additional cyclohexyloxy substituent at position 2.
+MotorFunction	false	Motor Function is the ability of to control and move muscles in order to achieve a desired motion.
+Force	false	Force is the extent to which an object with mass can be caused to accelerate. It is a derived quantity in the International System of Units. Force is mass times acceleration.
+Dedifferentiation	true	Dedifferentiation is the process in which a specialized structure (cell, tissue or organ) loses structural or functional features that characterize it in the mature organism, or some other relatively stable phase of the organism's life history. Under certain conditions, these structures can revert back to the features of their ancestors.
+PositiveSignificance	false	Positive Significance is the test result of a statistical test which confirms that a null hypothesis could be rejected and - if two or more groups were compared - the difference between  these groups is statistically significant, i.e. a certain p value (usually below 0.05) was computed.
+Mexiletine	false	Mexiletine is an antiarrhythmic agent pharmacologically similar to LIDOCAINE. It may have some anticonvulsant properties.
+UnivOfTriesteImpactor	false	The University of Trieste or UTS impactor device is used to inflict accurate and specific weight drop on the exposed spinal cord.
+Hyperalgesia	true	Hyperalgesia is an increased sensation of pain or discomfort produced by mimimally noxious stimuli due to damage to soft tissue containing nociceptors or injury to a peripheral nerve.
+GaleRatingScoreTest	false	Gale Rating Scale is a neurologic scale for rating behaviour in rats.
+Faster	true	Faster is an observed qualitative difference between experimental groups in the course of an experiment and indicates an increased velocity or shorter time to reach a certain status. It also describes measurements of recovery. It also describes measurements of recovery.
+AnimalModel	false	Animal Model is an animal that is amenable to experimentation and whose physiological or pathologic mechanisms are sufficiently similar to those of a human for the animal to serve as a model.
+Antibody	false	An antibody or immunoglobulin is a multi-subunit protein which functions in immunity. They are produced by B lymphocytes and are comprised of two heavy and two light chains with additional ancillary polypeptide chains depending on their isoforms. The variety of isoforms include monomeric or polymeric forms, and transmembrane forms or secreted forms. They are divided by the amino acid sequence of their heavy chains into five classes and various subclasses.
+Syngenic	true	Syngenic is the biological relation of two biological entities and describes the circumstance that both entities are from different individuals which are genetically identical.
+OligodendrogliaChangesTest	false	Oligodendroglia Changes Test or Oligocyte Changes Test is the examination of any histological alterations in a class of large neuroglial (macroglial) cells in the central nervous system. Oligodendroglia may be called interfascicular, perivascular, or perineuronal according to their location. They form the insulating myelin sheath of axons in the central nervous system.
+Young	true	Young is a specific age category of the experimental subject as defined by the author, usually defined as pre-mature state. The exact age of a young organism differs between species.
+OrthoBiotech	true	Ortho Biotech is a company which distributes compounds used in spinal cord injury experimental studies, among others.
+AspirationLesion	false	Aspiration Lesion is a spinal cord injury applied by a vacuum or low pressure to the spinal cord tissue, leaving a gap in the tissue.
+Nutrition	true	Nutrition is the procedure of feeding of subjects after spinal cord injury.
+DosageExtracorporal	false	Dosage Extracorporal is the total quantity or strength of a substance administered at one time measured as concentration in a liquid or vehicle.
+EstradiolBenzoate	false	Estradiol benzoate is a compound of estradiol, the 17-beta-isomer of estradiol, an aromatized C18 steroid with hydroxyl group at 3-beta- and 17-beta-position and benzoate.
+Negative	true	Negative is a property of a result of a study and means that the subject experiences disadvantages with regard to the observed function or state.
+EvansBlue	false	Evans Blue is an azo dye used in blood volume and cardiac output measurement by the dye dilution method. It is very soluble, strongly bound to plasma albumin, and disappears very slowly.
+Laminectomy	false	Laminectomy is a surgical procedure that entails removing all (laminectomy) or part (laminotomy) of selected vertebral lamina to relieve pressure on the SPINAL CORD and/or SPINAL NERVE ROOTS. Vertebral lamina is the thin flattened posterior wall of vertebral arch that forms the vertebral foramen through which pass the spinal cord and nerve roots.

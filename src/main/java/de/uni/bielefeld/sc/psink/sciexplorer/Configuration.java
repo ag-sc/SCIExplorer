@@ -17,12 +17,14 @@ import main.java.de.uni.bielefeld.sc.psink.sciexplorer.sparql.SPARQLDatabaseInte
  * @author ABOROWI
  */
 public class Configuration {
+	
+	private static final int ONTOLOGY_VERSION = 63;
 	/**
 	 * Filenames of CSV-Files
 	 */
-	public static final String CSV_RELATIONS_FILE = "scio_v_51_relations.csv";
-	public static final String CSV_CLASSES_FILE = "scio_v_51_classes.csv";
-	public static final String CSV_SUBCLASSES_FILE = "scio_v_51_subclasses.csv";
+	public static final String CSV_RELATIONS_FILE = "scio_v_" + ONTOLOGY_VERSION + "_relations.csv";
+	public static final String CSV_CLASSES_FILE = "scio_v_" + ONTOLOGY_VERSION + "_classes.csv";
+	public static final String CSV_SUBCLASSES_FILE = "scio_v_" + ONTOLOGY_VERSION + "_subclasses.csv";
 
 	/**
 	 * During the generation of search tree, exclude relations mentioned here.
@@ -32,7 +34,7 @@ public class Configuration {
 	/**
 	 * File name of the RDF triple data.
 	 */
-	public static final String RDF_TRIPLES_FILE = "brigitte_full25_v51.n-triples";
+	public static final String RDF_TRIPLES_FILE = "brigitte_full25_v" + ONTOLOGY_VERSION + ".n-triples";
 
 	/**
 	 * URIs of resources
@@ -85,8 +87,10 @@ public class Configuration {
 	 * {@value #SPARQL_ROOT_VARIABLENAME}.
 	 */
 
+	// TODO: investigate, if things are missing for new version 63!!
+	
 	public static final String[] PATH_TREATMENTS_COMPOUND = new String[] { "TargetExperimentalGroup", "TreatmentTypes",
-			"Treatment", "CompoundTreatment", "SuppliedCompound", "Compound", "Compound" };
+			"Treatment", "CompoundTreatment", "Compound", "Compound" };
 
 	public static final String[] PATH_TREATMENTS_COMPOUND_DOSAGE = new String[] { "TargetExperimentalGroup",
 			"TreatmentTypes", "Treatment", "CompoundTreatment", "Dosage" };

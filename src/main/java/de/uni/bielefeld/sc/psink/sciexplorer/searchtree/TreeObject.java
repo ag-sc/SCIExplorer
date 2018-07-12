@@ -14,7 +14,12 @@ import java.io.Serializable;
  */
 public abstract class TreeObject implements Serializable
 {
-    public static boolean isRelation(TreeObject object)
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -3038420636239045613L;
+
+	public static boolean isRelation(TreeObject object)
     {
         return object.getClass() == Relation.class;
     }

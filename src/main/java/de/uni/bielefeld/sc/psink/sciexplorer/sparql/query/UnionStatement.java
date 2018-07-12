@@ -16,11 +16,15 @@ import java.util.List;
  */
 public class UnionStatement extends AbstractStatement implements Serializable
 {   
-    private final List<List<AbstractStatement>> blocks;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3231904094044918857L;
+	private final List<List<AbstractStatement>> blocks;
     
     public UnionStatement()
     {
-        this.blocks = new LinkedList();
+        this.blocks = new LinkedList<List<AbstractStatement>>();
     }
     
     public UnionStatement(List<AbstractStatement> block)
@@ -32,7 +36,7 @@ public class UnionStatement extends AbstractStatement implements Serializable
     public UnionStatement(AbstractStatement block)
     {
         this();
-        LinkedList<AbstractStatement> statements = new LinkedList();
+        LinkedList<AbstractStatement> statements = new LinkedList<AbstractStatement>();
         statements.add(block);
         blocks.add(statements);
     }
@@ -49,7 +53,7 @@ public class UnionStatement extends AbstractStatement implements Serializable
     
     public void addBlock(AbstractStatement statement)
     {
-        LinkedList<AbstractStatement> statements = new LinkedList();
+        LinkedList<AbstractStatement> statements = new LinkedList<AbstractStatement>();
         statements.add(statement);
         addBlock(statements);
     }

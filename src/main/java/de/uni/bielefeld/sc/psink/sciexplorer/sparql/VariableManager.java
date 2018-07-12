@@ -22,7 +22,7 @@ public class VariableManager
 {
     private static Map<String,AtomicInteger> cloneOccurrenceMap(Map<String,AtomicInteger> occurrenceMap)
     {
-        Map<String,AtomicInteger> clonedOccurrenceMap = new LinkedHashMap();
+        Map<String,AtomicInteger> clonedOccurrenceMap = new LinkedHashMap<String, AtomicInteger>();
         for(Entry<String,AtomicInteger> entry : occurrenceMap.entrySet())
         {
             clonedOccurrenceMap.put(entry.getKey(), new AtomicInteger(entry.getValue().get()));
@@ -40,24 +40,24 @@ public class VariableManager
     
     public VariableManager()
     {
-        variableMap = new LinkedHashMap();
-        nodeMap = new LinkedHashMap();
-        occurrenceMap = new LinkedHashMap();
-        typeVariableMap = new LinkedHashMap();
-        typeOccurrenceMap = new LinkedHashMap();
-        valueVariableMap = new LinkedHashMap();
-        valueOccurrenceMap = new LinkedHashMap();
+        variableMap = new LinkedHashMap<TreeNode, String>();
+        nodeMap = new LinkedHashMap<String, TreeNode>();
+        occurrenceMap = new LinkedHashMap<String, AtomicInteger>();
+        typeVariableMap = new LinkedHashMap<TreeNode, String>();
+        typeOccurrenceMap = new LinkedHashMap<String, AtomicInteger>();
+        valueVariableMap = new LinkedHashMap<TreeNode, String>();
+        valueOccurrenceMap = new LinkedHashMap<String, AtomicInteger>();
     }
     
     
     public VariableManager(VariableManager manager)
     {
-        variableMap = new LinkedHashMap(manager.getVariableMap());
-        nodeMap = new LinkedHashMap(manager.getNodeMap());
+        variableMap = new LinkedHashMap<TreeNode, String>(manager.getVariableMap());
+        nodeMap = new LinkedHashMap<String, TreeNode>(manager.getNodeMap());
         occurrenceMap = cloneOccurrenceMap(manager.getOccurrenceMap());
-        typeVariableMap = new LinkedHashMap(manager.getTypeVariableMap());
+        typeVariableMap = new LinkedHashMap<TreeNode, String>(manager.getTypeVariableMap());
         typeOccurrenceMap = cloneOccurrenceMap(manager.getTypeOccurrenceMap());
-        valueVariableMap = new LinkedHashMap(manager.getValueVariableMap());
+        valueVariableMap = new LinkedHashMap<TreeNode, String>(manager.getValueVariableMap());
         valueOccurrenceMap = cloneOccurrenceMap(manager.getValueOccurrenceMap());
     }
 

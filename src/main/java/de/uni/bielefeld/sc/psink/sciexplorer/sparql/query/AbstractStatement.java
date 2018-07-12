@@ -13,6 +13,11 @@ import java.io.Serializable;
  */
 public abstract class AbstractStatement implements Serializable
 {
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 6311709746414983222L;
+
+	@Override
     public abstract String toString();
 }

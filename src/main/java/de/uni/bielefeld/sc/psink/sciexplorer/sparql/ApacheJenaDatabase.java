@@ -41,7 +41,7 @@ public class ApacheJenaDatabase implements SPARQLDatabaseInterface {
 	private static QueryResult select(Model model, String queryString) {
 		// System.out.println("Query: " + queryString);
 		Query query = QueryFactory.create(queryString);
-		List<List<RDFObject>> data = new LinkedList();
+		List<List<RDFObject>> data = new LinkedList<List<RDFObject>>();
 		List<String> variables;
 		List<RDFObject> row;
 		try (QueryExecution qexec = QueryExecutionFactory.create(query, model)) {
@@ -51,16 +51,12 @@ public class ApacheJenaDatabase implements SPARQLDatabaseInterface {
 
 			while (results.hasNext()) {
 				solution = results.nextSolution();
-				row = new LinkedList();
-				for (String variable : variables)
-                                {
-					try
-                                        {
-                                            row.add(new RDFObject(solution.getResource(variable).toString(), true));
-					}
-                                        catch (ClassCastException e)
-                                        {
-                                            row.add(new RDFObject(solution.getLiteral(variable).toString(), false));
+				row = new LinkedList<RDFObject>();
+				for (String variable : variables) {
+					try {
+						row.add(new RDFObject(solution.getResource(variable).toString(), true));
+					} catch (ClassCastException e) {
+						row.add(new RDFObject(solution.getLiteral(variable).toString(), false));
 					}
 				}
 				data.add(row);
