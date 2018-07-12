@@ -15,9 +15,6 @@ import org.primefaces.model.chart.AxisType;
 import org.primefaces.model.chart.BarChartModel;
 import org.primefaces.model.chart.ChartSeries;
 
-import com.google.common.collect.HashBasedTable;
-import com.google.common.collect.Table;
-
 import main.java.de.uni.bielefeld.sc.psink.sciexplorer.searchtree.Subclass;
 import main.java.de.uni.bielefeld.sc.psink.sciexplorer.sparql.QueryResult;
 import main.java.de.uni.bielefeld.sc.psink.sciexplorer.sparql.RDFObject;
@@ -69,7 +66,7 @@ public class TableManager {
 		this.organismModelData = new ArrayList<List<List<BarChartModel>>>();
 	}
 
-	public void update(List<TreeNode> investigationMethodNodes, List<TreeNode> injuryTypeNodes,
+	public void update(String treatment, List<TreeNode> investigationMethodNodes, List<TreeNode> injuryTypeNodes,
 			List<TreeNode> locationNodes, List<TreeNode> deliveryMethodNodes, List<TreeNode> organismModelNodes) {
 
 		this.sortInvestigationMethods(investigationMethodNodes);
@@ -101,7 +98,7 @@ public class TableManager {
 			this.organismModels.add(sc);
 		}
 
-		this.queryData();
+		this.queryData(treatment);
 	}
 
 	private void sortInvestigationMethods(List<TreeNode> investigationMethodNodes) {
@@ -133,10 +130,7 @@ public class TableManager {
 		}
 	}
 
-	private void queryData() {
-		String treatment = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap()
-				.get("treatment");
-
+	private void queryData(String treatment) {
 		this.queryInjuryAreaData(treatment);
 		this.queryDeliveryMethodData(treatment);
 		this.queryOrganismModelData(treatment);
@@ -144,6 +138,7 @@ public class TableManager {
 
 	private void queryInjuryAreaData(String treatment) {
 
+		int maxCount = 3;
 		this.injuryAreaData.clear();
 
 		for (String investigationMethod : investigationMethods) {
@@ -180,6 +175,7 @@ public class TableManager {
 									&& resultInjuryType.equals(injuryType.getName())) {
 								count++;
 							}
+
 						}
 
 						ChartSeries series = new ChartSeries();
@@ -187,14 +183,18 @@ public class TableManager {
 						series.setLabel(judgement);
 						barModel.addSeries(series);
 
+						maxCount = Math.max(count, maxCount);
+
 					}
 				}
 			}
 		}
+		this.makeEvenScales(injuryAreaData, maxCount);
 	}
 
 	private void queryDeliveryMethodData(String treatment) {
 
+		int maxCount = 3;
 		this.deliveryMethodData.clear();
 
 		for (String investigationMethod : investigationMethods) {
@@ -231,7 +231,8 @@ public class TableManager {
 							String resultDeliveryMethodType = data.get(2).toStringNoPrefix();
 
 							// find matches
-							if (resultJudgement.equals(judgement) && resultDeliveryMethodType.equals(deliveryMethod.getName())
+							if (resultJudgement.equals(judgement)
+									&& resultDeliveryMethodType.equals(deliveryMethod.getName())
 									&& resultInjuryType.equals(injuryType.getName())) {
 								count++;
 							}
@@ -241,14 +242,18 @@ public class TableManager {
 						series.setLabel(judgement);
 						barModel.addSeries(series);
 
+						maxCount = Math.max(count, maxCount);
+
 					}
 				}
 			}
 		}
+		this.makeEvenScales(deliveryMethodData, maxCount);
 	}
 
 	private void queryOrganismModelData(String treatment) {
 
+		int maxCount = 3;
 		this.organismModelData.clear();
 
 		for (String investigationMethod : investigationMethods) {
@@ -284,7 +289,8 @@ public class TableManager {
 							String resultOrganismModelType = data.get(2).toStringNoPrefix();
 
 							// find matches
-							if (resultJudgement.equals(judgement) && resultOrganismModelType.equals(organismModel.getName())
+							if (resultJudgement.equals(judgement)
+									&& resultOrganismModelType.equals(organismModel.getName())
 									&& resultInjuryType.equals(injuryType.getName())) {
 								count++;
 							}
@@ -295,12 +301,27 @@ public class TableManager {
 						series.setLabel(judgement);
 						barModel.addSeries(series);
 
+						maxCount = Math.max(count, maxCount);
+
 					}
 				}
 			}
 		}
+		this.makeEvenScales(organismModelData, maxCount);
 	}
 
+	private void makeEvenScales(List<List<List<BarChartModel>>> charts, int max) {
+		for (List<List<BarChartModel>> list1 : charts) {
+			for (List<BarChartModel> list2 : list1) {
+				for (BarChartModel chart : list2) {
+					chart.getAxis(AxisType.Y).setMax(max);
+					chart.getAxis(AxisType.Y).setMin(0);
+					chart.getAxis(AxisType.Y).setTickFormat("%d");
+				}
+			}
+		}
+	}
+	
 	private String buildUnionForInvestigationMethod(String investigationMethod) {
 		String union = "";
 		List<Subclass> subclasses = this.investigationMethodsMap.get(investigationMethod);

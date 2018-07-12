@@ -70,12 +70,6 @@
 			<artifactId>jena-arq</artifactId>
 			<version>3.4.0</version>
 		</dependency>
-
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>25.1-jre</version>
-		</dependency>
 	</dependencies>
 
 	<build>

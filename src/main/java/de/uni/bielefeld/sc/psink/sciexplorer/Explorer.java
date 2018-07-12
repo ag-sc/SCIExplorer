@@ -730,8 +730,15 @@ public class Explorer implements Serializable {
 			break;
 
 		case TABLES:
-			this.tableManager.update(investigationMethodNodes, injuryTypeNodes, locationNodes, deliveryMethodNodes,
-					animalModelNodes);
+			String treatment = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap()
+					.get("treatment");
+			if (treatment == null) {
+				treatment = "";
+			}
+			this.treatmentSearchTerm = treatment;
+
+			this.tableManager.update(this.treatmentSearchTerm, investigationMethodNodes, injuryTypeNodes, locationNodes,
+					deliveryMethodNodes, animalModelNodes);
 			break;
 		}
 	}
@@ -1075,9 +1082,12 @@ public class Explorer implements Serializable {
 		}
 	}
 
-	
 	public String reset() {
 		return "index.xhtml?faces-redirect=true";
+	}
+	
+	public String resetTables() {
+		return "tables.xhtml?faces-redirect=true";
 	}
 
 	public boolean isIncludeSubtypes() {
@@ -1109,13 +1119,22 @@ public class Explorer implements Serializable {
 	}
 
 	private String generateTablesPageUrl(boolean facesRedirect) {
-		// return generateUrl("tables.xhtml", facesRedirect);
 		String url = "tables.xhtml";
-		if(treatmentSearchTerm != null && !treatmentSearchTerm.isEmpty()) {
+
+		boolean didAddTreatment = false;
+
+		if (treatmentSearchTerm != null && !treatmentSearchTerm.isEmpty()) {
 			url += "?treatment=" + treatmentSearchTerm;
+			didAddTreatment = true;
 		}
+
 		if (facesRedirect) {
-			url += "?faces-redirect=true";
+			if (didAddTreatment) {
+				url += "&";
+			} else {
+				url += "?";
+			}
+			url += "faces-redirect=true";
 		}
 		return url;
 	}
